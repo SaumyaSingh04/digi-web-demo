@@ -8,6 +8,7 @@ import Services from './pages/Services'
 import Contact from './pages/Contact'
 import Portfolio from './pages/Portfolio'
 import Blog from './pages/Blog'
+import BlogPost from './pages/BlogPost'
 import Career from './pages/Career'
 import FAQs from './pages/FAQs'
 import WebsiteDesign from './pages/WebsiteDesign'
@@ -15,7 +16,7 @@ import WebDevelopment from './pages/WebDevelopment'
 import SEOServices from './pages/SEOServices'
 import DigitalMarketing from './pages/DigitalMarketing'
 import SMM from './pages/SMM'
-import PPC from './pages/PPC'
+import PPC from './pages/PPC' 
 import NotFound from './pages/NotFound'
 
 function ScrollToTop() {
@@ -41,6 +42,7 @@ export default function App() {
         <Route path="/services/ppc" element={<PPC />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:id" element={<BlogPost />} />
         <Route path="/career" element={<Career />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/faqs" element={<FAQs />} />
