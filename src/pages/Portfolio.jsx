@@ -365,7 +365,7 @@ export default function Portfolio() {
             <h2 className="section-title">Words of praise from others<br />about our presence</h2>
           </motion.div>
         </div>
-
+ 
         <div className="infinite-moving-cards-wrapper">
           <div className="cards-fade-left" aria-hidden="true" />
           <div className="cards-fade-right" aria-hidden="true" />

@@ -16,7 +16,7 @@ import WebDevelopment from './pages/WebDevelopment'
 import SEOServices from './pages/SEOServices'
 import DigitalMarketing from './pages/DigitalMarketing'
 import SMM from './pages/SMM'
-import PPC from './pages/PPC'
+import PPC from './pages/PPC' 
 import NotFound from './pages/NotFound'
 
 function ScrollToTop() {

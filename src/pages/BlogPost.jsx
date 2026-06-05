@@ -330,7 +330,7 @@ export default function BlogPost() {
           />
         </div>
       </article>
-
+ 
       <CTA />
     </>
   )

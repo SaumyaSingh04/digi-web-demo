@@ -728,7 +728,7 @@ html { scroll-behavior: smooth; }
   .orb--cyan { width: 320px; height: 320px; }
   .orb--lavender { width: 260px; height: 260px; }
 }
-
+ 
 @media (max-width: 480px) {
   .portfolio-hero { padding: 120px 0 30px; }
   .hero-title { font-size: 28px; letter-spacing: -1.4px; line-height: 34px; }
