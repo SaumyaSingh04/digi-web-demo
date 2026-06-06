@@ -559,7 +559,7 @@
 
 @media (max-width: 900px) {
   .navbar__links {
-    display: none;
+    display: none; 
   }
   
   .navbar__cta-btn:not(.navbar__cta-mobile) {

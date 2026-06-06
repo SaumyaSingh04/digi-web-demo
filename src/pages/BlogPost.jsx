@@ -316,7 +316,7 @@ export default function BlogPost() {
               </div>
             </motion.div>
           </div>
-        </div>
+        </div> 
 
         <div className="blog-post__image">
           <img src={article.image} alt={article.title} />

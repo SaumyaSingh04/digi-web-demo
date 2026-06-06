@@ -327,7 +327,7 @@ export default function Navbar() {
                       </div>
                     )}
                   </>
-                ) : (
+                ) : ( 
                   <NavLink
                     to={to}
                     className={({ isActive }) => isActive ? 'active' : ''}

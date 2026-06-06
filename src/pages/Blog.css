@@ -228,7 +228,7 @@
 }
 
 @media (max-width: 640px) {
-  .page-hero {
+  .page-hero { 
     padding: 120px 0 30px;
   } 
   

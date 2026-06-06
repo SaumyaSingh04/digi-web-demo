@@ -717,7 +717,7 @@ html { scroll-behavior: smooth; }
   .stat-item { flex: 0 0 calc(50% - 30px); }
   .section-title { font-size: 1.6rem; }
   .pf-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; 
     max-width: 450px;
   }
   .portfolio-cases-section { padding: 60px 0; }

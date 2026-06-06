@@ -164,7 +164,7 @@ export default function Blog() {
                       </div>
                     </div>
                   </div>
-                </Link>
+                </Link> 
               </motion.article>
             ))}
           </div>
