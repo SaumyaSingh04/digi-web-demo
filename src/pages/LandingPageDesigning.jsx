@@ -4,16 +4,16 @@ const LandingPageVisual = () => (
   <svg viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%', display: 'block' }}>
     <defs>
       <linearGradient id="lp-bg" x1="0" y1="0" x2="480" y2="360" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#E0DDD6" />
-        <stop offset="100%" stopColor="#D0CDC8" />
+        <stop offset="0%" stopColor="#0f1e0f" />
+        <stop offset="100%" stopColor="#081408" />
       </linearGradient>
       <linearGradient id="lp-dark" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stopColor="#484440" />
-        <stop offset="100%" stopColor="#383430" />
+        <stop offset="0%" stopColor="#0e1a0e" />
+        <stop offset="100%" stopColor="#081008" />
       </linearGradient>
       <linearGradient id="lp-card" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0%" stopColor="#F2EEE8" />
-        <stop offset="100%" stopColor="#E8E4DC" />
+        <stop offset="100%" stopColor="#102818" />
       </linearGradient>
       <filter id="lp-shadow"><feDropShadow dx="0" dy="6" stdDeviation="10" floodColor="#00000022" /></filter>
     </defs>
@@ -83,7 +83,7 @@ const LandingPageVisual = () => (
       {[['+120%','Conv Lift',10],['500+','Pages Built',130]].map(([v,l,x])=>(
         <g key={l}>
           <text x={x+12} y={24} fontSize="7" fill="#8A8480" fontFamily="Inter,sans-serif">{l}</text>
-          <text x={x+12} y={44} fontSize="16" fontWeight="900" fill="#484440" fontFamily="Inter,sans-serif">{v}</text>
+          <text x={x+12} y={44} fontSize="16" fontWeight="900" fill="#0e1a0e" fontFamily="Inter,sans-serif">{v}</text>
           {x<130 && <rect x={x+108} y="12" width="1" height="32" fill="#D4CEC6" />}
         </g>
       ))}

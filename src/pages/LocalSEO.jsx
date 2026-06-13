@@ -4,42 +4,42 @@ const LocalSEOVisual = () => (
   <svg viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%', display: 'block' }}>
     <defs>
       <linearGradient id="ls-bg" x1="0" y1="0" x2="480" y2="360" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#E0DDD6" />
-        <stop offset="100%" stopColor="#D0CECA" />
+        <stop offset="0%" stopColor="#0e1a10" />
+        <stop offset="100%" stopColor="#081208" />
       </linearGradient>
       <linearGradient id="ls-card" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stopColor="#F2EFEA" />
-        <stop offset="100%" stopColor="#E6E2DC" />
+        <stop offset="0%" stopColor="#162a18" />
+        <stop offset="100%" stopColor="#0e1e12" />
       </linearGradient>
       <linearGradient id="ls-dark" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stopColor="#484440" />
-        <stop offset="100%" stopColor="#383430" />
+        <stop offset="0%" stopColor="#0a1a0c" />
+        <stop offset="100%" stopColor="#060e06" />
       </linearGradient>
       <filter id="ls-shadow"><feDropShadow dx="0" dy="6" stdDeviation="10" floodColor="#00000022" /></filter>
     </defs>
     <rect width="480" height="360" fill="url(#ls-bg)" />
 
     {/* Map background */}
-    <rect x="40" y="30" width="400" height="220" rx="14" fill="#D8D4CC" />
+    <rect x="40" y="30" width="400" height="220" rx="14" fill="#142a18" />
     {/* Grid lines */}
     {[0,1,2,3,4,5].map(i=>(
-      <line key={`v${i}`} x1={90+i*60} y1="30" x2={90+i*60} y2="250" stroke="#C8C4BC" strokeWidth="0.8" opacity="0.5" />
+      <line key={`v${i}`} x1={90+i*60} y1="30" x2={90+i*60} y2="250" stroke="#0e2010" strokeWidth="0.8" opacity="0.5" />
     ))}
     {[0,1,2,3].map(i=>(
-      <line key={`h${i}`} x1="40" y1={80+i*56} x2="440" y2={80+i*56} stroke="#C8C4BC" strokeWidth="0.8" opacity="0.5" />
+      <line key={`h${i}`} x1="40" y1={80+i*56} x2="440" y2={80+i*56} stroke="#0e2010" strokeWidth="0.8" opacity="0.5" />
     ))}
     {/* Roads */}
-    <path d="M40 160 Q160 130 240 155 Q320 180 440 150" stroke="#B8B4AC" strokeWidth="8" fill="none" strokeLinecap="round" />
-    <path d="M40 160 Q160 130 240 155 Q320 180 440 150" stroke="#E8E4DC" strokeWidth="5" fill="none" strokeLinecap="round" />
-    <path d="M180 30 Q200 130 210 250" stroke="#B8B4AC" strokeWidth="6" fill="none" strokeLinecap="round" />
-    <path d="M180 30 Q200 130 210 250" stroke="#E8E4DC" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+    <path d="M40 160 Q160 130 240 155 Q320 180 440 150" stroke="#1a3a20" strokeWidth="8" fill="none" strokeLinecap="round" />
+    <path d="M40 160 Q160 130 240 155 Q320 180 440 150" stroke="#e8e4dc" strokeWidth="5" fill="none" strokeLinecap="round" />
+    <path d="M180 30 Q200 130 210 250" stroke="#1a3a20" strokeWidth="6" fill="none" strokeLinecap="round" />
+    <path d="M180 30 Q200 130 210 250" stroke="#e8e4dc" strokeWidth="3.5" fill="none" strokeLinecap="round" />
     {/* Blocks */}
     {[[60,45,80,50],[280,45,100,60],[80,175,90,50],[310,170,100,55],[60,110,60,45],[360,100,70,50]].map(([x,y,w,h],i)=>(
-      <rect key={i} x={x} y={y} width={w} height={h} rx="4" fill="#C8C4BC" opacity="0.7" />
+      <rect key={i} x={x} y={y} width={w} height={h} rx="4" fill="#0e2010" opacity="0.7" />
     ))}
 
     {/* Map pins */}
-    {[[240,130,'#E05040',true],[160,100,'#8A8480',false],[310,140,'#8A8480',false]].map(([x,y,clr,big],i)=>(
+    {[[240,130,'#e05040',true],[160,100,'#3a6a48',false],[310,140,'#3a6a48',false]].map(([x,y,clr,big],i)=>(
       <g key={i}>
         <ellipse cx={x} cy={y+22} rx={big?10:7} ry={big?4:3} fill="#00000020" />
         <path d={`M${x},${y+20} C${x-14},${y} ${x-14},${y-16} ${x},${y-20} C${x+14},${y-16} ${x+14},${y} ${x},${y+20}Z`} fill={clr} />
@@ -50,13 +50,13 @@ const LocalSEOVisual = () => (
     {/* Maps pack card */}
     <g filter="url(#ls-shadow)" transform="translate(28,268)">
       <rect width="420" height="72" rx="14" fill="url(#ls-card)" />
-      <polygon points="420,14 424,18 424,80 420,76" fill="#D0CAC2" />
-      <polygon points="14,72 18,76 424,76 420,72" fill="#C8C2BA" />
-      <rect x="14" y="14" width="80" height="5" rx="2" fill="#8A8480" />
+      <polygon points="420,14 424,18 424,80 420,76" fill="#0e2016" />
+      <polygon points="14,72 18,76 424,76 420,72" fill="#0a1810" />
+      <rect x="14" y="14" width="80" height="5" rx="2" fill="#3a6a48" />
       {[['Top 3','Maps Pack',20],['+220%','Local Traffic',160],['500+','Citations Built',300]].map(([v,l,x])=>(
         <g key={l}>
           <text x={x+14} y="36" fontSize="8" fill="#7A7470" fontFamily="Inter,sans-serif">{l}</text>
-          <text x={x+14} y="58" fontSize="20" fontWeight="900" fill="#484440" fontFamily="Inter,sans-serif">{v}</text>
+          <text x={x+14} y="58" fontSize="20" fontWeight="900" fill="#0a1a0c" fontFamily="Inter,sans-serif">{v}</text>
           {x < 300 && <rect x={x+147} y="14" width="1" height="46" fill="#D8D2CA" />}
         </g>
       ))}
@@ -65,11 +65,11 @@ const LocalSEOVisual = () => (
     {/* Review stars card */}
     <g filter="url(#ls-shadow)" transform="translate(290,90)">
       <rect width="130" height="56" rx="12" fill="url(#ls-dark)" />
-      <polygon points="130,12 134,16 134,64 130,60" fill="#282420" />
-      <polygon points="12,56 16,60 134,60 130,56" fill="#201C18" />
-      <rect x="12" y="12" width="50" height="4" rx="2" fill="#6A6460" />
-      <text x="12" y="38" fontSize="20" fontWeight="900" fill="#E8E0D8" fontFamily="Inter,sans-serif">4.9 ★</text>
-      <rect x="12" y="44" width="60" height="4" rx="2" fill="#5A5450" />
+      <polygon points="130,12 134,16 134,64 130,60" fill="#041008" />
+      <polygon points="12,56 16,60 134,60 130,56" fill="#020a04" />
+      <rect x="12" y="12" width="50" height="4" rx="2" fill="#3a7848" />
+      <text x="12" y="38" fontSize="20" fontWeight="900" fill="#90d0a8" fontFamily="Inter,sans-serif">4.9 ★</text>
+      <rect x="12" y="44" width="60" height="4" rx="2" fill="#2a5838" />
     </g>
   </svg>
 )

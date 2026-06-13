@@ -112,16 +112,16 @@ export default function Portfolio() {
                 <svg viewBox="0 0 260 260" className="impact__svg" aria-label="Growth analytics dashboard">
                   <defs>
                     <linearGradient id="port-bg" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#C8C4BE"/><stop offset="100%" stopColor="#B0ACA6"/>
+                      <stop offset="0%" stopColor="#1a2a3a"/><stop offset="100%" stopColor="#121e2c"/>
                     </linearGradient>
                     <linearGradient id="port-bar-lo" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#A8A49E"/><stop offset="100%" stopColor="#888480"/>
+                      <stop offset="0%" stopColor="#2e5878"/><stop offset="100%" stopColor="#1e3e58"/>
                     </linearGradient>
                     <linearGradient id="port-bar-hi" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#585654"/><stop offset="100%" stopColor="#383634"/>
+                      <stop offset="0%" stopColor="#4a8898"/><stop offset="100%" stopColor="#2e6070"/>
                     </linearGradient>
                     <linearGradient id="port-bar-md" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#787674"/><stop offset="100%" stopColor="#545250"/>
+                      <stop offset="0%" stopColor="#386880"/><stop offset="100%" stopColor="#244c60"/>
                     </linearGradient>
                     <filter id="port-glow"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
                     <filter id="port-shadow"><feDropShadow dx="0" dy="4" stdDeviation="6" floodColor="#00000030"/></filter>
@@ -152,12 +152,12 @@ export default function Portfolio() {
                       {/* right face — darker */}
                       <polygon
                         points={`${x+16},${y} ${x+24},${y-8} ${x+24},${224} ${x+16},${232}`}
-                        fill={i>=5?'rgba(30,28,26,0.55)':i>=3?'rgba(60,58,56,0.35)':'rgba(80,78,76,0.22)'}
+                        fill={i>=5?'rgba(20,60,80,0.6)':i>=3?'rgba(20,50,70,0.4)':'rgba(20,45,65,0.25)'}
                       />
                       {/* top face — lighter highlight */}
                       <polygon
                         points={`${x},${y} ${x+16},${y} ${x+24},${y-8} ${x+8},${y-8}`}
-                        fill={i>=5?'rgba(140,136,130,0.9)':i>=3?'rgba(160,156,150,0.85)':'rgba(180,176,170,0.8)'}
+                        fill={i>=5?'rgba(100,180,200,0.7)':i>=3?'rgba(80,150,175,0.6)':'rgba(60,120,155,0.55)'}
                       />
                       {/* top edge highlight */}
                       <line x1={x} y1={y} x2={x+8} y2={y-8} stroke="rgba(255,255,255,0.3)" strokeWidth="0.8"/>
@@ -169,20 +169,20 @@ export default function Portfolio() {
                   {/* trend line */}
                   <polyline
                     points="36,188 58,173 80,158 102,143 124,126 146,108 168,92 190,76"
-                    fill="none" stroke="rgba(40,38,36,0.65)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+                    fill="none" stroke="rgba(100,190,210,0.8)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
                     filter="url(#port-glow)"
                   />
                   {/* trend area fill */}
                   <polygon
                     points="36,188 58,173 80,158 102,143 124,126 146,108 168,92 190,76 190,232 36,232"
-                    fill="rgba(0,0,0,0.06)"
+                    fill="rgba(60,140,170,0.1)"
                   />
                   {/* peak dot with halo */}
-                  <circle cx="190" cy="76" r="8" fill="rgba(60,58,56,0.15)"/>
-                  <circle cx="190" cy="76" r="4" fill="#484644" filter="url(#port-glow)"/>
+                  <circle cx="190" cy="76" r="8" fill="rgba(80,170,195,0.2)"/>
+                  <circle cx="190" cy="76" r="4" fill="#5ab8cc" filter="url(#port-glow)"/>
                   {/* other dots */}
                   {[[36,188],[58,173],[80,158],[102,143],[124,126],[146,108],[168,92]].map(([cx,cy],i) => (
-                    <circle key={i} cx={cx} cy={cy} r="2.5" fill="rgba(60,58,54,0.6)"/>
+                    <circle key={i} cx={cx} cy={cy} r="2.5" fill="rgba(80,160,185,0.7)"/>
                   ))}
                   {/* stat badge */}
                   <g filter="url(#port-shadow)" transform="translate(18,18)">
@@ -190,8 +190,8 @@ export default function Portfolio() {
                     <polygon points="6,38 12,44 94,44 88,38" fill="rgba(30,28,26,0.25)"/>
                     <rect width="88" height="38" rx="8" fill="rgba(40,38,36,0.82)"/>
                     <rect x="0" y="0" width="88" height="1.5" rx="1" fill="rgba(255,255,255,0.18)"/>
-                    <text x="10" y="16" fontSize="6" fill="rgba(200,196,190,0.6)" fontFamily="Inter,sans-serif">Growth</text>
-                    <text x="10" y="31" fontSize="13" fontWeight="900" fill="#C8C4BE" fontFamily="Inter,sans-serif">+180%</text>
+                    <text x="10" y="16" fontSize="6" fill="rgba(100,190,210,0.7)" fontFamily="Inter,sans-serif">Growth</text>
+                    <text x="10" y="31" fontSize="13" fontWeight="900" fill="#7ac8d8" fontFamily="Inter,sans-serif">+180%</text>
                   </g>
                 </svg>
               </motion.div>

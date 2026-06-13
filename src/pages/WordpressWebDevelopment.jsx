@@ -4,11 +4,11 @@ const WordPressVisual = () => (
   <svg viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%', display: 'block' }}>
     <defs>
       <linearGradient id="wp-bg" x1="0" y1="0" x2="480" y2="360" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#DDD8D4" />
-        <stop offset="100%" stopColor="#CBC6C0" />
+        <stop offset="0%" stopColor="#0f1a2e" />
+        <stop offset="100%" stopColor="#080f1c" />
       </linearGradient>
       <linearGradient id="wp-card" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stopColor="#F0EDE8" />
+        <stop offset="0%" stopColor="#1a2d4a" />
         <stop offset="100%" stopColor="#E4E0DA" />
       </linearGradient>
       <linearGradient id="wp-dark" x1="0" y1="0" x2="0" y2="1">
@@ -44,21 +44,21 @@ const WordPressVisual = () => (
     ))}
 
     {/* Page preview right */}
-    <rect x="130" y="90" width="106" height="166" rx="3" fill="#F0EDE8" />
-    <rect x="134" y="96" width="98" height="12" rx="3" fill="#D8D2CA" />
+    <rect x="130" y="90" width="106" height="166" rx="3" fill="#1a2d4a" />
+    <rect x="134" y="96" width="98" height="12" rx="3" fill="#102038" />
     <rect x="134" y="112" width="98" height="30" rx="3" fill="#E0D8D0" />
     <rect x="134" y="146" width="44" height="8" rx="2" fill="#C8C2B8" />
     <rect x="182" y="146" width="44" height="8" rx="2" fill="#C8C2B8" />
     {[0,1,2].map(i=>(
       <g key={i}>
-        <rect x={134+i*36} y="160" width="30" height="24" rx="4" fill="#D8D2CA" />
+        <rect x={134+i*36} y="160" width="30" height="24" rx="4" fill="#102038" />
         <rect x={138+i*36} y="188" width="22" height="4" rx="2" fill="#C0BAB0" />
         <rect x={138+i*36} y="196" width="16" height="3" rx="1" fill="#C8C2B8" />
       </g>
     ))}
     <rect x="134" y="206" width="80" height="12" rx="5" fill="#7A7670" />
-    <rect x="134" y="224" width="98" height="5" rx="2" fill="#D0CAC2" />
-    <rect x="134" y="234" width="70" height="5" rx="2" fill="#D8D2CA" />
+    <rect x="134" y="224" width="98" height="5" rx="2" fill="#0c1830" />
+    <rect x="134" y="234" width="70" height="5" rx="2" fill="#102038" />
 
     {/* Floating speed badge */}
     <g filter="url(#wp-shadow)" transform="translate(28,180)">
@@ -66,12 +66,12 @@ const WordPressVisual = () => (
       <polygon points="108,12 112,16 112,66 108,62" fill="#262220" />
       <polygon points="12,58 16,62 112,62 108,58" fill="#1E1A18" />
       <rect x="12" y="12" width="50" height="4" rx="2" fill="#5A5652" />
-      <text x="12" y="44" fontSize="20" fontWeight="900" fill="#E8E0D8" fontFamily="Inter,sans-serif">95+</text>
+      <text x="12" y="44" fontSize="20" fontWeight="900" fill="#90b8e0" fontFamily="Inter,sans-serif">95+</text>
       <rect x="12" y="50" width="60" height="3" rx="1" fill="#4A4642" />
     </g>
     <g filter="url(#wp-shadow)" transform="translate(28,252)">
       <rect width="108" height="46" rx="12" fill="url(#wp-card)" />
-      <polygon points="108,12 112,16 112,54 108,50" fill="#D0CAC2" />
+      <polygon points="108,12 112,16 112,54 108,50" fill="#0c1830" />
       <polygon points="12,46 16,50 112,50 108,46" fill="#C8C2BA" />
       <rect x="12" y="12" width="60" height="4" rx="2" fill="#8A8480" />
       <text x="12" y="36" fontSize="14" fontWeight="900" fill="#464240" fontFamily="Inter,sans-serif">300+</text>

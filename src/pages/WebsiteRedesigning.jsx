@@ -4,12 +4,12 @@ const RedesignVisual = () => (
   <svg viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%', display: 'block' }}>
     <defs>
       <linearGradient id="rd-bg" x1="0" y1="0" x2="480" y2="360" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#E0DDD8" />
-        <stop offset="100%" stopColor="#D0CCC8" />
+        <stop offset="0%" stopColor="#1a0a2e" />
+        <stop offset="100%" stopColor="#10061e" />
       </linearGradient>
       <linearGradient id="rd-dark" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stopColor="#484440" />
-        <stop offset="100%" stopColor="#383430" />
+        <stop offset="0%" stopColor="#1a0a2e" />
+        <stop offset="100%" stopColor="#10061e" />
       </linearGradient>
       <linearGradient id="rd-card" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0%" stopColor="#F0EDE8" />
@@ -31,15 +31,15 @@ const RedesignVisual = () => (
       <rect x="14" y="14" width="168" height="18" rx="5" fill="#C4BEB8" />
       <text x="98" y="27" fontSize="8" fill="#8A8480" fontFamily="Inter,sans-serif" textAnchor="middle">OLD SITE</text>
       {/* Outdated layout */}
-      <rect x="14" y="38" width="168" height="50" rx="3" fill="#C8C4BC" />
+      <rect x="14" y="38" width="168" height="50" rx="3" fill="#8060c8" />
       <rect x="22" y="44" width="80" height="10" rx="2" fill="#B0AAA4" />
-      <rect x="22" y="58" width="120" height="6" rx="2" fill="#B8B4AC" />
+      <rect x="22" y="58" width="120" height="6" rx="2" fill="#6a4ab8" />
       <rect x="22" y="68" width="100" height="6" rx="2" fill="#C0BCB4" />
       {[0,1,2].map(i=>(
         <rect key={i} x={14+i*58} y="94" width="50" height="50" rx="3" fill="#C0BCB4" />
       ))}
       <rect x="14" y="150" width="168" height="8" rx="2" fill="#C4C0B8" />
-      <rect x="14" y="162" width="168" height="8" rx="2" fill="#C8C4BC" />
+      <rect x="14" y="162" width="168" height="8" rx="2" fill="#8060c8" />
       <rect x="14" y="174" width="120" height="8" rx="2" fill="#CCC8C0" />
       {/* old CTA */}
       <rect x="14" y="188" width="60" height="14" rx="3" fill="#A8A49C" />
@@ -79,10 +79,10 @@ const RedesignVisual = () => (
     {[['+90%','Conversion Lift',22],['+55%','Organic Traffic',176],['3x','Speed Gain',330]].map(([v,l,x])=>(
       <g key={l} filter="url(#rd-shadow)" transform={`translate(${x},250)`}>
         <rect width="130" height="60" rx="12" fill="url(#rd-dark)" />
-        <polygon points="130,12 134,16 134,68 130,64" fill="#282420" />
-        <polygon points="12,60 16,64 134,64 130,60" fill="#201C18" />
+        <polygon points="130,12 134,16 134,68 130,64" fill="#0c0418" />
+        <polygon points="12,60 16,64 134,64 130,60" fill="#080210" />
         <text x="14" y="24" fontSize="7" fill="#6A6460" fontFamily="Inter,sans-serif">{l}</text>
-        <text x="14" y="48" fontSize="22" fontWeight="900" fill="#E8E0D8" fontFamily="Inter,sans-serif">{v}</text>
+        <text x="14" y="48" fontSize="22" fontWeight="900" fill="#d0b8f0" fontFamily="Inter,sans-serif">{v}</text>
       </g>
     ))}
 

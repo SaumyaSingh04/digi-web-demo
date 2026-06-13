@@ -174,29 +174,71 @@ export default function Portfolio() {
           >
             <div className="ph__visual-glow" />
             <div className="ph__parallax">
-              <motion.div
-                className="ph__panel"
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }}
-              >
-                <div className="ph__panel-header">
-                  <span className="ph__panel-title">Impact Overview</span>
-                  <span className="ph__panel-badge">All Time</span>
-                </div>
-                <div className="ph__topics">
-                  {[['Nexora Tech', '+180% Traffic'], ['Veltrix Solutions', '+60% Conversions'], ['Brandify Co.', '4.5x ROAS'], ['Optica Retail', '+220% Engagement'], ['FinEdge Capital', '3.2x Leads'], ['Luminary Studios', '98 PageSpeed']].map(([client, result]) => (
-                    <div key={client} className="ph__topic-row">
-                      <span className="ph__topic-dot" />
-                      <span className="ph__topic-name">{client}</span>
-                      <span className="ph__topic-count">{result}</span>
-                    </div>
+              <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }} style={{ position: 'relative', zIndex: 2 }}>
+                <svg viewBox="0 0 420 320" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', display: 'block', borderRadius: 16 }}>
+                  <defs>
+                    <linearGradient id="pf-bg" x1="0" y1="0" x2="420" y2="320" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stopColor="#0a1628"/><stop offset="100%" stopColor="#040e1c"/>
+                    </linearGradient>
+                    <linearGradient id="pf-bar-a" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#4f8bff"/><stop offset="100%" stopColor="#3a6ad4"/>
+                    </linearGradient>
+                    <linearGradient id="pf-bar-b" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#34d399"/><stop offset="100%" stopColor="#059669"/>
+                    </linearGradient>
+                    <linearGradient id="pf-bar-c" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#fb923c"/><stop offset="100%" stopColor="#c2410c"/>
+                    </linearGradient>
+                    <linearGradient id="pf-bar-d" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#f472b6"/><stop offset="100%" stopColor="#be185d"/>
+                    </linearGradient>
+                    <filter id="pf-sh"><feDropShadow dx="0" dy="4" stdDeviation="8" floodColor="#00000050"/></filter>
+                  </defs>
+                  <rect width="420" height="320" rx="16" fill="url(#pf-bg)"/>
+                  {/* grid lines */}
+                  {[80,130,180,230].map(y => <line key={y} x1="24" y1={y} x2="396" y2={y} stroke="rgba(255,255,255,0.05)" strokeWidth="1"/>)}
+                  {/* bars - 6 clients */}
+                  {[
+                    {x:28, h:140, g:'pf-bar-a', label:'Nexora',  val:'+180%'},
+                    {x:88, h:100, g:'pf-bar-b', label:'Veltrix', val:'+60%'},
+                    {x:148,h:160, g:'pf-bar-c', label:'Brandify',val:'4.5x'},
+                    {x:208,h:120, g:'pf-bar-d', label:'Optica',  val:'+220%'},
+                    {x:268,h:180, g:'pf-bar-a', label:'FinEdge', val:'3.2x'},
+                    {x:328,h:200, g:'pf-bar-b', label:'Luminary',val:'98'},
+                  ].map(({x,h,g,label,val})=>(
+                    <g key={label}>
+                      <polygon points={`${x+44},${250-h} ${x+52},${242-h} ${x+52},250 ${x+44},258`} fill={`url(#${g})`} opacity="0.4"/>
+                      <polygon points={`${x},${250-h} ${x+8},${242-h} ${x+52},${242-h} ${x+44},${250-h}`} fill={`url(#${g})`} opacity="0.6"/>
+                      <rect x={x} y={250-h} width={44} height={h} rx="3" fill={`url(#${g})`} opacity="0.85"/>
+                      <text x={x+22} y={266} fontSize="7" fill="rgba(255,255,255,0.5)" fontFamily="Inter,sans-serif" textAnchor="middle">{label}</text>
+                      <text x={x+22} y={244-h} fontSize="8" fontWeight="800" fill="rgba(255,255,255,0.85)" fontFamily="Inter,sans-serif" textAnchor="middle">{val}</text>
+                    </g>
                   ))}
-                </div>
-                <div className="ph__panel-divider" />
-                <div className="ph__readtime">
-                  <span className="ph__readtime-label">Avg. Growth</span>
-                  <span className="ph__readtime-value">+168%</span>
-                </div>
+                  {/* trend line */}
+                  <polyline points="50,110 110,150 170,90 230,130 290,70 350,50" fill="none" stroke="rgba(99,153,255,0.7)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <circle cx="350" cy="50" r="5" fill="#4f8bff"/>
+                  {/* stat badge top */}
+                  <g filter="url(#pf-sh)" transform="translate(18,16)">
+                    <rect width="120" height="46" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" strokeWidth="1"/>
+                    <text x="14" y="22" fontSize="7" fill="rgba(99,153,255,0.8)" fontFamily="Inter,sans-serif">Avg. Growth</text>
+                    <text x="14" y="40" fontSize="18" fontWeight="900" fill="#93c5fd" fontFamily="Inter,sans-serif">+168%</text>
+                  </g>
+                  <g filter="url(#pf-sh)" transform="translate(282,16)">
+                    <rect width="120" height="46" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" strokeWidth="1"/>
+                    <text x="14" y="22" fontSize="7" fill="rgba(52,211,153,0.8)" fontFamily="Inter,sans-serif">Projects</text>
+                    <text x="14" y="40" fontSize="18" fontWeight="900" fill="#6ee7b7" fontFamily="Inter,sans-serif">100+</text>
+                  </g>
+                  {/* bottom row */}
+                  <g transform="translate(18,278)">
+                    <rect width="384" height="30" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.07)" strokeWidth="1"/>
+                    {[['SEO','#4f8bff'],['PPC','#fb923c'],['SMM','#f472b6'],['Web Dev','#34d399'],['Content','#a78bfa'],['AI','#38bdf8']].map(([lbl,clr],i)=>(
+                      <g key={lbl}>
+                        <circle cx={22+i*64} cy={15} r={4} fill={clr} opacity="0.8"/>
+                        <text x={30+i*64} y={19} fontSize="7" fill="rgba(255,255,255,0.55)" fontFamily="Inter,sans-serif">{lbl}</text>
+                      </g>
+                    ))}
+                  </g>
+                </svg>
               </motion.div>
               {pfFloatCards.map((card) => (
                 <motion.div

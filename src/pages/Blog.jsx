@@ -192,29 +192,49 @@ export default function Blog() {
           >
             <div className="ph__visual-glow" />
             <div className="ph__parallax">
-              <motion.div
-                className="ph__panel"
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }}
-              >
-                <div className="ph__panel-header">
-                  <span className="ph__panel-title">Editorial Calendar</span>
-                  <span className="ph__panel-badge">Jan 2025</span>
-                </div>
-                <div className="ph__topics">
-                  {[['SEO', '12 posts'], ['PPC', '9 posts'], ['Social Media', '8 posts'], ['Web Design', '7 posts'], ['Strategy', '6 posts'], ['Branding', '5 posts']].map(([topic, count]) => (
-                    <div key={topic} className="ph__topic-row">
-                      <span className="ph__topic-dot" />
-                      <span className="ph__topic-name">{topic}</span>
-                      <span className="ph__topic-count">{count}</span>
-                    </div>
+              <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }} style={{ position: 'relative', zIndex: 2 }}>
+                <svg viewBox="0 0 420 320" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', display: 'block', borderRadius: 16 }}>
+                  <defs>
+                    <linearGradient id="bl-bg" x1="0" y1="0" x2="420" y2="320" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stopColor="#0e1a10"/><stop offset="100%" stopColor="#060e08"/>
+                    </linearGradient>
+                    <filter id="bl-sh"><feDropShadow dx="0" dy="4" stdDeviation="8" floodColor="#00000050"/></filter>
+                  </defs>
+                  <rect width="420" height="320" rx="16" fill="url(#bl-bg)"/>
+                  {/* article cards stacked */}
+                  {[
+                    {y:16,  tag:'SEO',          title:'10 Technical SEO Fixes', color:'#4ade80', tagBg:'rgba(74,222,128,0.15)'},
+                    {y:88,  tag:'PPC',          title:'How We Got 4.5x ROAS',   color:'#fb923c', tagBg:'rgba(251,146,60,0.15)'},
+                    {y:160, tag:'Web Design',   title:'5 UX Principles for CRO',color:'#60a5fa', tagBg:'rgba(96,165,250,0.15)'},
+                    {y:232, tag:'Social Media', title:'Fix Your Instagram Reach',color:'#f472b6', tagBg:'rgba(244,114,182,0.15)'},
+                  ].map(({y,tag,title,color,tagBg},i)=>(
+                    <g key={tag} filter="url(#bl-sh)">
+                      <rect x="18" y={y} width="384" height="62" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)" strokeWidth="1"/>
+                      {/* color left bar */}
+                      <rect x="18" y={y} width="4" height="62" rx="2" fill={color} opacity="0.8"/>
+                      {/* tag pill */}
+                      <rect x="30" y={y+10} width={tag.length*6+10} height="16" rx="8" fill={tagBg}/>
+                      <text x={30+(tag.length*6+10)/2} y={y+22} fontSize="7" fontWeight="700" fill={color} fontFamily="Inter,sans-serif" textAnchor="middle">{tag}</text>
+                      {/* title */}
+                      <text x="30" y={y+44} fontSize="10" fontWeight="700" fill="rgba(255,255,255,0.85)" fontFamily="Inter,sans-serif">{title}</text>
+                      {/* read time */}
+                      <text x="350" y={y+44} fontSize="7" fill="rgba(255,255,255,0.35)" fontFamily="Inter,sans-serif" textAnchor="middle">{6+i} min</text>
+                      {/* progress bar */}
+                      <rect x="30" y={y+52} width="340" height="3" rx="2" fill="rgba(255,255,255,0.06)"/>
+                      <rect x="30" y={y+52} width={100+i*60} height="3" rx="2" fill={color} opacity="0.5"/>
+                    </g>
                   ))}
-                </div>
-                <div className="ph__panel-divider" />
-                <div className="ph__readtime">
-                  <span className="ph__readtime-label">Avg. Read Time</span>
-                  <span className="ph__readtime-value">7 min</span>
-                </div>
+                  {/* top stats */}
+                  <g filter="url(#bl-sh)" transform="translate(18,16)" opacity="0">
+                    <rect width="100" height="36" rx="8" fill="rgba(255,255,255,0.06)"/>
+                  </g>
+                  {/* readers badge */}
+                  <g filter="url(#bl-sh)" transform="translate(284,248)">
+                    <rect width="118" height="52" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.08)" strokeWidth="1"/>
+                    <text x="14" y="20" fontSize="7" fill="rgba(74,222,128,0.8)" fontFamily="Inter,sans-serif">Monthly Readers</text>
+                    <text x="14" y="40" fontSize="18" fontWeight="900" fill="#86efac" fontFamily="Inter,sans-serif">20K+</text>
+                  </g>
+                </svg>
               </motion.div>
               {blogFloatCards.map((card) => (
                 <motion.div

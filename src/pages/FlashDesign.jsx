@@ -4,12 +4,12 @@ const FlashVisual = () => (
   <svg viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%', display: 'block' }}>
     <defs>
       <linearGradient id="fl-bg" x1="0" y1="0" x2="480" y2="360" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#E4DCE0" />
-        <stop offset="100%" stopColor="#D4CCD0" />
+        <stop offset="0%" stopColor="#1a0818" />
+        <stop offset="100%" stopColor="#100410" />
       </linearGradient>
       <linearGradient id="fl-dark" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stopColor="#302838" />
-        <stop offset="100%" stopColor="#201828" />
+        <stop offset="0%" stopColor="#1a0818" />
+        <stop offset="100%" stopColor="#100410" />
       </linearGradient>
       <linearGradient id="fl-card" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0%" stopColor="#F0E8F0" />
@@ -27,7 +27,7 @@ const FlashVisual = () => (
       {/* timeline tracks */}
       {[0,1,2].map(ti=>(
         <g key={ti}>
-          <rect x="14" y={18+ti*17} width="408" height="10" rx="3" fill="#201828" />
+          <rect x="14" y={18+ti*17} width="408" height="10" rx="3" fill="#100410" />
           {[0,1,2,3,4,5,6,7,8].map(ki=>(
             <rect key={ki} x={14+ki*46+Math.random()*10} y={18+ti*17}
               width={[30,24,36,20,40,28,32,26,38][ki]}

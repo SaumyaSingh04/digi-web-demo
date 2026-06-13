@@ -4,45 +4,45 @@ const EcommerceVisual = () => (
   <svg viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%', display: 'block' }}>
     <defs>
       <linearGradient id="ec-bg" x1="0" y1="0" x2="480" y2="360" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#E0DDD8" />
-        <stop offset="100%" stopColor="#D0CCC6" />
+        <stop offset="0%" stopColor="#0f1a2e" />
+        <stop offset="100%" stopColor="#081020" />
       </linearGradient>
       <linearGradient id="ec-card" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stopColor="#F2EEE9" />
-        <stop offset="100%" stopColor="#E8E3DC" />
+        <stop offset="0%" stopColor="#1a2d4a" />
+        <stop offset="100%" stopColor="#101e36" />
       </linearGradient>
       <linearGradient id="ec-dark" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stopColor="#484440" />
-        <stop offset="100%" stopColor="#383430" />
+        <stop offset="0%" stopColor="#0a1628" />
+        <stop offset="100%" stopColor="#060e1c" />
       </linearGradient>
       <filter id="ec-shadow"><feDropShadow dx="0" dy="6" stdDeviation="10" floodColor="#00000022" /></filter>
     </defs>
     <rect width="480" height="360" fill="url(#ec-bg)" />
 
     {/* 3D isometric store platform */}
-    <polygon points="80,300 240,340 400,300 240,260" fill="#C0BBB4" />
-    <polygon points="80,220 80,300 240,340 240,260" fill="#B0ABA4" />
-    <polygon points="400,220 400,300 240,340 240,260" fill="#CCC6C0" />
+    <polygon points="80,300 240,340 400,300 240,260" fill="#1e3060" />
+    <polygon points="80,220 80,300 240,340 240,260" fill="#162550" />
+    <polygon points="400,220 400,300 240,340 240,260" fill="#263a70" />
 
     {/* Store screen */}
     <g filter="url(#ec-shadow)" transform="translate(80,40)">
       <rect width="320" height="200" rx="14" fill="url(#ec-card)" />
-      <polygon points="320,14 324,18 324,212 320,208" fill="#D8D2CA" />
-      <polygon points="14,200 18,204 324,204 320,200" fill="#D0CAC2" />
+      <polygon points="320,14 324,18 324,212 320,208" fill="#102038" />
+      <polygon points="14,200 18,204 324,204 320,200" fill="#0c1830" />
       {/* browser bar */}
       <rect x="14" y="14" width="292" height="22" rx="6" fill="#E0D8D0" />
-      <circle cx="26" cy="25" r="4" fill="#C0BAB2" opacity="0.6" />
-      <circle cx="38" cy="25" r="4" fill="#C0BAB2" opacity="0.5" />
-      <circle cx="50" cy="25" r="4" fill="#C0BAB2" opacity="0.4" />
-      <rect x="68" y="19" width="140" height="12" rx="6" fill="#D8D2CA" />
-      <rect x="78" y="22" width="70" height="6" rx="3" fill="#C8C2BA" />
+      <circle cx="26" cy="25" r="4" fill="#3a5a90" opacity="0.6" />
+      <circle cx="38" cy="25" r="4" fill="#3a5a90" opacity="0.5" />
+      <circle cx="50" cy="25" r="4" fill="#3a5a90" opacity="0.4" />
+      <rect x="68" y="19" width="140" height="12" rx="6" fill="#102038" />
+      <rect x="78" y="22" width="70" height="6" rx="3" fill="#142848" />
       {/* product grid */}
       {[0,1,2,3,4,5].map(i=>(
         <g key={i}>
           <rect x={14+(i%3)*98} y={46+(Math.floor(i/3)*74)} width="88" height="62" rx="6" fill="#E0D8D0" />
           <rect x={22+(i%3)*98} y={52+(Math.floor(i/3)*74)} width="72" height="36" rx="3" fill="#D0C8C0" />
-          <rect x={22+(i%3)*98} y={92+(Math.floor(i/3)*74)} width="44" height="5" rx="2" fill="#B8B2AA" />
-          <rect x={22+(i%3)*98} y={100+(Math.floor(i/3)*74)} width="28" height="4" rx="2" fill="#9A9890" />
+          <rect x={22+(i%3)*98} y={92+(Math.floor(i/3)*74)} width="44" height="5" rx="2" fill="#2a4a80" />
+          <rect x={22+(i%3)*98} y={100+(Math.floor(i/3)*74)} width="28" height="4" rx="2" fill="#3a6aa0" />
         </g>
       ))}
     </g>
@@ -50,30 +50,30 @@ const EcommerceVisual = () => (
     {/* Cart badge */}
     <g filter="url(#ec-shadow)" transform="translate(30,130)">
       <rect width="36" height="36" rx="10" fill="url(#ec-dark)" />
-      <polygon points="36,10 40,14 40,44 36,40" fill="#282420" />
-      <polygon points="10,36 14,40 40,40 36,36" fill="#201C18" />
-      <text x="18" y="24" fontSize="14" fill="#E8E0D8" fontFamily="Inter,sans-serif" textAnchor="middle">🛒</text>
-      <circle cx="30" cy="10" r="7" fill="#7A7268" />
+      <polygon points="36,10 40,14 40,44 36,40" fill="#04101c" />
+      <polygon points="10,36 14,40 40,40 36,36" fill="#020c16" />
+      <text x="18" y="24" fontSize="14" fill="#90b8e0" fontFamily="Inter,sans-serif" textAnchor="middle">🛒</text>
+      <circle cx="30" cy="10" r="7" fill="#4a80b8" />
       <text x="30" y="14" fontSize="7" fontWeight="900" fill="#F0E8E0" fontFamily="Inter,sans-serif" textAnchor="middle">3</text>
     </g>
 
     {/* Conversion stat */}
     <g filter="url(#ec-shadow)" transform="translate(24,250)">
       <rect width="120" height="60" rx="12" fill="url(#ec-dark)" />
-      <polygon points="120,12 124,16 124,68 120,64" fill="#282420" />
-      <polygon points="12,60 16,64 124,64 120,60" fill="#201C18" />
+      <polygon points="120,12 124,16 124,68 120,64" fill="#04101c" />
+      <polygon points="12,60 16,64 124,64 120,60" fill="#020c16" />
       <rect x="12" y="12" width="60" height="4" rx="2" fill="#6A6460" />
-      <text x="12" y="46" fontSize="22" fontWeight="900" fill="#E8E0D8" fontFamily="Inter,sans-serif">+85%</text>
+      <text x="12" y="46" fontSize="22" fontWeight="900" fill="#90b8e0" fontFamily="Inter,sans-serif">+85%</text>
     </g>
 
     {/* Payment badges */}
     <g filter="url(#ec-shadow)" transform="translate(360,240)">
       <rect width="96" height="78" rx="12" fill="url(#ec-card)" />
-      <polygon points="96,12 100,16 100,86 96,82" fill="#D8D2CA" />
-      <polygon points="12,78 16,82 100,82 96,78" fill="#D0CAC2" />
+      <polygon points="96,12 100,16 100,86 96,82" fill="#102038" />
+      <polygon points="12,78 16,82 100,82 96,78" fill="#0c1830" />
       <rect x="12" y="12" width="50" height="4" rx="2" fill="#8A8480" />
       {['💳 Stripe','💰 PayPal','💸 Razorpay'].map((p,i)=>(
-        <text key={p} x="16" y={32+i*16} fontSize="8" fill="#5A5450" fontFamily="Inter,sans-serif">{p}</text>
+        <text key={p} x="16" y={32+i*16} fontSize="8" fill="#2a5080" fontFamily="Inter,sans-serif">{p}</text>
       ))}
     </g>
   </svg>

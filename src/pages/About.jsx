@@ -107,90 +107,82 @@ function AboutVisual() {
           {/* SVG — same visual language as "Who We Are" section but dark-themed */}
           <svg viewBox="0 0 440 260" fill="none" xmlns="http://www.w3.org/2000/svg"
             style={{ width: '100%', display: 'block', borderRadius: 10 }}>
+            <defs>
+              <linearGradient id="hero-desk-top" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#2a4a6a" stopOpacity="0.5"/>
+                <stop offset="100%" stopColor="#1a3050" stopOpacity="0.3"/>
+              </linearGradient>
+              <linearGradient id="hero-mon-face" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stopColor="#3a5878"/>
+                <stop offset="100%" stopColor="#4a6e90"/>
+              </linearGradient>
+            </defs>
 
             {/* --- isometric desk --- */}
-            {/* desk top face */}
-            <polygon points="60,168 220,210 380,168 220,126" fill="rgba(180,175,165,0.18)" />
-            {/* desk front face */}
-            <polygon points="60,168 60,196 220,238 220,210" fill="rgba(140,135,125,0.14)" />
-            {/* desk right face */}
-            <polygon points="380,168 380,196 220,238 220,210" fill="rgba(160,155,145,0.16)" />
+            <polygon points="60,168 220,210 380,168 220,126" fill="url(#hero-desk-top)" />
+            <polygon points="60,168 60,196 220,238 220,210" fill="rgba(30,60,90,0.35)" />
+            <polygon points="380,168 380,196 220,238 220,210" fill="rgba(50,80,110,0.30)" />
 
             {/* --- monitor --- */}
-            {/* monitor left side */}
-            <polygon points="196,80 196,158 228,168 228,90" fill="rgba(120,130,150,0.30)" />
-            {/* monitor right side */}
-            <polygon points="228,90 228,168 260,158 260,80" fill="rgba(140,150,170,0.30)" />
-            {/* monitor top */}
-            <polygon points="196,80 228,90 260,80 228,70" fill="rgba(160,170,190,0.35)" />
+            <polygon points="196,80 196,158 228,168 228,90" fill="rgba(40,70,110,0.55)" />
+            <polygon points="228,90 228,168 260,158 260,80" fill="rgba(55,85,125,0.55)" />
+            <polygon points="196,80 228,90 260,80 228,70" fill="rgba(80,120,170,0.60)" />
             {/* screen */}
-            <rect x="202" y="88" width="50" height="62" rx="2" fill="rgba(20,26,40,0.85)" />
-            {/* screen chrome bar */}
-            <rect x="202" y="88" width="50" height="10" rx="2" fill="rgba(14,18,30,0.90)" />
-            {/* screen content lines */}
-            <rect x="207" y="104" width="28" height="4" rx="1" fill="rgba(100,120,160,0.7)" />
-            <rect x="207" y="112" width="38" height="3" rx="1" fill="rgba(80,100,140,0.5)" />
-            <rect x="207" y="119" width="30" height="3" rx="1" fill="rgba(80,100,140,0.4)" />
-            {/* screen CTA button */}
-            <rect x="207" y="128" width="22" height="8" rx="3" fill="rgba(100,120,160,0.55)" />
+            <rect x="202" y="88" width="50" height="62" rx="2" fill="rgba(8,16,32,0.92)" />
+            <rect x="202" y="88" width="50" height="10" rx="2" fill="rgba(6,12,24,0.95)" />
+            {/* screen content */}
+            <rect x="207" y="104" width="28" height="4" rx="1" fill="rgba(80,140,200,0.75)" />
+            <rect x="207" y="112" width="38" height="3" rx="1" fill="rgba(60,110,170,0.55)" />
+            <rect x="207" y="119" width="30" height="3" rx="1" fill="rgba(60,110,170,0.45)" />
+            <rect x="207" y="128" width="22" height="8" rx="3" fill="rgba(70,130,190,0.65)" />
             {/* monitor stand */}
-            <rect x="221" y="168" width="14" height="10" rx="1" fill="rgba(140,135,125,0.25)" />
-            <rect x="214" y="177" width="28" height="4" rx="2" fill="rgba(140,135,125,0.20)" />
+            <rect x="221" y="168" width="14" height="10" rx="1" fill="rgba(40,70,100,0.40)" />
+            <rect x="214" y="177" width="28" height="4" rx="2" fill="rgba(40,70,100,0.30)" />
 
             {/* --- keyboard --- */}
-            <polygon points="188,172 188,182 248,192 248,182" fill="rgba(160,155,145,0.22)" />
-            <polygon points="248,182 248,192 270,184 270,174" fill="rgba(180,175,165,0.18)" />
-            <polygon points="188,172 248,182 270,174 210,164" fill="rgba(200,195,185,0.20)" />
+            <polygon points="188,172 188,182 248,192 248,182" fill="rgba(45,75,110,0.38)" />
+            <polygon points="248,182 248,192 270,184 270,174" fill="rgba(55,85,120,0.32)" />
+            <polygon points="188,172 248,182 270,174 210,164" fill="rgba(70,105,145,0.34)" />
 
-            {/* --- book stack left --- */}
-            {[0,1,2].map(i => (
-              <g key={i}>
-                <polygon
-                  points={`84,${174-i*10} 84,${184-i*10} 148,${198-i*10} 148,${188-i*10}`}
-                  fill={['rgba(120,115,108,0.28)','rgba(140,135,128,0.24)','rgba(160,155,148,0.20)'][i]} />
-                <polygon
-                  points={`148,${188-i*10} 148,${198-i*10} 162,${192-i*10} 162,${182-i*10}`}
-                  fill={['rgba(100,95,88,0.22)','rgba(120,115,108,0.18)','rgba(140,135,128,0.14)'][i]} />
-                <polygon
-                  points={`84,${174-i*10} 148,${188-i*10} 162,${182-i*10} 98,${168-i*10}`}
-                  fill={['rgba(180,175,165,0.20)','rgba(200,195,185,0.18)','rgba(220,215,205,0.16)'][i]} />
-              </g>
-            ))}
-
-            {/* --- team figures (abstract silhouettes) --- */}
+            {/* --- book stack left (colorful spines) --- */}
             {[
-              { cx: 100, cy: 120 },
-              { cx: 156, cy: 104 },
-              { cx: 290, cy: 104 },
-              { cx: 346, cy: 120 },
-            ].map(({ cx, cy }, i) => (
-              <g key={i} opacity={0.55 + i * 0.05}>
-                {/* head */}
-                <circle cx={cx} cy={cy - 14} r="11" fill="rgba(200,195,185,0.35)" />
-                {/* body */}
-                <path
-                  d={`M${cx-10},${cy} Q${cx},${cy-4} ${cx+10},${cy} L${cx+14},${cy+38} L${cx-14},${cy+38} Z`}
-                  fill="rgba(180,175,165,0.28)"
-                />
+              { color: 'rgba(180,80,80,0.55)',  top: 'rgba(210,110,110,0.50)', side: 'rgba(140,50,50,0.40)' },
+              { color: 'rgba(80,140,180,0.50)', top: 'rgba(110,170,210,0.45)', side: 'rgba(50,100,140,0.38)' },
+              { color: 'rgba(80,160,100,0.45)', top: 'rgba(110,190,130,0.42)', side: 'rgba(50,120,70,0.35)'  },
+            ].map((c, i) => (
+              <g key={i}>
+                <polygon points={`84,${174-i*10} 84,${184-i*10} 148,${198-i*10} 148,${188-i*10}`} fill={c.color} />
+                <polygon points={`148,${188-i*10} 148,${198-i*10} 162,${192-i*10} 162,${182-i*10}`} fill={c.side} />
+                <polygon points={`84,${174-i*10} 148,${188-i*10} 162,${182-i*10} 98,${168-i*10}`} fill={c.top} />
               </g>
             ))}
 
-            {/* --- coffee cup right of desk --- */}
-            <ellipse cx="338" cy="164" rx="10" ry="4" fill="rgba(160,155,145,0.22)" />
-            <rect x="328" y="148" width="20" height="16" rx="3" fill="rgba(140,135,125,0.28)" />
-            <path d="M348,152 Q356,156 348,160" stroke="rgba(160,155,145,0.30)" strokeWidth="2" fill="none" />
-            {/* steam */}
-            <path d="M333,146 Q331,140 333,134" stroke="rgba(255,255,255,0.12)" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-            <path d="M338,145 Q336,138 338,132" stroke="rgba(255,255,255,0.10)" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-            <path d="M343,146 Q341,140 343,134" stroke="rgba(255,255,255,0.08)" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+            {/* --- team figures --- */}
+            {[
+              { cx: 100, cy: 120, c: 'rgba(100,160,210,0.55)' },
+              { cx: 156, cy: 104, c: 'rgba(160,100,180,0.50)' },
+              { cx: 290, cy: 104, c: 'rgba(100,180,130,0.50)' },
+              { cx: 346, cy: 120, c: 'rgba(210,140,80,0.50)'  },
+            ].map(({ cx, cy, c }, i) => (
+              <g key={i}>
+                <circle cx={cx} cy={cy - 14} r="11" fill={c} />
+                <path d={`M${cx-10},${cy} Q${cx},${cy-4} ${cx+10},${cy} L${cx+14},${cy+38} L${cx-14},${cy+38} Z`} fill={c} opacity="0.7" />
+              </g>
+            ))}
 
-            {/* --- plant pot right corner --- */}
-            <polygon points="356,142 344,142 348,168 360,168" fill="rgba(120,115,108,0.30)" />
-            <ellipse cx="352" cy="142" rx="8" ry="4" fill="rgba(140,135,128,0.25)" />
-            {/* leaves */}
-            <path d="M352,136 Q344,124 336,120 Q344,128 352,130" fill="rgba(80,110,80,0.35)" />
-            <path d="M352,134 Q360,122 370,118 Q362,126 352,130" fill="rgba(70,100,70,0.30)" />
-            <path d="M352,132 Q350,118 352,110 Q354,118 352,130" fill="rgba(90,120,90,0.28)" />
+            {/* --- coffee cup --- */}
+            <ellipse cx="338" cy="164" rx="10" ry="4" fill="rgba(160,100,60,0.35)" />
+            <rect x="328" y="148" width="20" height="16" rx="3" fill="rgba(140,85,50,0.45)" />
+            <path d="M348,152 Q356,156 348,160" stroke="rgba(180,120,80,0.50)" strokeWidth="2" fill="none" />
+            <path d="M333,146 Q331,140 333,134" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+            <path d="M338,145 Q336,138 338,132" stroke="rgba(255,255,255,0.12)" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+
+            {/* --- plant pot --- */}
+            <polygon points="356,142 344,142 348,168 360,168" fill="rgba(100,70,40,0.45)" />
+            <ellipse cx="352" cy="142" rx="8" ry="4" fill="rgba(120,85,50,0.40)" />
+            <path d="M352,136 Q344,124 336,120 Q344,128 352,130" fill="rgba(60,110,65,0.55)" />
+            <path d="M352,134 Q360,122 370,118 Q362,126 352,130" fill="rgba(50,100,55,0.50)" />
+            <path d="M352,132 Q350,118 352,110 Q354,118 352,130" fill="rgba(70,125,75,0.48)" />
           </svg>
 
           {/* bottom metric strip */}
@@ -350,10 +342,109 @@ export default function About() {
     </div>
         <div className="container why-section__inner">
           <div className="why-left">
-            <img 
-              src="/public/WhyUs (1).png" 
-              alt="Why Us" 
-            />
+            <svg viewBox="0 0 480 420" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', maxWidth: 500, display: 'block' }}>
+              <defs>
+                <linearGradient id="why-bg" x1="0" y1="0" x2="480" y2="420" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stopColor="#0e1a2e"/><stop offset="100%" stopColor="#081020"/>
+                </linearGradient>
+                <linearGradient id="why-card-a" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#1a3a5a"/><stop offset="100%" stopColor="#0e2240"/>
+                </linearGradient>
+                <linearGradient id="why-card-b" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#1a4a34"/><stop offset="100%" stopColor="#0e2e1e"/>
+                </linearGradient>
+                <linearGradient id="why-card-c" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#3a1a4a"/><stop offset="100%" stopColor="#220e30"/>
+                </linearGradient>
+                <filter id="why-sh"><feDropShadow dx="2" dy="6" stdDeviation="10" floodColor="#00000055"/></filter>
+              </defs>
+
+              {/* bg */}
+              <rect width="480" height="420" rx="24" fill="url(#why-bg)"/>
+
+              {/* center circle */}
+              <circle cx="240" cy="200" r="80" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" strokeWidth="1.5"/>
+              <circle cx="240" cy="200" r="52" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)" strokeWidth="1"/>
+              <text x="240" y="194" fontSize="13" fontWeight="900" fill="rgba(255,255,255,0.9)" fontFamily="Inter,sans-serif" textAnchor="middle">WHY</text>
+              <text x="240" y="212" fontSize="13" fontWeight="900" fill="rgba(255,255,255,0.9)" fontFamily="Inter,sans-serif" textAnchor="middle">TRENDOX</text>
+
+              {/* connector lines */}
+              <line x1="240" y1="120" x2="240" y2="62" stroke="rgba(80,140,200,0.35)" strokeWidth="1.5" strokeDasharray="4 3"/>
+              <line x1="240" y1="280" x2="240" y2="338" stroke="rgba(80,200,130,0.35)" strokeWidth="1.5" strokeDasharray="4 3"/>
+              <line x1="164" y1="168" x2="100" y2="130" stroke="rgba(180,100,220,0.35)" strokeWidth="1.5" strokeDasharray="4 3"/>
+              <line x1="316" y1="168" x2="380" y2="130" stroke="rgba(220,140,60,0.35)" strokeWidth="1.5" strokeDasharray="4 3"/>
+              <line x1="164" y1="232" x2="100" y2="270" stroke="rgba(220,80,100,0.35)" strokeWidth="1.5" strokeDasharray="4 3"/>
+              <line x1="316" y1="232" x2="380" y2="270" stroke="rgba(60,180,200,0.35)" strokeWidth="1.5" strokeDasharray="4 3"/>
+
+              {/* card: Save Money — top */}
+              <g filter="url(#why-sh)" transform="translate(158,14)">
+                <polygon points="164,6 170,12 170,78 164,72" fill="#071628"/>
+                <polygon points="6,72 12,78 170,78 164,72" fill="#040e1c"/>
+                <rect width="164" height="72" rx="12" fill="url(#why-card-a)"/>
+                <rect x="0" y="0" width="164" height="1" rx="1" fill="rgba(80,140,200,0.40)"/>
+                <text x="16" y="28" fontSize="9" fill="rgba(80,160,220,0.85)" fontFamily="Inter,sans-serif" fontWeight="700">SAVE MONEY</text>
+                <text x="16" y="50" fontSize="20" fontWeight="900" fill="#7ab8e0" fontFamily="Inter,sans-serif">↓ 40%</text>
+                <text x="16" y="64" fontSize="7" fill="rgba(120,180,220,0.55)" fontFamily="Inter,sans-serif">Reduced operational costs</text>
+              </g>
+
+              {/* card: Save Time — bottom */}
+              <g filter="url(#why-sh)" transform="translate(158,328)">
+                <polygon points="164,6 170,12 170,78 164,72" fill="#071a0e"/>
+                <polygon points="6,72 12,78 170,78 164,72" fill="#041208"/>
+                <rect width="164" height="72" rx="12" fill="url(#why-card-b)"/>
+                <rect x="0" y="0" width="164" height="1" rx="1" fill="rgba(60,180,110,0.40)"/>
+                <text x="16" y="28" fontSize="9" fill="rgba(70,200,120,0.85)" fontFamily="Inter,sans-serif" fontWeight="700">SAVE TIME</text>
+                <text x="16" y="50" fontSize="20" fontWeight="900" fill="#6abf90" fontFamily="Inter,sans-serif">10× Faster</text>
+                <text x="16" y="64" fontSize="7" fill="rgba(100,200,140,0.55)" fontFamily="Inter,sans-serif">Automated workflows</text>
+              </g>
+
+              {/* card: ROI — top left */}
+              <g filter="url(#why-sh)" transform="translate(14,96)">
+                <polygon points="134,6 140,12 140,78 134,72" fill="#160828"/>
+                <polygon points="6,72 12,78 140,78 134,72" fill="#0e0420"/>
+                <rect width="134" height="72" rx="12" fill="url(#why-card-c)"/>
+                <rect x="0" y="0" width="134" height="1" rx="1" fill="rgba(160,80,220,0.40)"/>
+                <text x="14" y="28" fontSize="9" fill="rgba(180,100,240,0.85)" fontFamily="Inter,sans-serif" fontWeight="700">SOLUTIONS</text>
+                <text x="14" y="50" fontSize="20" fontWeight="900" fill="#b07ad0" fontFamily="Inter,sans-serif">Custom</text>
+                <text x="14" y="64" fontSize="7" fill="rgba(180,120,240,0.55)" fontFamily="Inter,sans-serif">Tailored strategies</text>
+              </g>
+
+              {/* card: ROAS — top right */}
+              <g filter="url(#why-sh)" transform="translate(332,96)">
+                <polygon points="134,6 140,12 140,78 134,72" fill="#1e0e04"/>
+                <polygon points="6,72 12,78 140,78 134,72" fill="#140800"/>
+                <rect width="134" height="72" rx="12">
+                  <animate attributeName="fill" values="#2a1a06;#2a1a06" dur="0s" fill="freeze"/>
+                </rect>
+                <rect width="134" height="72" rx="12" fill="#221408"/>
+                <rect x="0" y="0" width="134" height="1" rx="1" fill="rgba(220,140,60,0.40)"/>
+                <text x="14" y="28" fontSize="9" fill="rgba(240,160,70,0.85)" fontFamily="Inter,sans-serif" fontWeight="700">AVG ROAS</text>
+                <text x="14" y="50" fontSize="20" fontWeight="900" fill="#d4a060" fontFamily="Inter,sans-serif">4.8×</text>
+                <text x="14" y="64" fontSize="7" fill="rgba(220,160,80,0.55)" fontFamily="Inter,sans-serif">Return on ad spend</text>
+              </g>
+
+              {/* card: Retention — bottom left */}
+              <g filter="url(#why-sh)" transform="translate(14,246)">
+                <polygon points="134,6 140,12 140,78 134,72" fill="#1a0808"/>
+                <polygon points="6,72 12,78 140,78 134,72" fill="#100404"/>
+                <rect width="134" height="72" rx="12" fill="#1c0c0e"/>
+                <rect x="0" y="0" width="134" height="1" rx="1" fill="rgba(220,80,100,0.40)"/>
+                <text x="14" y="28" fontSize="9" fill="rgba(240,90,110,0.85)" fontFamily="Inter,sans-serif" fontWeight="700">RETENTION</text>
+                <text x="14" y="50" fontSize="20" fontWeight="900" fill="#c07080" fontFamily="Inter,sans-serif">93%</text>
+                <text x="14" y="64" fontSize="7" fill="rgba(220,100,120,0.55)" fontFamily="Inter,sans-serif">Client retention rate</text>
+              </g>
+
+              {/* card: Growth — bottom right */}
+              <g filter="url(#why-sh)" transform="translate(332,246)">
+                <polygon points="134,6 140,12 140,78 134,72" fill="#041618"/>
+                <polygon points="6,72 12,78 140,78 134,72" fill="#020e10"/>
+                <rect width="134" height="72" rx="12" fill="#081c20"/>
+                <rect x="0" y="0" width="134" height="1" rx="1" fill="rgba(60,180,200,0.40)"/>
+                <text x="14" y="28" fontSize="9" fill="rgba(70,200,220,0.85)" fontFamily="Inter,sans-serif" fontWeight="700">GROWTH</text>
+                <text x="14" y="50" fontSize="20" fontWeight="900" fill="#60b8c8" fontFamily="Inter,sans-serif">+184%</text>
+                <text x="14" y="64" fontSize="7" fill="rgba(80,200,220,0.55)" fontFamily="Inter,sans-serif">Organic traffic growth</text>
+              </g>
+            </svg>
           </div>
           <div className="why-right">
             {WHY.map((item, index) => (

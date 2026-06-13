@@ -4,11 +4,11 @@ const CRMVisual = () => (
   <svg viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%', display: 'block' }}>
     <defs>
       <linearGradient id="crm-bg" x1="0" y1="0" x2="480" y2="360" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#DDE0E6" />
-        <stop offset="100%" stopColor="#CDD2DC" />
+        <stop offset="0%" stopColor="#061828" />
+        <stop offset="100%" stopColor="#040e1c" />
       </linearGradient>
       <linearGradient id="crm-dark" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stopColor="#303848" />
+        <stop offset="0%" stopColor="#0a1828" />
         <stop offset="100%" stopColor="#202838" />
       </linearGradient>
       <linearGradient id="crm-card" x1="0" y1="0" x2="0" y2="1">
@@ -47,7 +47,7 @@ const CRMVisual = () => (
       <rect width="130" height="60" rx="12" fill="url(#crm-dark)" />
       <polygon points="130,12 134,16 134,68 130,64" fill="#181C28" />
       <polygon points="12,60 16,64 134,64 130,60" fill="#101420" />
-      <rect x="12" y="12" width="60" height="4" rx="2" fill="#505870" />
+      <rect x="12" y="12" width="60" height="4" rx="2" fill="#2a4060" />
       <text x="12" y="46" fontSize="22" fontWeight="900" fill="#A8B8D8" fontFamily="Inter,sans-serif">3x Faster</text>
     </g>
 
@@ -56,7 +56,7 @@ const CRMVisual = () => (
       <rect width="130" height="60" rx="12" fill="url(#crm-dark)" />
       <polygon points="130,12 134,16 134,68 130,64" fill="#181C28" />
       <polygon points="12,60 16,64 134,64 130,60" fill="#101420" />
-      <rect x="12" y="12" width="60" height="4" rx="2" fill="#505870" />
+      <rect x="12" y="12" width="60" height="4" rx="2" fill="#2a4060" />
       <text x="12" y="46" fontSize="22" fontWeight="900" fill="#A8B8D8" fontFamily="Inter,sans-serif">-40% Churn</text>
     </g>
 
@@ -79,7 +79,7 @@ const CRMVisual = () => (
       {['Lead In','→ Score','→ Nurture','→ Assign','→ Close'].map((s,i)=>(
         <g key={s}>
           <rect x={12+i*86} y={10} width={76} height={22} rx="6" fill={i===4?'#8AB8A8':'#282E40'} />
-          <text x={50+i*86} y={25} fontSize="9" fill={i===4?'#1A3028':'#6878A0'}
+          <text x={50+i*86} y={25} fontSize="9" fill={i===4?'#1A3028':'#3a60a0'}
             fontFamily="Inter,sans-serif" fontWeight={i===4?'800':'500'} textAnchor="middle">{s}</text>
         </g>
       ))}

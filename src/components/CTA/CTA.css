@@ -19,11 +19,9 @@
 
 .cta__person-img {
   width: 100%;
-  max-width: 420px;
-  height: auto;
-  object-fit: contain;
-  border-radius: 0;
-  drop-shadow: drop-shadow(0 20px 40px rgba(0,0,0,0.4));
+  max-width: 400px;
+  height: 100%;
+  min-height: 420px;
   filter: drop-shadow(0 20px 48px rgba(80, 120, 255, 0.25));
 }
 

@@ -1,179 +1,137 @@
-/* ══ Contact Page · cp- namespace ══════════════════════════════ */
+/* ══ Contact Page · ct- namespace ══════════════════════════════ */
 
-.cp {
+.ct {
   background: var(--bg);
   overflow-x: hidden;
 }
 
-/* ── Shared locals ── */
-.cp-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #888888;
-  flex-shrink: 0;
-}
-.cp-dot--gold { background: #888888; }
-
-.cp-eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.35);
-  margin-bottom: 14px;
+/* ══ INFO CARDS ════════════════════════════════════════════════ */
+.ct-info {
+  padding: 56px 0 48px;
+  background: var(--bg);
+  margin-top: -2px;
 }
 
-/* ══ 2. INFO STRIP ═════════════════════════════════════════════ */
-.cp-info-strip {
-  position: relative;
-  z-index: 20;
-
-  margin-top: -120px;
-  padding-top: 60px;
-
-  background: var(--bg-dark-alt);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-}
-
-.cp-info-strip__grid {
+.ct-info__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
-  
-  position: relative;
-  top: -40px;
 }
 
-
-.cp-info-card {
+.ct-info-card {
+  position: relative;
   display: flex;
   align-items: flex-start;
   gap: 16px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: var(--radius-lg);
-  padding: 20px 22px;
-  transition: background var(--t-fast), border-color var(--t-fast);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 24px 22px;
+  overflow: hidden;
+  transition: box-shadow var(--t-base), transform var(--t-base), border-color var(--t-base);
 }
 
-a.cp-info-card:hover {
-  background: rgba(255,255,255,0.07);
-  border-color: rgba(255,255,255,0.14);
+a.ct-info-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px);
+  border-color: var(--border-hover);
 }
 
-.cp-info-card__icon {
-  width: 40px;
-  height: 40px;
+.ct-info-card__icon {
+  width: 44px;
+  height: 44px;
   border-radius: var(--radius-md);
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.9rem;
-  color: rgba(255,255,255,0.6);
+  font-size: 1rem;
   flex-shrink: 0;
 }
 
-.cp-info-card__body {
+.ct-info-card__body {
   display: flex;
   flex-direction: column;
   gap: 3px;
 }
 
-.cp-info-card__label {
+.ct-info-card__label {
   font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.3);
+  color: var(--text-subtle);
 }
 
-.cp-info-card__value {
-  font-size: 0.9rem;
+.ct-info-card__value {
+  font-size: 0.92rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--text);
   letter-spacing: -0.02em;
 }
 
-.cp-info-card__sub {
+.ct-info-card__sub {
   font-size: 0.72rem;
-  color: rgba(255,255,255,0.3);
-
-}
-/* ══ Robot══════════════════════════════════ */
-.ph__visual {
-  position: relative;
-  z-index: 5;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.ph {
-  position: relative;
-  z-index: 1;
+  color: var(--text-muted);
 }
 
-.ph__spline-wrapper {
-  width: 100%;
-  height: 650px;
-  position: relative;
-  overflow: visible; 
-  border-radius: 24px;
-}
-
-.ph__spline-wrapper spline-viewer {
+.ct-info-card__bar {
   position: absolute;
-  top: -70px;          
-  right: -200px;
-  width: calc(100% + 280px);
-  height: calc(100% + 140px);
-  border: none;
-  display: block;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  opacity: 0;
+  transition: opacity var(--t-fast);
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
 }
 
+a.ct-info-card:hover .ct-info-card__bar { opacity: 0.7; }
 
-.ph__visual-glow {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-}
-/* ══ 3. MAIN (Form + Sidebar) ══════════════════════════════════ */
-.cp-main {
-  padding: var(--section-padding);
+/* ══ FORM + SIDEBAR ════════════════════════════════════════════ */
+.ct-main {
+  padding: 0 0 80px;
   background: var(--bg-alt);
 }
 
-.cp-main__inner {
+.ct-main__inner {
   display: grid;
-  grid-template-columns: 1.35fr 1fr;
-  gap: clamp(40px, 5vw, 72px);
+  grid-template-columns: 1.2fr 1fr;
+  gap: clamp(32px, 4vw, 60px);
   align-items: start;
+  padding-top: 60px;
 }
 
 /* ── Form card ── */
-.cp-form-card {
+.ct-form-card {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
-  padding: clamp(32px, 4vw, 52px);
+  padding: clamp(28px, 4vw, 48px);
   box-shadow: var(--shadow-md);
 }
 
-.cp-form-card__head {
+.ct-form-card__head {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
   margin-bottom: 32px;
 }
 
-.cp-form-card__title {
+.ct-tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  border: 1px solid var(--border);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  width: fit-content;
+}
+
+.ct-form-card__title {
   font-size: clamp(1.5rem, 2.4vw, 2rem);
   font-weight: 900;
   letter-spacing: -0.05em;
@@ -181,26 +139,26 @@ a.cp-info-card:hover {
   line-height: 1.1;
 }
 
-.cp-form-card__sub {
+.ct-form-card__sub {
   font-size: 0.9rem;
   color: var(--text-muted);
   line-height: 1.75;
 }
 
-/* ── Form layout ── */
-.cp-form {
+/* ── Form fields ── */
+.ct-form {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.cp-form__row {
+.ct-form__row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
 }
 
-/* ── Floating label field (shared with old cf- classes in JSX) ── */
+/* floating label fields (shared cf- classes) */
 .cf-field {
   position: relative;
 }
@@ -247,7 +205,7 @@ a.cp-info-card:hover {
 
 .cf-input:focus {
   border-color: var(--text);
-  box-shadow: 0 0 0 3px rgba(0,0,0,0.06);
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.05);
 }
 
 .cf-select {
@@ -277,12 +235,12 @@ a.cp-info-card:hover {
 .cf-error {
   font-size: 0.72rem;
   font-weight: 600;
-  color: #555555;
+  color: #e53e3e;
   margin-top: 5px;
   padding-left: 2px;
 }
 
-.cf-field--error .cf-input { border-color: #555555; }
+.cf-field--error .cf-input { border-color: #e53e3e; }
 
 .cf-feedback {
   padding: 12px 16px;
@@ -292,19 +250,19 @@ a.cp-info-card:hover {
 }
 
 .cf-feedback--success {
-  background: #f0f0f0;
-  color: #222222;
-  border: 1px solid #cccccc;
+  background: #f0fff4;
+  color: #276749;
+  border: 1px solid #c6f6d5;
 }
 
 .cf-feedback--error {
-  background: #f5f5f5;
-  color: #333333;
-  border: 1px solid #bbbbbb;
+  background: #fff5f5;
+  color: #9b2c2c;
+  border: 1px solid #fed7d7;
 }
 
 /* ── Submit button ── */
-.cp-submit {
+.ct-submit {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -315,63 +273,149 @@ a.cp-info-card:hover {
   font-size: 0.9rem;
   font-weight: 700;
   padding: 16px 32px;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-pill);
   border: none;
   cursor: pointer;
   font-family: var(--font);
   letter-spacing: -0.01em;
-  transition: opacity var(--t-fast), transform var(--t-fast);
+  transition: opacity var(--t-fast), transform var(--t-fast), box-shadow var(--t-fast);
   margin-top: 4px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
 
-.cp-submit:hover:not(:disabled) { opacity: 0.82; transform: translateY(-2px); }
-.cp-submit:disabled { opacity: 0.5; cursor: not-allowed; }
-.cp-submit__arrow { transition: transform var(--t-fast); }
-.cp-submit:hover:not(:disabled) .cp-submit__arrow { transform: translateX(4px); }
+.ct-submit:hover:not(:disabled) {
+  opacity: 0.85;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 32px rgba(0,0,0,0.2);
+}
 
-/* ── Sidebar ───────────────────────────── */
+.ct-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+.ct-submit__arrow { transition: transform var(--t-fast); }
+.ct-submit:hover:not(:disabled) .ct-submit__arrow { transform: translateX(4px); }
 
-.cp-sidebar {
+/* ── Sidebar ── */
+.ct-sidebar {
   position: sticky;
-  top: 100px;
-  width: 100%;
-  margin-top: -80px;
+  top: 96px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.cp-sidebar__image-wrapper {
+.ct-sidebar__img-wrap {
   position: relative;
-  width: 100%;
+  border-radius: var(--radius-xl);
   overflow: hidden;
-  border-radius: 24px;
   border: 1px solid var(--border);
-  background: var(--surface);
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.08),
-    0 25px 80px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow-md);
 }
 
-.cp-sidebar__image {
+.ct-sidebar__img {
   display: block;
   width: 100%;
-  height: 800px;
+  height: 340px;
   object-fit: cover;
   transition: transform 0.6s ease;
 }
 
-.cp-sidebar__image:hover {
-  transform: scale(1.04);
+.ct-sidebar__img-wrap:hover .ct-sidebar__img { transform: scale(1.04); }
+
+.ct-sidebar__img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.35) 0%, transparent 60%);
+  pointer-events: none;
 }
 
-/* ══ 4. CTA ════════════════════════════════════════════════════ */
+/* Contact info rows */
+.ct-sidebar__info {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  box-shadow: var(--shadow-sm);
+}
 
-.cp-cta {
+.ct-sidebar__row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: var(--radius-lg);
+  transition: background var(--t-fast);
+}
+
+a.ct-sidebar__row:hover { background: var(--bg-alt); }
+
+.ct-sidebar__row-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.ct-sidebar__row-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  margin-bottom: 2px;
+}
+
+.ct-sidebar__row-value {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+/* Promise strip */
+.ct-sidebar__promise {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.ct-sidebar__promise-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #34d399;
+  flex-shrink: 0;
+  margin-top: 4px;
+  box-shadow: 0 0 8px rgba(52,211,153,0.5);
+  animation: ctPromisePulse 2s ease-out infinite;
+}
+
+@keyframes ctPromisePulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+/* ══ CTA ════════════════════════════════════════════════════════ */
+.ct-cta {
   position: relative;
   background: var(--bg-dark);
-  padding: clamp(48px, 6vw, 80px) 0;
+  padding: clamp(56px, 7vw, 96px) 0;
   overflow: hidden;
 }
 
-.cp-cta__pattern {
+.ct-cta__pattern {
   position: absolute;
   inset: 0;
   background-image: radial-gradient(circle, rgba(255,255,255,0.025) 1px, transparent 1px);
@@ -379,12 +423,12 @@ a.cp-info-card:hover {
   pointer-events: none;
 }
 
-.cp-cta__inner {
+.ct-cta__inner {
   position: relative;
   z-index: 1;
 }
 
-.cp-cta__eyebrow {
+.ct-cta__eyebrow {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -396,7 +440,16 @@ a.cp-info-card:hover {
   margin-bottom: 14px;
 }
 
-.cp-cta__title {
+.ct-cta__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 8px rgba(52,211,153,0.6);
+  flex-shrink: 0;
+}
+
+.ct-cta__title {
   font-size: clamp(2.2rem, 5vw, 4rem);
   font-weight: 900;
   letter-spacing: -0.055em;
@@ -405,13 +458,13 @@ a.cp-info-card:hover {
   margin-bottom: 20px;
 }
 
-.cp-cta__title em {
+.ct-cta__title em {
   font-style: italic;
   font-weight: 300;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.45);
 }
 
-.cp-cta__sub {
+.ct-cta__sub {
   font-size: 1rem;
   color: rgba(255,255,255,0.45);
   max-width: 480px;
@@ -419,14 +472,14 @@ a.cp-info-card:hover {
   margin-bottom: 32px;
 }
 
-.cp-cta__actions {
+.ct-cta__actions {
   display: flex;
   align-items: center;
   gap: 16px;
   flex-wrap: wrap;
 }
 
-.cp-cta__btn-primary {
+.ct-cta__btn-primary {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -435,17 +488,19 @@ a.cp-info-card:hover {
   font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: -0.01em;
-  padding: 14px 28px;
-  border-radius: var(--radius-sm);
-  transition: opacity var(--t-fast), transform var(--t-fast);
+  padding: 15px 30px;
+  border-radius: var(--radius-pill);
+  transition: opacity var(--t-fast), transform var(--t-fast), box-shadow var(--t-fast);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
 }
 
-.cp-cta__btn-primary:hover {
+.ct-cta__btn-primary:hover {
   opacity: 0.88;
   transform: translateY(-2px);
+  box-shadow: 0 10px 32px rgba(0,0,0,0.35);
 }
 
-.cp-cta__btn-ghost {
+.ct-cta__btn-ghost {
   font-size: 0.875rem;
   font-weight: 500;
   color: rgba(255,255,255,0.45);
@@ -454,56 +509,32 @@ a.cp-info-card:hover {
   transition: color var(--t-fast), border-color var(--t-fast);
 }
 
-.cp-cta__btn-ghost:hover {
+.ct-cta__btn-ghost:hover {
   color: #fff;
   border-color: rgba(255,255,255,0.6);
 }
 
-/* ══ Responsive ════════════════════════════════════════════════ */
-
+/* ══ RESPONSIVE ════════════════════════════════════════════════ */
 @media (max-width: 1024px) {
-  .cp-main__inner {
+  .ct-main__inner {
     grid-template-columns: 1fr;
   }
-
-  .cp-sidebar {
+  .ct-sidebar {
     position: static;
-    margin-top: 40px;
   }
-
-  .cp-sidebar__image {
-    height: 600px;
-  }
+  .ct-sidebar__img { height: 300px; }
 }
 
 @media (max-width: 768px) {
-  .cp-info-strip__grid {
+  .ct-info__grid {
     grid-template-columns: 1fr;
     gap: 10px;
   }
-
-  .cp-form__row {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .cp-sidebar__image {
-    height: 450px;
-    border-radius: 20px;
-  }
+  .ct-form__row { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 560px) {
-  .cp-form__row {
-    grid-template-columns: 1fr;
-  }
-
-  .cp-sidebar__image {
-    height: 320px;
-    border-radius: 16px;
-  }
-
-  .cp-cta__actions {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+  .ct-form__row { grid-template-columns: 1fr; }
+  .ct-cta__actions { flex-direction: column; align-items: flex-start; }
+  .ct-sidebar__img { height: 240px; }
 }

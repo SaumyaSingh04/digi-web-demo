@@ -4,11 +4,11 @@ const AngularVisual = () => (
   <svg viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%', display: 'block' }}>
     <defs>
       <linearGradient id="ng-bg" x1="0" y1="0" x2="480" y2="360" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#E4D8D8" />
-        <stop offset="100%" stopColor="#D4C8C8" />
+        <stop offset="0%" stopColor="#1e0808" />
+        <stop offset="100%" stopColor="#140404" />
       </linearGradient>
       <linearGradient id="ng-dark" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stopColor="#302028" />
+        <stop offset="0%" stopColor="#2a0808" />
         <stop offset="100%" stopColor="#201820" />
       </linearGradient>
       <linearGradient id="ng-card" x1="0" y1="0" x2="0" y2="1">

@@ -4,11 +4,11 @@ const PHPVisual = () => (
   <svg viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%', display: 'block' }}>
     <defs>
       <linearGradient id="php-bg" x1="0" y1="0" x2="480" y2="360" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#DDD8E4" />
-        <stop offset="100%" stopColor="#CDD0E0" />
+        <stop offset="0%" stopColor="#1a0a28" />
+        <stop offset="100%" stopColor="#100618" />
       </linearGradient>
       <linearGradient id="php-dark" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stopColor="#1E2038" />
+        <stop offset="0%" stopColor="#1a0a28" />
         <stop offset="100%" stopColor="#141828" />
       </linearGradient>
       <linearGradient id="php-card" x1="0" y1="0" x2="0" y2="1">

@@ -80,7 +80,7 @@ export default function Career() {
   return (
     <div className="cp">
 
-      <section className="ph">
+      <section className="ph ph--career">
         <div className="ph__bg-glow" />
         <div className="ph__noise" />
         <svg className="ph__mountains" viewBox="0 0 1440 320" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -124,29 +124,45 @@ export default function Career() {
           >
             <div className="ph__visual-glow" />
             <div className="ph__parallax">
-              <motion.div
-                className="ph__panel"
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }}
-              >
-                <div className="ph__panel-header">
-                  <span className="ph__panel-title">Open Positions</span>
-                  <span className="ph__panel-badge">Hiring Now</span>
-                </div>
-                <div className="ph__topics">
-                  {[['Senior SEO Strategist', 'Full-Time'], ['React / Next.js Developer', 'Full-Time'], ['Performance Marketing Mgr', 'Full-Time'], ['UI/UX Designer', 'Full-Time'], ['Social Media Manager', 'Full-Time'], ['Content Strategist', 'Contract']].map(([role, type]) => (
-                    <div key={role} className="ph__topic-row">
-                      <span className="ph__topic-dot" />
-                      <span className="ph__topic-name">{role}</span>
-                      <span className="ph__topic-count">{type}</span>
-                    </div>
+              <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }} style={{ position: 'relative', zIndex: 2 }}>
+                <svg viewBox="0 0 420 320" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', display: 'block', borderRadius: 16 }}>
+                  <defs>
+                    <linearGradient id="cr-bg" x1="0" y1="0" x2="420" y2="320" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stopColor="#0a0f1e"/><stop offset="100%" stopColor="#050810"/>
+                    </linearGradient>
+                    <filter id="cr-sh"><feDropShadow dx="0" dy="4" stdDeviation="8" floodColor="#00000060"/></filter>
+                  </defs>
+                  <rect width="420" height="320" rx="16" fill="url(#cr-bg)"/>
+
+                  {/* ── Role cards ── */}
+                  {[
+                    { y: 14,  role: 'Senior SEO Strategist',     dept: 'SEO',         type: 'Full-Time', color: '#4f8bff', tagBg: 'rgba(79,139,255,0.15)' },
+                    { y: 72,  role: 'React / Next.js Developer',  dept: 'Development', type: 'Full-Time', color: '#34d399', tagBg: 'rgba(52,211,153,0.15)' },
+                    { y: 130, role: 'Performance Mktg Manager',   dept: 'PPC',         type: 'Full-Time', color: '#fb923c', tagBg: 'rgba(251,146,60,0.15)' },
+                    { y: 188, role: 'UI/UX Designer',             dept: 'Design',      type: 'Full-Time', color: '#f472b6', tagBg: 'rgba(244,114,182,0.15)' },
+                    { y: 246, role: 'Social Media Manager',       dept: 'SMM',         type: 'Full-Time', color: '#a78bfa', tagBg: 'rgba(167,139,250,0.15)' },
+                  ].map(({ y, role, dept, type, color, tagBg }) => (
+                    <g key={role} filter="url(#cr-sh)">
+                      <rect x="16" y={y} width="388" height="50" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.07)" strokeWidth="1"/>
+                      <rect x="16" y={y} width="4" height="50" rx="2" fill={color} opacity="0.85"/>
+                      {/* dept pill */}
+                      <rect x="28" y={y + 9} width={dept.length * 6 + 10} height="15" rx="7" fill={tagBg}/>
+                      <text x={28 + (dept.length * 6 + 10) / 2} y={y + 20} fontSize="7" fontWeight="700" fill={color} fontFamily="Inter,sans-serif" textAnchor="middle">{dept}</text>
+                      {/* role name */}
+                      <text x="28" y={y + 38} fontSize="10" fontWeight="700" fill="rgba(255,255,255,0.88)" fontFamily="Inter,sans-serif">{role}</text>
+                      {/* type badge */}
+                      <rect x="340" y={y + 16} width={type.length * 5 + 10} height="14" rx="7" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" strokeWidth="1"/>
+                      <text x={340 + (type.length * 5 + 10) / 2} y={y + 26} fontSize="6" fontWeight="600" fill="rgba(255,255,255,0.45)" fontFamily="Inter,sans-serif" textAnchor="middle">{type}</text>
+                    </g>
                   ))}
-                </div>
-                <div className="ph__panel-divider" />
-                <div className="ph__readtime">
-                  <span className="ph__readtime-label">Response Time</span>
-                  <span className="ph__readtime-value">5 days</span>
-                </div>
+
+                  {/* ── Stat badge — hiring ── */}
+                  <g filter="url(#cr-sh)" transform="translate(248,262)">
+                    <rect width="154" height="50" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.09)" strokeWidth="1"/>
+                    <text x="14" y="20" fontSize="7" fill="rgba(167,139,250,0.8)" fontFamily="Inter,sans-serif">Response Time</text>
+                    <text x="14" y="40" fontSize="18" fontWeight="900" fill="#c4b5fd" fontFamily="Inter,sans-serif">5 Days</text>
+                  </g>
+                </svg>
               </motion.div>
               {careerFloatCards.map(card => (
                 <motion.div

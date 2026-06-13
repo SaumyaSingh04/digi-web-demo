@@ -43,49 +43,49 @@ function HeroDashboard3D() {
   return (
     <svg viewBox="0 0 500 380" fill="none" xmlns="http://www.w3.org/2000/svg" className="hero__dash-svg">
       <defs>
-        {/* Card background — deep charcoal */}
+        {/* Card background */}
         <linearGradient id="d-bg" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#2A2825"/>
-          <stop offset="100%" stopColor="#1A1816"/>
+          <stop offset="0%" stopColor="#1a1040"/>
+          <stop offset="100%" stopColor="#0d0820"/>
         </linearGradient>
-        {/* Bar gradients — dull stone tones */}
+        {/* Bar gradients — dull/muted */}
         <linearGradient id="d-bar-a" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#7A7672" stopOpacity="0.9"/>
-          <stop offset="100%" stopColor="#484442" stopOpacity="0.3"/>
+          <stop offset="0%" stopColor="#6b6b80" stopOpacity="0.8"/>
+          <stop offset="100%" stopColor="#3a3a4a" stopOpacity="0.4"/>
         </linearGradient>
         <linearGradient id="d-bar-b" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#908C88" stopOpacity="0.95"/>
-          <stop offset="100%" stopColor="#585452" stopOpacity="0.35"/>
+          <stop offset="0%" stopColor="#5a7a80" stopOpacity="0.8"/>
+          <stop offset="100%" stopColor="#3a5060" stopOpacity="0.4"/>
         </linearGradient>
         <linearGradient id="d-bar-pk" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#B0ACA8" stopOpacity="1"/>
-          <stop offset="100%" stopColor="#787472" stopOpacity="0.45"/>
+          <stop offset="0%" stopColor="#8a6a75" stopOpacity="0.85"/>
+          <stop offset="100%" stopColor="#5a3a45" stopOpacity="0.45"/>
         </linearGradient>
-        {/* 3D bar top face — stone highlight */}
+        {/* 3D bar top face */}
         <linearGradient id="d-top-face" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stopColor="#424040"/>
-          <stop offset="50%" stopColor="#6A6866"/>
-          <stop offset="100%" stopColor="#424040"/>
+          <stop offset="0%" stopColor="#4a4a5a"/>
+          <stop offset="50%" stopColor="#6a6a7a"/>
+          <stop offset="100%" stopColor="#4a4a5a"/>
         </linearGradient>
         {/* Trend area fill */}
         <linearGradient id="d-area" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="rgba(176,172,168,0.12)"/>
-          <stop offset="100%" stopColor="rgba(176,172,168,0)"/>
+          <stop offset="0%" stopColor="rgba(138,106,117,0.15)"/>
+          <stop offset="100%" stopColor="rgba(138,106,117,0)"/>
         </linearGradient>
         {/* Glass orb fill */}
         <linearGradient id="d-glass" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="rgba(200,196,192,0.16)"/>
-          <stop offset="100%" stopColor="rgba(200,196,192,0.02)"/>
+          <stop offset="0%" stopColor="rgba(80,80,100,0.22)"/>
+          <stop offset="100%" stopColor="rgba(80,80,100,0.04)"/>
         </linearGradient>
         {/* Ring stroke */}
         <linearGradient id="d-ring" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="rgba(176,172,168,0.7)"/>
-          <stop offset="100%" stopColor="rgba(176,172,168,0)"/>
+          <stop offset="0%" stopColor="rgba(100,100,120,0.7)"/>
+          <stop offset="100%" stopColor="rgba(100,100,120,0)"/>
         </linearGradient>
         {/* Badge face */}
         <linearGradient id="d-badge-face" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#242220"/>
-          <stop offset="100%" stopColor="#161412"/>
+          <stop offset="0%" stopColor="#1e1b4b"/>
+          <stop offset="100%" stopColor="#0f0c29"/>
         </linearGradient>
 
         <filter id="d-shadow"><feDropShadow dx="0" dy="12" stdDeviation="22" floodColor="#000" floodOpacity="0.7"/></filter>
@@ -95,14 +95,14 @@ function HeroDashboard3D() {
       </defs>
 
       {/* ambient glow */}
-      <ellipse cx="250" cy="190" rx="200" ry="140" fill="rgba(140,136,132,0.04)" filter="url(#d-soft)"/>
+      <ellipse cx="250" cy="190" rx="200" ry="140" fill="rgba(99,102,241,0.08)" filter="url(#d-soft)"/>
 
       {/* ── Floating glass sphere — top left ── */}
       <motion.g animate={{y:[0,-9,0]}} transition={{duration:6,repeat:Infinity,ease:'easeInOut',delay:0.4}}>
         {/* sphere back shadow */}
         <ellipse cx="62" cy="88" rx="20" ry="6" fill="rgba(0,0,0,0.25)"/>
         {/* sphere body */}
-        <circle cx="60" cy="76" r="24" fill="url(#d-glass)" stroke="rgba(200,196,192,0.14)" strokeWidth="1"/>
+        <circle cx="60" cy="76" r="24" fill="url(#d-glass)" stroke="rgba(99,102,241,0.35)" strokeWidth="1"/>
         {/* specular highlight */}
         <ellipse cx="53" cy="68" rx="9" ry="6" fill="rgba(255,255,255,0.16)" transform="rotate(-30,53,68)"/>
         {/* rim light */}
@@ -115,10 +115,10 @@ function HeroDashboard3D() {
       <motion.g style={{transformOrigin:'420px 50px'}} animate={{rotate:[0,360]}} transition={{duration:16,repeat:Infinity,ease:'linear'}}>
         {/* ring shadow */}
         <ellipse cx="424" cy="60" rx="30" ry="10" fill="rgba(0,0,0,0.2)"/>
-        <ellipse cx="420" cy="50" rx="34" ry="13" stroke="url(#d-ring)" strokeWidth="2" fill="none" opacity="0.65"/>
-        <ellipse cx="420" cy="50" rx="20" ry="7" stroke="rgba(176,172,168,0.28)" strokeWidth="0.9" fill="none"/>
+        <ellipse cx="420" cy="50" rx="34" ry="13" stroke="url(#d-ring)" strokeWidth="2" fill="none" opacity="0.85"/>
+        <ellipse cx="420" cy="50" rx="20" ry="7" stroke="rgba(244,114,182,0.4)" strokeWidth="0.9" fill="none"/>
         {/* ring highlight dot */}
-        <circle cx="386" cy="50" r="2.5" fill="rgba(220,216,212,0.6)"/>
+        <circle cx="386" cy="50" r="2.5" fill="rgba(99,102,241,0.9)"/>
       </motion.g>
 
       {/* ── Main 3D Dashboard card ── */}
@@ -143,9 +143,9 @@ function HeroDashboard3D() {
           <rect x="20" y="32" width="65" height="4" rx="2" fill="rgba(200,196,192,0.16)"/>
 
           {/* live pill */}
-          <rect x="315" y="18" width="64" height="20" rx="10" fill="rgba(200,196,192,0.06)" stroke="rgba(200,196,192,0.12)" strokeWidth="1"/>
-          <circle cx="329" cy="28" r="3" fill="rgba(176,172,168,0.8)"/>
-          <rect x="337" y="25" width="32" height="4" rx="2" fill="rgba(200,196,192,0.38)"/>
+          <rect x="315" y="18" width="64" height="20" rx="10" fill="rgba(80,100,90,0.12)" stroke="rgba(100,130,115,0.35)" strokeWidth="1"/>
+          <circle cx="329" cy="28" r="3" fill="#6a8a7a"/>
+          <rect x="337" y="25" width="32" height="4" rx="2" fill="rgba(140,170,155,0.5)"/>
 
           {/* grid lines */}
           {[0,1,2,3].map(i=>(
@@ -187,19 +187,19 @@ function HeroDashboard3D() {
             fill="url(#d-area)"/>
           {/* trend line */}
           <path d="M44,162 C75,145 105,122 133,112 C161,102 188,122 215,100 C242,78 268,56 295,44 C313,35 330,32 342,28"
-            fill="none" stroke="rgba(176,172,168,0.65)" strokeWidth="1.8" strokeLinecap="round"/>
+            fill="none" stroke="#8a6a75" strokeWidth="2.2" strokeLinecap="round"/>
           {/* peak dot with halo */}
-          <circle cx="295" cy="44" r="10" fill="rgba(176,172,168,0.1)"/>
-          <circle cx="295" cy="44" r="4.5" fill="rgba(220,216,212,0.9)" filter="url(#d-glow)"/>
+          <circle cx="295" cy="44" r="10" fill="rgba(138,106,117,0.15)"/>
+          <circle cx="295" cy="44" r="4.5" fill="#8a6a75" filter="url(#d-glow)"/>
 
           {/* footer divider */}
           <line x1="20" y1="193" x2="380" y2="193" stroke="rgba(200,196,192,0.06)" strokeWidth="1"/>
 
           {/* footer metrics */}
-          {[{v:'3.2M',l:'Impressions',x:40},{v:'184%',l:'Traffic',x:160},{v:'4.8x',l:'ROAS',x:270}].map(m=>(
+          {[{v:'3.2M',l:'Impressions',x:40,c:'#8a8aa0'},{v:'184%',l:'Traffic',x:160,c:'#7a9a8a'},{v:'4.8x',l:'ROAS',x:270,c:'#8a7080'}].map(m=>(
             <g key={m.l}>
-              <text x={m.x} y={214} fontSize="15" fontWeight="800" fill="rgba(220,216,212,0.9)" fontFamily="Inter,sans-serif" letterSpacing="-0.5">{m.v}</text>
-              <text x={m.x} y={228} fontSize="7" fill="rgba(176,172,168,0.3)" fontFamily="Inter,sans-serif">{m.l}</text>
+              <text x={m.x} y={214} fontSize="15" fontWeight="800" fill={m.c} fontFamily="Inter,sans-serif" letterSpacing="-0.5">{m.v}</text>
+              <text x={m.x} y={228} fontSize="7" fill="rgba(200,196,255,0.4)" fontFamily="Inter,sans-serif">{m.l}</text>
             </g>
           ))}
           <line x1="138" y1="200" x2="138" y2="238" stroke="rgba(200,196,192,0.06)" strokeWidth="1"/>
@@ -226,11 +226,11 @@ function HeroDashboard3D() {
           <rect x="0" y="0" width="118" height="1.5" rx="1" fill="rgba(220,216,212,0.18)"/>
           <rect x="0" y="0" width="1" height="62" rx="1" fill="rgba(220,216,212,0.07)"/>
           {/* icon circle */}
-          <circle cx="18" cy="18" r="7" fill="rgba(176,172,168,0.12)" stroke="rgba(176,172,168,0.35)" strokeWidth="1"/>
-          <text x="14.5" y="22" fontSize="8" fill="rgba(176,172,168,0.85)" fontFamily="Inter,sans-serif" fontWeight="800">↑</text>
+          <circle cx="18" cy="18" r="7" fill="rgba(80,110,95,0.15)" stroke="#7a9a8a" strokeWidth="1"/>
+          <text x="14.5" y="22" fontSize="8" fill="#7a9a8a" fontFamily="Inter,sans-serif" fontWeight="800">↑</text>
           {/* value */}
-          <text x="12" y="44" fontSize="19" fontWeight="900" fill="rgba(220,216,212,0.92)" fontFamily="Inter,sans-serif" letterSpacing="-1">+184%</text>
-          <text x="12" y="56" fontSize="7" fill="rgba(176,172,168,0.35)" fontFamily="Inter,sans-serif">Organic Traffic</text>
+          <text x="12" y="44" fontSize="19" fontWeight="900" fill="#7a9a8a" fontFamily="Inter,sans-serif" letterSpacing="-1">+184%</text>
+          <text x="12" y="56" fontSize="7" fill="rgba(140,170,155,0.45)" fontFamily="Inter,sans-serif">Organic Traffic</text>
         </g>
       </motion.g>
 
@@ -245,11 +245,11 @@ function HeroDashboard3D() {
           <rect width="108" height="58" rx="12" fill="url(#d-badge-face)"/>
           <rect x="0" y="0" width="108" height="1.5" rx="1" fill="rgba(220,216,212,0.15)"/>
           <rect x="0" y="0" width="1" height="58" rx="1" fill="rgba(220,216,212,0.06)"/>
-          <text x="12" y="20" fontSize="7" fill="rgba(176,172,168,0.32)" fontFamily="Inter,sans-serif">Avg. ROAS</text>
-          <text x="12" y="44" fontSize="22" fontWeight="900" fill="rgba(210,206,202,0.88)" fontFamily="Inter,sans-serif" letterSpacing="-1">4.8x</text>
+          <text x="12" y="20" fontSize="7" fill="rgba(150,140,160,0.45)" fontFamily="Inter,sans-serif">Avg. ROAS</text>
+          <text x="12" y="44" fontSize="22" fontWeight="900" fill="#8a7a9a" fontFamily="Inter,sans-serif" letterSpacing="-1">4.8x</text>
           {/* sparkline */}
-          <polyline points="66,40 74,32 82,35 90,24 98,18" fill="none" stroke="rgba(160,156,152,0.55)" strokeWidth="1.5" strokeLinecap="round"/>
-          <circle cx="98" cy="18" r="2.5" fill="rgba(176,172,168,0.75)"/>
+          <polyline points="66,40 74,32 82,35 90,24 98,18" fill="none" stroke="#8a6a75" strokeWidth="1.5" strokeLinecap="round"/>
+          <circle cx="98" cy="18" r="2.5" fill="#8a6a75"/>
         </g>
       </motion.g>
 
@@ -257,8 +257,8 @@ function HeroDashboard3D() {
       <motion.g animate={{y:[0,-11,0]}} transition={{duration:7,repeat:Infinity,ease:'easeInOut',delay:2}}>
         {/* orb shadow */}
         <ellipse cx="468" cy="316" rx="16" ry="4" fill="rgba(0,0,0,0.22)"/>
-        <circle cx="466" cy="298" r="19" fill="url(#d-glass)" stroke="rgba(200,196,192,0.12)" strokeWidth="1"/>
-        <ellipse cx="459" cy="291" rx="7" ry="4.5" fill="rgba(255,255,255,0.15)" transform="rotate(-25,459,291)"/>
+        <circle cx="466" cy="298" r="19" fill="url(#d-glass)" stroke="rgba(99,102,241,0.4)" strokeWidth="1"/>
+        <ellipse cx="459" cy="291" rx="7" ry="4.5" fill="rgba(255,255,255,0.2)" transform="rotate(-25,459,291)"/>
         <circle cx="466" cy="298" r="19" stroke="url(#d-ring)" strokeWidth="0.7" fill="none"/>
       </motion.g>
     </svg>

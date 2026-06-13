@@ -4,11 +4,11 @@ const ReactVisual = () => (
   <svg viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%', display: 'block' }}>
     <defs>
       <linearGradient id="rct-bg" x1="0" y1="0" x2="480" y2="360" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#D8E0E8" />
-        <stop offset="100%" stopColor="#C8D4E0" />
+        <stop offset="0%" stopColor="#061828" />
+        <stop offset="100%" stopColor="#040e1c" />
       </linearGradient>
       <linearGradient id="rct-dark" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stopColor="#1C2838" />
+        <stop offset="0%" stopColor="#061828" />
         <stop offset="100%" stopColor="#121E2C" />
       </linearGradient>
       <linearGradient id="rct-card" x1="0" y1="0" x2="0" y2="1">
@@ -34,7 +34,7 @@ const ReactVisual = () => (
       <rect width="130" height="170" rx="12" fill="url(#rct-dark)" />
       <polygon points="130,12 134,16 134,178 130,174" fill="#0C1420" />
       <polygon points="12,170 16,174 134,174 130,170" fill="#080E18" />
-      <rect x="12" y="12" width="106" height="12" rx="4" fill="#1C2838" />
+      <rect x="12" y="12" width="106" height="12" rx="4" fill="#061828" />
       {[
         [12,'#6A90B0',30],[28,'#A0C080',60],[28,'#9090A8',40],
         [44,'#6AB8A8',70],[44,'#B09060',45],[60,'#8098B8',55],
@@ -54,7 +54,7 @@ const ReactVisual = () => (
       {['Header','Sidebar','DataGrid','Form','Modal','Toast','Footer'].map((c,i)=>(
         <g key={c}>
           <rect x="12" y={24+i*20} width="106" height="14" rx="4" fill={i%2===0?'#DAEAF8':'#D0E0EE'} />
-          <text x="18" y={35+i*20} fontSize="8" fill="#4A6080" fontFamily="Inter,sans-serif" fontWeight="600">⬡ {c}</text>
+          <text x="18" y={35+i*20} fontSize="8" fill="#1a4060" fontFamily="Inter,sans-serif" fontWeight="600">⬡ {c}</text>
         </g>
       ))}
     </g>

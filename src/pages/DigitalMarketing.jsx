@@ -4,16 +4,16 @@ const DigitalMarketingVisual = () => (
   <svg viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%', display: 'block' }}>
     <defs>
       <linearGradient id="dm-bg" x1="0" y1="0" x2="480" y2="360" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#DAD8D2" />
-        <stop offset="100%" stopColor="#C8C6BF" />
+        <stop offset="0%" stopColor="#1a1008" />
+        <stop offset="100%" stopColor="#0e0804" />
       </linearGradient>
       <linearGradient id="dm-card" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stopColor="#EEECEA" />
-        <stop offset="100%" stopColor="#E4E2DC" />
+        <stop offset="0%" stopColor="#2a1c0c" />
+        <stop offset="100%" stopColor="#1c1208" />
       </linearGradient>
       <linearGradient id="dm-dark" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stopColor="#464440" />
-        <stop offset="100%" stopColor="#363430" />
+        <stop offset="0%" stopColor="#0e0804" />
+        <stop offset="100%" stopColor="#080400" />
       </linearGradient>
       <filter id="dm-shadow">
         <feDropShadow dx="0" dy="6" stdDeviation="10" floodColor="#00000020" />

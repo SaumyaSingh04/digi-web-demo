@@ -4,16 +4,16 @@ const WhiteLabelVisual = () => (
   <svg viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%', display: 'block' }}>
     <defs>
       <linearGradient id="wl-bg" x1="0" y1="0" x2="480" y2="360" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#E0DDD6" />
-        <stop offset="100%" stopColor="#D0CEC8" />
+        <stop offset="0%" stopColor="#0f1e0f" />
+        <stop offset="100%" stopColor="#081408" />
       </linearGradient>
       <linearGradient id="wl-card" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stopColor="#F2EEE8" />
-        <stop offset="100%" stopColor="#E6E2DC" />
+        <stop offset="0%" stopColor="#163020" />
+        <stop offset="100%" stopColor="#0e2016" />
       </linearGradient>
       <linearGradient id="wl-dark" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stopColor="#484440" />
-        <stop offset="100%" stopColor="#383430" />
+        <stop offset="0%" stopColor="#0a1a0e" />
+        <stop offset="100%" stopColor="#060e06" />
       </linearGradient>
       <filter id="wl-shadow"><feDropShadow dx="0" dy="6" stdDeviation="10" floodColor="#00000022" /></filter>
     </defs>
@@ -22,9 +22,9 @@ const WhiteLabelVisual = () => (
     {/* 3D layered report stack */}
     {[3,2,1,0].map(i=>(
       <g key={i} transform={`translate(${i*6},${-i*8})`}>
-        <polygon points="80,180 240,220 400,180 240,140" fill={['#C8C4BC','#D0CCC4','#D8D4CC','#E0DCD4'][i]} />
+        <polygon points="80,180 240,220 400,180 240,140" fill={['#C8C4BC','#D0CCC4','#0e2016','#E0DCD4'][i]} />
         <polygon points="80,130 80,180 240,220 240,170" fill={['#B8B4AC','#C0BCB4','#C8C4BC','#D0CCC4'][i]} />
-        <polygon points="400,130 400,180 240,220 240,170" fill={['#CCC8C0','#D4D0C8','#DCD8D0','#E4E0D8'][i]} />
+        <polygon points="400,130 400,180 240,220 240,170" fill={['#0a1810','#D4D0C8','#DCD8D0','#E4E0D8'][i]} />
       </g>
     ))}
 
@@ -37,7 +37,7 @@ const WhiteLabelVisual = () => (
       <rect x="14" y="14" width="172" height="30" rx="6" fill="#E4E0D8" />
       <rect x="20" y="20" width="50" height="18" rx="4" fill="#D0CAC2" />
       <rect x="80" y="22" width="60" height="6" rx="3" fill="#C0BAB2" />
-      <rect x="80" y="32" width="40" height="5" rx="2" fill="#CCCAC2" />
+      <rect x="80" y="32" width="40" height="5" rx="2" fill="#264a32" />
       {/* Report content */}
       <rect x="14" y="52" width="80" height="5" rx="2" fill="#A8A49C" />
       {[0,1,2,3].map(i=>(
@@ -53,11 +53,11 @@ const WhiteLabelVisual = () => (
     {/* 50+ partners */}
     <g filter="url(#wl-shadow)" transform="translate(286,20)">
       <rect width="170" height="80" rx="14" fill="url(#wl-dark)" />
-      <polygon points="170,14 174,18 174,88 170,84" fill="#282420" />
-      <polygon points="14,80 18,84 174,84 170,80" fill="#201C18" />
-      <rect x="14" y="14" width="70" height="5" rx="2" fill="#6A6460" />
-      <text x="14" y="58" fontSize="30" fontWeight="900" fill="#E8E0D8" fontFamily="Inter,sans-serif">50+</text>
-      <rect x="14" y="64" width="80" height="4" rx="2" fill="#5A5450" />
+      <polygon points="170,14 174,18 174,88 170,84" fill="#041008" />
+      <polygon points="14,80 18,84 174,84 170,80" fill="#020a04" />
+      <rect x="14" y="14" width="70" height="5" rx="2" fill="#3a7848" />
+      <text x="14" y="58" fontSize="30" fontWeight="900" fill="#90d0a8" fontFamily="Inter,sans-serif">50+</text>
+      <rect x="14" y="64" width="80" height="4" rx="2" fill="#2a6038" />
     </g>
 
     {/* NDA card */}
@@ -66,17 +66,17 @@ const WhiteLabelVisual = () => (
       <polygon points="170,14 174,18 174,68 170,64" fill="#D4CEC6" />
       <polygon points="14,60 18,64 174,64 170,60" fill="#CCC6BE" />
       <rect x="14" y="14" width="60" height="5" rx="2" fill="#8A8480" />
-      <text x="14" y="46" fontSize="20" fontWeight="900" fill="#484440" fontFamily="Inter,sans-serif">🔒 NDA</text>
+      <text x="14" y="46" fontSize="20" fontWeight="900" fill="#0a1a0e" fontFamily="Inter,sans-serif">🔒 NDA</text>
       <rect x="14" y="52" width="80" height="4" rx="2" fill="#B0A8A0" />
     </g>
 
     {/* Onboarding speed */}
     <g filter="url(#wl-shadow)" transform="translate(286,192)">
       <rect width="170" height="52" rx="12" fill="url(#wl-dark)" />
-      <polygon points="170,12 174,16 174,60 170,56" fill="#282420" />
-      <polygon points="12,52 16,56 174,56 170,52" fill="#201C18" />
-      <rect x="12" y="12" width="60" height="4" rx="2" fill="#6A6460" />
-      <text x="12" y="40" fontSize="18" fontWeight="900" fill="#E8E0D8" fontFamily="Inter,sans-serif">48hr Onboard</text>
+      <polygon points="170,12 174,16 174,60 170,56" fill="#041008" />
+      <polygon points="12,52 16,56 174,56 170,52" fill="#020a04" />
+      <rect x="12" y="12" width="60" height="4" rx="2" fill="#3a7848" />
+      <text x="12" y="40" fontSize="18" fontWeight="900" fill="#90d0a8" fontFamily="Inter,sans-serif">48hr Onboard</text>
     </g>
 
     {/* Retention badge */}
@@ -87,7 +87,7 @@ const WhiteLabelVisual = () => (
       {[['95%','Retention',10],['100%','White-Label',120]].map(([v,l,x])=>(
         <g key={l}>
           <text x={x+12} y="22" fontSize="7" fill="#8A8480" fontFamily="Inter,sans-serif">{l}</text>
-          <text x={x+12} y="42" fontSize="18" fontWeight="900" fill="#484440" fontFamily="Inter,sans-serif">{v}</text>
+          <text x={x+12} y="42" fontSize="18" fontWeight="900" fill="#0a1a0e" fontFamily="Inter,sans-serif">{v}</text>
           {x < 120 && <rect x={x+97} y="10" width="1" height="34" fill="#D4CEC6" />}
         </g>
       ))}

@@ -4,11 +4,11 @@ const DotNetVisual = () => (
   <svg viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%', display: 'block' }}>
     <defs>
       <linearGradient id="dn-bg" x1="0" y1="0" x2="480" y2="360" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#D8DCE8" />
-        <stop offset="100%" stopColor="#C8CCDC" />
+        <stop offset="0%" stopColor="#061828" />
+        <stop offset="100%" stopColor="#040e1c" />
       </linearGradient>
       <linearGradient id="dn-dark" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stopColor="#1A1E3A" />
+        <stop offset="0%" stopColor="#0a1028" />
         <stop offset="100%" stopColor="#10142A" />
       </linearGradient>
       <linearGradient id="dn-card" x1="0" y1="0" x2="0" y2="1">

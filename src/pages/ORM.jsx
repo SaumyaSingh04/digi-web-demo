@@ -4,8 +4,8 @@ const ORMVisual = () => (
   <svg viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%', display: 'block' }}>
     <defs>
       <linearGradient id="orm-bg" x1="0" y1="0" x2="480" y2="360" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#DDD8D4" />
-        <stop offset="100%" stopColor="#CDCAC4" />
+        <stop offset="0%" stopColor="#1a1008" />
+        <stop offset="100%" stopColor="#0e0a04" />
       </linearGradient>
       <linearGradient id="orm-card" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0%" stopColor="#F2EEEA" />
@@ -27,7 +27,7 @@ const ORMVisual = () => (
     {/* Big shield */}
     <g filter="url(#orm-shadow)" transform="translate(152,50)">
       <path d="M88,0 L176,30 L176,110 Q176,170 88,200 Q0,170 0,110 L0,30 Z" fill="url(#orm-dark)" />
-      <path d="M88,10 L166,36 L166,112 Q166,162 88,188 Q10,162 10,112 L10,36 Z" fill="#3A3630" />
+      <path d="M88,10 L166,36 L166,112 Q166,162 88,188 Q10,162 10,112 L10,36 Z" fill="#0e0a04" />
       {/* shield checkmark */}
       <text x="88" y="118" fontSize="60" fill="#C8C0B8" fontFamily="Inter,sans-serif" textAnchor="middle" opacity="0.4">🛡️</text>
       <text x="88" y="110" fontSize="36" fontWeight="900" fill="#E8E0D8" fontFamily="Inter,sans-serif" textAnchor="middle">98%</text>
@@ -51,8 +51,8 @@ const ORMVisual = () => (
     {/* Mention growth */}
     <g filter="url(#orm-shadow)" transform="translate(22,176)">
       <rect width="120" height="80" rx="14" fill="url(#orm-dark)" />
-      <polygon points="120,14 124,18 124,88 120,84" fill="#282420" />
-      <polygon points="14,80 18,84 124,84 120,80" fill="#201C18" />
+      <polygon points="120,14 124,18 124,88 120,84" fill="#0c0800" />
+      <polygon points="14,80 18,84 124,84 120,80" fill="#080400" />
       <rect x="14" y="14" width="60" height="5" rx="2" fill="#6A6460" />
       <text x="14" y="58" fontSize="22" fontWeight="900" fill="#E8E0D8" fontFamily="Inter,sans-serif">+150%</text>
       <rect x="14" y="64" width="70" height="4" rx="2" fill="#5A5450" />
@@ -75,8 +75,8 @@ const ORMVisual = () => (
     {/* Turnaround badge */}
     <g filter="url(#orm-shadow)" transform="translate(338,256)">
       <rect width="116" height="60" rx="12" fill="url(#orm-dark)" />
-      <polygon points="116,12 120,16 120,68 116,64" fill="#282420" />
-      <polygon points="12,60 16,64 120,64 116,60" fill="#201C18" />
+      <polygon points="116,12 120,16 120,68 116,64" fill="#0c0800" />
+      <polygon points="12,60 16,64 120,64 116,60" fill="#080400" />
       <rect x="12" y="12" width="60" height="4" rx="2" fill="#6A6460" />
       <text x="12" y="44" fontSize="18" fontWeight="900" fill="#E8E0D8" fontFamily="Inter,sans-serif">30 days</text>
     </g>

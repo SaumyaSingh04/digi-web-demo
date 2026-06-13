@@ -4,11 +4,11 @@ const NodeVisual = () => (
   <svg viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%', display: 'block' }}>
     <defs>
       <linearGradient id="nd-bg" x1="0" y1="0" x2="480" y2="360" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#D8E0D8" />
-        <stop offset="100%" stopColor="#C8D4C8" />
+        <stop offset="0%" stopColor="#0a1a0a" />
+        <stop offset="100%" stopColor="#061006" />
       </linearGradient>
       <linearGradient id="nd-dark" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stopColor="#182818" />
+        <stop offset="0%" stopColor="#0c1e0c" />
         <stop offset="100%" stopColor="#0E1E0E" />
       </linearGradient>
       <linearGradient id="nd-card" x1="0" y1="0" x2="0" y2="1">

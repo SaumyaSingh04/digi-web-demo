@@ -4,12 +4,12 @@ const Web20Visual = () => (
   <svg viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%', display: 'block' }}>
     <defs>
       <linearGradient id="w2-bg" x1="0" y1="0" x2="480" y2="360" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#DCE4E4" />
-        <stop offset="100%" stopColor="#CCD4D8" />
+        <stop offset="0%" stopColor="#061828" />
+        <stop offset="100%" stopColor="#040e1c" />
       </linearGradient>
       <linearGradient id="w2-dark" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stopColor="#283040" />
-        <stop offset="100%" stopColor="#182030" />
+        <stop offset="0%" stopColor="#061828" />
+        <stop offset="100%" stopColor="#021018" />
       </linearGradient>
       <linearGradient id="w2-card" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0%" stopColor="#EAF0F0" />
@@ -75,7 +75,7 @@ const Web20Visual = () => (
       <polygon points="130,12 134,16 134,62 130,58" fill="#C0CCCC" />
       <polygon points="12,54 16,58 134,58 130,54" fill="#B8C4C4" />
       <rect x="12" y="12" width="60" height="4" rx="2" fill="#7090A0" />
-      <text x="12" y="42" fontSize="20" fontWeight="900" fill="#283040" fontFamily="Inter,sans-serif">WCAG AA</text>
+      <text x="12" y="42" fontSize="20" fontWeight="900" fill="#061828" fontFamily="Inter,sans-serif">WCAG AA</text>
     </g>
 
     <g filter="url(#w2-shadow)" transform="translate(314,278)">

@@ -4,11 +4,11 @@ const WebDevVisual = () => (
   <svg viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%', display: 'block' }}>
     <defs>
       <linearGradient id="wd-bg" x1="0" y1="0" x2="480" y2="360" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#DCE4E8" />
-        <stop offset="100%" stopColor="#C8D4DA" />
+        <stop offset="0%" stopColor="#0f1a2e" />
+        <stop offset="100%" stopColor="#080f1c" />
       </linearGradient>
       <linearGradient id="wd-card" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stopColor="#EFF3F5" />
+        <stop offset="0%" stopColor="#1a2d4a" />
         <stop offset="100%" stopColor="#E2E9ED" />
       </linearGradient>
       <linearGradient id="wd-dark" x1="0" y1="0" x2="0" y2="1">

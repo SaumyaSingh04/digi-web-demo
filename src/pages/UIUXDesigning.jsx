@@ -4,12 +4,12 @@ const UIUXVisual = () => (
   <svg viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%', display: 'block' }}>
     <defs>
       <linearGradient id="ux-bg" x1="0" y1="0" x2="480" y2="360" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#E0DBD8" />
-        <stop offset="100%" stopColor="#CEC9C4" />
+        <stop offset="0%" stopColor="#1a0a1e" />
+        <stop offset="100%" stopColor="#10061a" />
       </linearGradient>
       <linearGradient id="ux-card" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stopColor="#F2EEE9" />
-        <stop offset="100%" stopColor="#E6E0D8" />
+        <stop offset="0%" stopColor="#2c1240" />
+        <stop offset="100%" stopColor="#1e0c30" />
       </linearGradient>
       <linearGradient id="ux-dark" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0%" stopColor="#484240" />
@@ -32,7 +32,7 @@ const UIUXVisual = () => (
     {[[100,68,90,30],[110,106,120,18],[110,130,80,8],[110,142,60,8],[110,154,90,8]].map(([x,y,w,h],i)=>(
       <rect key={i} x={x} y={y} width={w} height={h} rx="3" fill="#C8C2BA" opacity="0.5" />
     ))}
-    <rect x="240" y="60" width="130" height="80" rx="5" fill="#D8D0C8" opacity="0.6" />
+    <rect x="240" y="60" width="130" height="80" rx="5" fill="#1e0830" opacity="0.6" />
     <rect x="248" y="68" width="114" height="44" rx="3" fill="#C0B8B0" opacity="0.5" />
     <rect x="248" y="118" width="50" height="12" rx="5" fill="#8A8480" opacity="0.7" />
 
@@ -56,7 +56,7 @@ const UIUXVisual = () => (
       <polygon points="14,90 18,94 134,94 130,90" fill="#C8C2BA" />
       <rect x="14" y="14" width="70" height="5" rx="2" fill="#8A8480" />
       <text x="14" y="62" fontSize="26" fontWeight="900" fill="#484240" fontFamily="Inter,sans-serif">+68%</text>
-      <rect x="14" y="70" width="80" height="4" rx="2" fill="#B0A8A0" />
+      <rect x="14" y="70" width="80" height="4" rx="2" fill="#8060c8" />
     </g>
 
     {/* Floating component card */}

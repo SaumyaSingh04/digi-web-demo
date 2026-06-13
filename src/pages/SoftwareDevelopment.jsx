@@ -4,16 +4,16 @@ const SoftwareDevVisual = () => (
   <svg viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%', display: 'block' }}>
     <defs>
       <linearGradient id="sd-bg" x1="0" y1="0" x2="480" y2="360" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#D8DCE4" />
-        <stop offset="100%" stopColor="#C6CAD6" />
+        <stop offset="0%" stopColor="#061828" />
+        <stop offset="100%" stopColor="#040e1c" />
       </linearGradient>
       <linearGradient id="sd-card" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stopColor="#ECEEF4" />
-        <stop offset="100%" stopColor="#E0E3EE" />
+        <stop offset="0%" stopColor="#0c2244" />
+        <stop offset="100%" stopColor="#081838" />
       </linearGradient>
       <linearGradient id="sd-dark" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stopColor="#30384A" />
-        <stop offset="100%" stopColor="#20283A" />
+        <stop offset="0%" stopColor="#061828" />
+        <stop offset="100%" stopColor="#020e18" />
       </linearGradient>
       <filter id="sd-shadow"><feDropShadow dx="0" dy="6" stdDeviation="10" floodColor="#00000022" /></filter>
     </defs>
@@ -22,37 +22,37 @@ const SoftwareDevVisual = () => (
     {/* 3D isometric server stack */}
     {[0,1,2].map(i=>(
       <g key={i} transform={`translate(0,${-i*40})`}>
-        <polygon points="100,250 240,288 380,250 240,212" fill={['#A8B0C0','#B0B8C8','#B8C0D0'][i]} />
-        <polygon points="100,220 100,250 240,288 240,258" fill={['#98A0B2','#A0A8BA','#A8B0C2'][i]} />
-        <polygon points="380,220 380,250 240,288 240,258" fill={['#B8C0D0','#C0C8D8','#C8D0E0'][i]} />
-        <rect x="120" y={222+0} width="50" height="8" rx="4" fill="#808890" opacity="0.5" />
-        <circle cx="350" cy={226} r="5" fill="#60A870" opacity="0.7" />
-        <circle cx="338" cy={226} r="5" fill="#A0C060" opacity="0.5" />
+        <polygon points="100,250 240,288 380,250 240,212" fill={['#1e3a5a','#263a62','#2e4a6a'][i]} />
+        <polygon points="100,220 100,250 240,288 240,258" fill={['#162e4a','#1e384a','#263852'][i]} />
+        <polygon points="380,220 380,250 240,288 240,258" fill={['#2e4a6a','#365068','#3e5870'][i]} />
+        <rect x="120" y={222+0} width="50" height="8" rx="4" fill="#3a6898" opacity="0.5" />
+        <circle cx="350" cy={226} r="5" fill="#60a870" opacity="0.7" />
+        <circle cx="338" cy={226} r="5" fill="#a0c060" opacity="0.5" />
       </g>
     ))}
 
     {/* Code editor card */}
     <g filter="url(#sd-shadow)" transform="translate(26,20)">
       <rect width="240" height="160" rx="14" fill="url(#sd-dark)" />
-      <polygon points="240,14 244,18 244,172 240,168" fill="#101826" />
-      <polygon points="14,160 18,164 244,164 240,160" fill="#081020" />
+      <polygon points="240,14 244,18 244,172 240,168" fill="#020810" />
+      <polygon points="14,160 18,164 244,164 240,160" fill="#010608" />
       {/* tab bar */}
-      <rect x="14" y="14" width="212" height="18" rx="5" fill="#181E2C" />
-      <rect x="18" y="18" width="50" height="10" rx="4" fill="#28303F" />
-      <rect x="72" y="18" width="40" height="10" rx="4" fill="#202838" />
+      <rect x="14" y="14" width="212" height="18" rx="5" fill="#060a16" />
+      <rect x="18" y="18" width="50" height="10" rx="4" fill="#0e1828" />
+      <rect x="72" y="18" width="40" height="10" rx="4" fill="#080f1e" />
       {/* code lines */}
       {[
-        [14,'#6A8EA8',30],
-        [30,'#C0B870',60],
-        [46,'#8AA8C0',80],
-        [46,'#A8C890',50],
-        [62,'#8898B0',70],
-        [62,'#C0B060',40],
-        [78,'#7A90A8',90],
-        [94,'#6A8898',55],
-        [110,'#B0A860',70],
-        [126,'#8898B0',45],
-        [142,'#6A8EA8',30],
+        [14,'#5a90c0',30],
+        [30,'#c0b870',60],
+        [46,'#6aaad8',80],
+        [46,'#80b870',50],
+        [62,'#6090c0',70],
+        [62,'#c0b060',40],
+        [78,'#5888c0',90],
+        [94,'#4a80b8',55],
+        [110,'#b0a860',70],
+        [126,'#6090c0',45],
+        [142,'#5a90c0',30],
       ].map(([y,clr,w],i)=>(
         <rect key={i} x={18+(i%2)*8} y={38+i*10} width={w} height="5" rx="2" fill={clr} opacity="0.8" />
       ))}
@@ -61,15 +61,15 @@ const SoftwareDevVisual = () => (
     {/* Sprint board */}
     <g filter="url(#sd-shadow)" transform="translate(278,20)">
       <rect width="176" height="160" rx="14" fill="url(#sd-card)" />
-      <polygon points="176,14 180,18 180,172 176,168" fill="#C8CCD8" />
-      <polygon points="14,160 18,164 180,164 176,160" fill="#C0C4D0" />
-      <rect x="14" y="14" width="70" height="5" rx="2" fill="#8890A4" />
-      {[['Todo','#B0B8C8'],['In Progress','#C8B060'],['Done','#70A870']].map(([col,clr],ci)=>(
+      <polygon points="176,14 180,18 180,172 176,168" fill="#1a3060" />
+      <polygon points="14,160 18,164 180,164 176,160" fill="#142858" />
+      <rect x="14" y="14" width="70" height="5" rx="2" fill="#5080b8" />
+      {[['Todo','#263a62'],['In Progress','#c8b060'],['Done','#70a870']].map(([col,clr],ci)=>(
         <g key={col}>
           <rect x={14+ci*52} y={26} width={44} height={8} rx="3" fill={clr} opacity="0.4" />
-          <text x={36+ci*52} y={33} fontSize="6" fill="#4A5268" fontFamily="Inter,sans-serif" fontWeight="700" textAnchor="middle">{col}</text>
+          <text x={36+ci*52} y={33} fontSize="6" fill="#c0d4f0" fontFamily="Inter,sans-serif" fontWeight="700" textAnchor="middle">{col}</text>
           {[0,1,2].slice(0,ci===1?2:3).map(ri=>(
-            <rect key={ri} x={14+ci*52} y={40+ri*32} width={44} height={26} rx="5" fill="#D8DCE8" />
+            <rect key={ri} x={14+ci*52} y={40+ri*32} width={44} height={26} rx="5" fill="#1a2848" />
           ))}
         </g>
       ))}
@@ -79,10 +79,10 @@ const SoftwareDevVisual = () => (
     {[['150+','Projects'],['99.9%','Uptime'],['2X','Faster']].map(([v,l],i)=>(
       <g key={l} filter="url(#sd-shadow)" transform={`translate(${26+i*154},198)`}>
         <rect width="134" height="54" rx="10" fill="url(#sd-dark)" />
-        <polygon points="134,10 138,14 138,60 134,56" fill="#101826" />
-        <polygon points="10,54 14,58 138,58 134,54" fill="#081020" />
-        <text x="14" y="22" fontSize="7" fill="#505870" fontFamily="Inter,sans-serif">{l}</text>
-        <text x="14" y="44" fontSize="20" fontWeight="900" fill="#B0BAD0" fontFamily="Inter,sans-serif">{v}</text>
+        <polygon points="134,10 138,14 138,60 134,56" fill="#020810" />
+        <polygon points="10,54 14,58 138,58 134,54" fill="#010608" />
+        <text x="14" y="22" fontSize="7" fill="#3a6898" fontFamily="Inter,sans-serif">{l}</text>
+        <text x="14" y="44" fontSize="20" fontWeight="900" fill="#90b8e8" fontFamily="Inter,sans-serif">{v}</text>
       </g>
     ))}
   </svg>

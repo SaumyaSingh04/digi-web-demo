@@ -4,16 +4,16 @@ const AIAutomationVisual = () => (
   <svg viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%', display: 'block' }}>
     <defs>
       <linearGradient id="ai-bg" x1="0" y1="0" x2="480" y2="360" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#D8DCE4" />
-        <stop offset="100%" stopColor="#C8CCD8" />
+        <stop offset="0%" stopColor="#061828" />
+        <stop offset="100%" stopColor="#040e1c" />
       </linearGradient>
       <linearGradient id="ai-card" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stopColor="#ECEEF4" />
-        <stop offset="100%" stopColor="#E0E3EC" />
+        <stop offset="0%" stopColor="#0c2244" />
+        <stop offset="100%" stopColor="#081838" />
       </linearGradient>
       <linearGradient id="ai-dark" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stopColor="#3A3E50" />
-        <stop offset="100%" stopColor="#282C3E" />
+        <stop offset="0%" stopColor="#061828" />
+        <stop offset="100%" stopColor="#020e18" />
       </linearGradient>
       <filter id="ai-shadow">
         <feDropShadow dx="0" dy="6" stdDeviation="10" floodColor="#00000022" />
@@ -26,20 +26,20 @@ const AIAutomationVisual = () => (
 
     {/* ── 3D isometric hexagonal core ── */}
     {/* bottom hex face */}
-    <polygon points="240,230 200,207 200,183 240,206 280,183 280,207" fill="#A8AEBF" />
+    <polygon points="240,230 200,207 200,183 240,206 280,183 280,207" fill="#2a4a7a" />
     {/* left face */}
-    <polygon points="200,183 200,207 240,230 240,206" fill="#98A0B2" />
+    <polygon points="200,183 200,207 240,230 240,206" fill="#1e3a68" />
     {/* right face */}
-    <polygon points="280,183 280,207 240,230 240,206" fill="#B8C0D0" />
+    <polygon points="280,183 280,207 240,230 240,206" fill="#3a5a8a" />
     {/* top hex */}
-    <polygon points="240,160 200,183 240,206 280,183" fill="#C8D0E0" />
+    <polygon points="240,160 200,183 240,206 280,183" fill="#4a6a9a" />
     {/* core center */}
     <circle cx="240" cy="184" r="22" fill="url(#ai-dark)" filter="url(#ai-glow)" />
-    <text x="240" y="181" fontSize="10" fill="#B0B8D0" fontFamily="Inter,sans-serif" fontWeight="900" textAnchor="middle">AI</text>
-    <text x="240" y="193" fontSize="6" fill="#6A7090" fontFamily="Inter,sans-serif" textAnchor="middle">ENGINE</text>
+    <text x="240" y="181" fontSize="10" fill="#7aaad0" fontFamily="Inter,sans-serif" fontWeight="900" textAnchor="middle">AI</text>
+    <text x="240" y="193" fontSize="6" fill="#4a80b0" fontFamily="Inter,sans-serif" textAnchor="middle">ENGINE</text>
 
     {/* Orbit ring */}
-    <ellipse cx="240" cy="184" rx="68" ry="38" stroke="#B8C0D0" strokeWidth="1" strokeDasharray="4 3" fill="none" opacity="0.6" />
+    <ellipse cx="240" cy="184" rx="68" ry="38" stroke="#3a5a8a" strokeWidth="1" strokeDasharray="4 3" fill="none" opacity="0.6" />
 
     {/* ── Satellite node cards (3D small cubes) ── */}
     {[
@@ -51,27 +51,27 @@ const AIAutomationVisual = () => (
       {x:172, y:142, label:'AI'},
     ].map(({x,y,label})=>(
       <g key={label}>
-        <line x1="240" y1="184" x2={x} y2={y} stroke="#9AA2B8" strokeWidth="1.2" strokeDasharray="3 3" opacity="0.5" />
+        <line x1="240" y1="184" x2={x} y2={y} stroke="#4a7ab0" strokeWidth="1.2" strokeDasharray="3 3" opacity="0.5" />
         {/* mini 3D cube */}
-        <polygon points={`${x-12},${y-6} ${x},${y-12} ${x+12},${y-6} ${x},${y}`} fill="#C0C8D8" />
-        <polygon points={`${x-12},${y-6} ${x-12},${y+6} ${x},${y+12} ${x},${y}`} fill="#A0A8B8" />
-        <polygon points={`${x+12},${y-6} ${x+12},${y+6} ${x},${y+12} ${x},${y}`} fill="#B0B8C8" />
-        <text x={x} y={y+4} fontSize="7" fill="#5A6080" fontFamily="Inter,sans-serif" fontWeight="700" textAnchor="middle">{label}</text>
+        <polygon points={`${x-12},${y-6} ${x},${y-12} ${x+12},${y-6} ${x},${y}`} fill="#3060a0" />
+        <polygon points={`${x-12},${y-6} ${x-12},${y+6} ${x},${y+12} ${x},${y}`} fill="#204080" />
+        <polygon points={`${x+12},${y-6} ${x+12},${y+6} ${x},${y+12} ${x},${y}`} fill="#2a5090" />
+        <text x={x} y={y+4} fontSize="7" fill="#3a70a8" fontFamily="Inter,sans-serif" fontWeight="700" textAnchor="middle">{label}</text>
       </g>
     ))}
 
     {/* ── Workflow strip top ── */}
     <g filter="url(#ai-shadow)" transform="translate(20,18)">
       <rect width="440" height="52" rx="12" fill="url(#ai-dark)" />
-      <polygon points="440,12 444,16 444,60 440,56" fill="#181C2E" />
-      <polygon points="12,52 16,56 444,56 440,52" fill="#101420" />
-      <rect x="14" y="12" width="60" height="5" rx="2" fill="#4A5068" />
+      <polygon points="440,12 444,16 444,60 440,56" fill="#020a18" />
+      <polygon points="12,52 16,56 444,56 440,52" fill="#010610" />
+      <rect x="14" y="12" width="60" height="5" rx="2" fill="#3a6a9a" />
       {['Lead In','→ Qualify','→ Nurture','→ Book','→ Close'].map((step,i)=>(
         <g key={step}>
           <rect x={14+i*84} y={22} width={72} height={18} rx="5"
-            fill={i===4?'#C8D0E0':'#2A2E40'} />
+            fill={i===4?'#4a6a9a':'#0a1828'} />
           <text x={14+i*84+36} y={35} fontSize="8"
-            fill={i===4?'#3A3E50':'#7A8098'}
+            fill={i===4?'#061828':'#60a0d0'}
             fontFamily="Inter,sans-serif" fontWeight={i===4?'800':'500'} textAnchor="middle">{step}</text>
         </g>
       ))}
@@ -81,10 +81,10 @@ const AIAutomationVisual = () => (
     {[['70%','Tasks Saved'],['10X','Faster'],['3.5X','Avg ROI']].map(([val,lbl],i)=>(
       <g key={lbl} filter="url(#ai-shadow)" transform={`translate(${20+i*154},286)`}>
         <rect width="134" height="52" rx="10" fill="url(#ai-dark)" />
-        <polygon points="134,10 138,14 138,58 134,54" fill="#181C2E" />
-        <polygon points="10,52 14,56 138,56 134,52" fill="#101420" />
-        <text x="14" y="22" fontSize="7" fill="#5A6080" fontFamily="Inter,sans-serif">{lbl}</text>
-        <text x="14" y="44" fontSize="20" fontWeight="900" fill="#C8D0E0" fontFamily="Inter,sans-serif">{val}</text>
+        <polygon points="134,10 138,14 138,58 134,54" fill="#020a18" />
+        <polygon points="10,52 14,56 138,56 134,52" fill="#010610" />
+        <text x="14" y="22" fontSize="7" fill="#3a70a8" fontFamily="Inter,sans-serif">{lbl}</text>
+        <text x="14" y="44" fontSize="20" fontWeight="900" fill="#4a6a9a" fontFamily="Inter,sans-serif">{val}</text>
       </g>
     ))}
   </svg>
