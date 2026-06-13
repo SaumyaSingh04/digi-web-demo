@@ -24,8 +24,8 @@ export default function CTA() {
           transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
         >
           <img
-            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80"
-            alt="Expert consultant"
+            src="https://png.pngtree.com/png-vector/20230408/ourmid/pngtree-3d-businessman-character-thinking-png-image_6685081.png"
+            alt="3D consultant character"
             className="cta__person-img"
           />
         </motion.div>

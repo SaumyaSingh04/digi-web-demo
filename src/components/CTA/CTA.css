@@ -19,11 +19,12 @@
 
 .cta__person-img {
   width: 100%;
-  max-width: 480px;
-  height: 520px;
-  object-fit: cover;
-  object-position: top;
-  border-radius: 12px;
+  max-width: 420px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0;
+  drop-shadow: drop-shadow(0 20px 40px rgba(0,0,0,0.4));
+  filter: drop-shadow(0 20px 48px rgba(80, 120, 255, 0.25));
 }
 
 /* Right form card */
