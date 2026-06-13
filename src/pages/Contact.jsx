@@ -257,6 +257,7 @@ export default function Contact() {
         </div>
       </section>
 
+      {/* ── BG → INFO: var(--bg) already matches wave fill ── */}
       {/* ── INFO CARDS ── */}
       <section className="ct-info">
         <div className="container ct-info__grid">
@@ -279,6 +280,13 @@ export default function Contact() {
           })}
         </div>
       </section>
+
+      {/* ── Wave: bg → bg-alt ── */}
+      <div className="ct-info__divider">
+        <svg viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,0 C360,56 1080,0 1440,56 L1440,56 L0,56 Z" fill="var(--bg-alt)" />
+        </svg>
+      </div>
 
       {/* ── FORM + SIDEBAR ── */}
       <section className="ct-main" id="contact-form">
@@ -372,7 +380,123 @@ export default function Contact() {
           {/* Sidebar */}
           <motion.aside className="ct-sidebar" {...up(0.12)}>
             <div className="ct-sidebar__img-wrap">
-              <img src="/ContactUs .png" alt="Contact Trendox" className="ct-sidebar__img" />
+              <svg viewBox="0 0 480 340" fill="none" xmlns="http://www.w3.org/2000/svg" className="ct-sidebar__img" style={{height:'auto'}}>
+                <defs>
+                  <linearGradient id="sb-bg" x1="0" y1="0" x2="480" y2="340" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stopColor="#0a0f1e"/><stop offset="100%" stopColor="#060910"/>
+                  </linearGradient>
+                  <filter id="sb-sh"><feDropShadow dx="0" dy="6" stdDeviation="10" floodColor="#00000066"/></filter>
+                  <filter id="sb-glow"><feGaussianBlur stdDeviation="22" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                </defs>
+
+                <rect width="480" height="340" rx="20" fill="url(#sb-bg)"/>
+
+                {/* ambient glows */}
+                <ellipse cx="140" cy="180" rx="120" ry="90" fill="rgba(79,139,255,0.08)" filter="url(#sb-glow)"/>
+                <ellipse cx="360" cy="160" rx="100" ry="80" fill="rgba(52,211,153,0.07)" filter="url(#sb-glow)"/>
+
+                {/* ── Phone device ── */}
+                <g filter="url(#sb-sh)">
+                  <rect x="60" y="50" width="140" height="240" rx="22" fill="#0d1828" stroke="rgba(79,139,255,0.3)" strokeWidth="1.5"/>
+                  {/* screen */}
+                  <rect x="70" y="68" width="120" height="204" rx="14" fill="#060d1a"/>
+                  {/* notch */}
+                  <rect x="110" y="62" width="40" height="8" rx="4" fill="#060d1a"/>
+                  {/* status bar */}
+                  <rect x="78" y="76" width="30" height="4" rx="2" fill="rgba(255,255,255,0.12)"/>
+                  <rect x="148" y="76" width="16" height="4" rx="2" fill="rgba(255,255,255,0.12)"/>
+                  {/* home indicator */}
+                  <rect x="114" y="260" width="32" height="4" rx="2" fill="rgba(255,255,255,0.15)"/>
+
+                  {/* call screen UI */}
+                  <circle cx="130" cy="130" r="32" fill="rgba(79,139,255,0.15)" stroke="rgba(79,139,255,0.25)" strokeWidth="1"/>
+                  <circle cx="130" cy="130" r="22" fill="rgba(79,139,255,0.2)"/>
+                  {/* person icon */}
+                  <circle cx="130" cy="122" r="9" fill="rgba(255,255,255,0.6)"/>
+                  <path d="M112,148 Q112,136 130,136 Q148,136 148,148" fill="rgba(255,255,255,0.5)"/>
+
+                  {/* caller name */}
+                  <rect x="90" y="170" width="80" height="8" rx="4" fill="rgba(255,255,255,0.15)"/>
+                  <rect x="102" y="183" width="56" height="5" rx="2" fill="rgba(79,139,255,0.4)"/>
+
+                  {/* call duration */}
+                  <rect x="108" y="196" width="44" height="5" rx="2" fill="rgba(255,255,255,0.1)"/>
+
+                  {/* action buttons */}
+                  <circle cx="100" cy="226" r="14" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.1)" strokeWidth="1"/>
+                  <circle cx="130" cy="226" r="14" fill="rgba(52,211,153,0.25)" stroke="rgba(52,211,153,0.4)" strokeWidth="1"/>
+                  <circle cx="160" cy="226" r="14" fill="rgba(255,80,80,0.2)" stroke="rgba(255,80,80,0.35)" strokeWidth="1"/>
+                  {/* mic icon */}
+                  <rect x="97" y="220" width="6" height="10" rx="3" fill="rgba(255,255,255,0.4)"/>
+                  <path d="M95,228 Q95,234 100,234 Q105,234 105,228" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.2"/>
+                  {/* phone icon green */}
+                  <path d="M125,222 Q124,224 126,226 Q128,228 130,227 L129,225 L127,226 Q126,224 125,222 Z" fill="#34d399"/>
+                  {/* end call red */}
+                  <path d="M155,228 Q158,224 165,228" fill="none" stroke="rgba(255,100,100,0.8)" strokeWidth="2" strokeLinecap="round"/>
+                  <circle cx="157" cy="226" r="1.5" fill="rgba(255,100,100,0.8)"/>
+                  <circle cx="163" cy="226" r="1.5" fill="rgba(255,100,100,0.8)"/>
+                </g>
+
+                {/* ── Chat bubbles panel ── */}
+                <g filter="url(#sb-sh)">
+                  <rect x="228" y="44" width="220" height="252" rx="16" fill="rgba(12,20,38,0.97)" stroke="rgba(255,255,255,0.07)" strokeWidth="1"/>
+                  {/* header */}
+                  <rect x="228" y="44" width="220" height="44" rx="16" fill="rgba(79,139,255,0.1)"/>
+                  <rect x="228" y="68" width="220" height="20" fill="rgba(79,139,255,0.1)"/>
+                  <circle cx="252" cy="66" r="12" fill="rgba(79,139,255,0.25)" stroke="rgba(79,139,255,0.3)" strokeWidth="1"/>
+                  <circle cx="252" cy="63" r="5" fill="rgba(255,255,255,0.5)"/>
+                  <path d="M244,74 Q244,70 252,70 Q260,70 260,74" fill="rgba(255,255,255,0.4)"/>
+                  <rect x="272" y="58" width="60" height="6" rx="3" fill="rgba(255,255,255,0.2)"/>
+                  <rect x="272" y="68" width="40" height="4" rx="2" fill="rgba(52,211,153,0.5)"/>
+                  {/* online dot */}
+                  <circle cx="261" cy="76" r="4" fill="#34d399"/>
+
+                  {/* bubble 1 — received */}
+                  <rect x="240" y="102" width="120" height="36" rx="10" rx="10" fill="rgba(79,139,255,0.15)" stroke="rgba(79,139,255,0.2)" strokeWidth="1"/>
+                  <path d="M240,118 L232,124 L240,120" fill="rgba(79,139,255,0.15)"/>
+                  <rect x="250" y="112" width="80" height="5" rx="2" fill="rgba(255,255,255,0.25)"/>
+                  <rect x="250" y="122" width="56" height="5" rx="2" fill="rgba(255,255,255,0.15)"/>
+
+                  {/* bubble 2 — sent */}
+                  <rect x="292" y="152" width="136" height="36" rx="10" fill="rgba(52,211,153,0.15)" stroke="rgba(52,211,153,0.2)" strokeWidth="1"/>
+                  <path d="M428,168 L436,174 L428,170" fill="rgba(52,211,153,0.15)"/>
+                  <rect x="302" y="162" width="90" height="5" rx="2" fill="rgba(255,255,255,0.25)"/>
+                  <rect x="302" y="172" width="64" height="5" rx="2" fill="rgba(255,255,255,0.15)"/>
+
+                  {/* bubble 3 — received */}
+                  <rect x="240" y="202" width="100" height="28" rx="10" fill="rgba(79,139,255,0.15)" stroke="rgba(79,139,255,0.2)" strokeWidth="1"/>
+                  <path d="M240,216 L232,222 L240,218" fill="rgba(79,139,255,0.15)"/>
+                  <rect x="250" y="212" width="64" height="5" rx="2" fill="rgba(255,255,255,0.25)"/>
+                  <rect x="250" y="221" width="44" height="4" rx="2" fill="rgba(255,255,255,0.12)"/>
+
+                  {/* typing indicator */}
+                  <rect x="240" y="244" width="60" height="24" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.08)" strokeWidth="1"/>
+                  <circle cx="256" cy="256" r="3" fill="rgba(255,255,255,0.3)"/>
+                  <circle cx="267" cy="256" r="3" fill="rgba(255,255,255,0.5)"/>
+                  <circle cx="278" cy="256" r="3" fill="rgba(255,255,255,0.3)"/>
+
+                  {/* input bar */}
+                  <rect x="236" y="278" width="204" height="8" rx="4" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" strokeWidth="1"/>
+                </g>
+
+                {/* ── floating badge: 24h ── */}
+                <g filter="url(#sb-sh)" transform="translate(30,272)">
+                  <rect width="120" height="40" rx="10" fill="rgba(12,20,38,0.97)" stroke="rgba(79,139,255,0.25)" strokeWidth="1"/>
+                  <circle cx="20" cy="20" r="8" fill="rgba(79,139,255,0.2)"/>
+                  <text x="20" y="24" fontSize="9" fill="#4f8bff" textAnchor="middle" fontFamily="Inter,sans-serif">⏱</text>
+                  <text x="36" y="16" fontSize="7" fill="rgba(255,255,255,0.35)" fontFamily="Inter,sans-serif">Avg. Response</text>
+                  <text x="36" y="30" fontSize="12" fontWeight="800" fill="#fff" fontFamily="Inter,sans-serif">24 hours</text>
+                </g>
+
+                {/* ── floating badge: satisfaction ── */}
+                <g filter="url(#sb-sh)" transform="translate(340,272)">
+                  <rect width="110" height="40" rx="10" fill="rgba(12,20,38,0.97)" stroke="rgba(52,211,153,0.25)" strokeWidth="1"/>
+                  <circle cx="20" cy="20" r="8" fill="rgba(52,211,153,0.2)"/>
+                  <text x="20" y="24" fontSize="9" fill="#34d399" textAnchor="middle" fontFamily="Inter,sans-serif">★</text>
+                  <text x="36" y="16" fontSize="7" fill="rgba(255,255,255,0.35)" fontFamily="Inter,sans-serif">Satisfaction</text>
+                  <text x="36" y="30" fontSize="12" fontWeight="800" fill="#34d399" fontFamily="Inter,sans-serif">98%</text>
+                </g>
+              </svg>
               <div className="ct-sidebar__img-overlay" />
             </div>
 
@@ -403,18 +527,41 @@ export default function Contact() {
       {/* ── CTA ── */}
       <section className="ct-cta">
         <div className="ct-cta__pattern" aria-hidden="true" />
+        <div className="ct-cta__glow ct-cta__glow--l" aria-hidden="true" />
+        <div className="ct-cta__glow ct-cta__glow--r" aria-hidden="true" />
         <div className="container ct-cta__inner">
-          <motion.div {...up(0)}>
+
+          {/* Left: text */}
+          <motion.div className="ct-cta__left" {...up(0)}>
             <p className="ct-cta__eyebrow"><span className="ct-cta__dot" />Ready to scale?</p>
             <h2 className="ct-cta__title">
               Not sure where<br />to <em>start?</em>
             </h2>
             <p className="ct-cta__sub">Book a free 30-minute strategy call. No pitch, no pressure — just honest advice about what will move your numbers.</p>
             <div className="ct-cta__actions">
-              <Link to="/contact" className="ct-cta__btn-primary">Book a Free Call →</Link>
+              <a href="tel:+918853533552" className="ct-cta__btn-primary">Book a Free Call →</a>
               <a href="mailto:hello@trendoxmarketing.com" className="ct-cta__btn-ghost">hello@trendoxmarketing.com</a>
             </div>
           </motion.div>
+
+          {/* Right: stat cards */}
+          <motion.div className="ct-cta__right" {...up(0.12)}>
+            {[
+              { icon: '⚡', val: '24h',  label: 'Average Response Time',   color: '#4f8bff' },
+              { icon: '★',  val: '98%',  label: 'Client Satisfaction Rate', color: '#34d399' },
+              { icon: '↑',  val: '4.2×', label: 'Average ROAS Delivered',   color: '#f472b6' },
+              { icon: '✦',  val: '60+',  label: 'Brands Scaled to Date',    color: '#fbbf24' },
+            ].map((s, i) => (
+              <motion.div key={s.label} className="ct-cta__stat" {...up(i * 0.07)}>
+                <span className="ct-cta__stat-icon" style={{ color: s.color, background: `${s.color}18` }}>{s.icon}</span>
+                <div>
+                  <div className="ct-cta__stat-val" style={{ color: s.color }}>{s.val}</div>
+                  <div className="ct-cta__stat-label">{s.label}</div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
         </div>
       </section>
 

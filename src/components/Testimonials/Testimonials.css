@@ -36,8 +36,8 @@
 .gr-card {
   width: 320px;
   flex-shrink: 0;
-  background: #ffffff;
-  border: 1px solid #e0e0e0;
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 18px;
   padding: 22px 22px 18px;
   display: flex;
