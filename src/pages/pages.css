@@ -70,8 +70,8 @@
   align-items: center;
   gap: 56px;
   width: 100%;
-  padding-top: 32px;
-  padding-bottom: 120px;
+  padding-top: 60px;
+  padding-bottom: 160px;
   position: relative;
   z-index: 2;
 }

@@ -4,7 +4,7 @@
 .hero {
   position: relative;
   overflow: hidden;
-  padding-top: 104px;
+  padding-top: 100px;
 }
 
 .hero__bg {
@@ -68,8 +68,8 @@
   align-items: center;
   gap: 38px;
   width: 100%;
-  padding-top: 22px;
-  padding-bottom: 60px;
+  padding-top: 15px;
+  padding-bottom: 40px;
   position: relative;
   z-index: 2;
 }
