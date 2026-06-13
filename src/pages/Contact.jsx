@@ -452,7 +452,7 @@ export default function Contact() {
                   <circle cx="261" cy="76" r="4" fill="#34d399"/>
 
                   {/* bubble 1 — received */}
-                  <rect x="240" y="102" width="120" height="36" rx="10" rx="10" fill="rgba(79,139,255,0.15)" stroke="rgba(79,139,255,0.2)" strokeWidth="1"/>
+                  <rect x="240" y="102" width="120" height="36" rx="10" fill="rgba(79,139,255,0.15)" stroke="rgba(79,139,255,0.2)" strokeWidth="1"/>
                   <path d="M240,118 L232,124 L240,120" fill="rgba(79,139,255,0.15)"/>
                   <rect x="250" y="112" width="80" height="5" rx="2" fill="rgba(255,255,255,0.25)"/>
                   <rect x="250" y="122" width="56" height="5" rx="2" fill="rgba(255,255,255,0.15)"/>
