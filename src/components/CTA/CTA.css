@@ -13,15 +13,16 @@
 .cta__image-side {
   flex: 1;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-end;
+  margin-left: -40px;
 }
 
 .cta__person-img {
   width: 100%;
-  max-width: 400px;
+  max-width: 480px;
   height: 100%;
-  min-height: 420px;
+  min-height: 500px;
   filter: drop-shadow(0 20px 48px rgba(80, 120, 255, 0.25));
 }
 
@@ -145,6 +146,29 @@
 .cta__submit:hover {
   opacity: 0.9;
   transform: translateY(-2px);
+}
+
+/* Bubble float animations */
+.cta-bubble--email {
+  animation: ctaBubbleUp 3.8s ease-in-out infinite;
+  transform-origin: 340px 147px;
+}
+.cta-bubble--msg {
+  animation: ctaBubbleDown 4.5s ease-in-out infinite;
+  transform-origin: 75px 127px;
+}
+.cta-bubble--call {
+  animation: ctaBubbleUp 4.1s ease-in-out infinite 0.6s;
+  transform-origin: 350px 334px;
+}
+
+@keyframes ctaBubbleUp {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+@keyframes ctaBubbleDown {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(8px); }
 }
 
 /* Responsive */

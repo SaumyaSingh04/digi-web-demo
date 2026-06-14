@@ -23,7 +23,43 @@
 .home__process-wrap  { position: relative; background: var(--bg-dark); }
 .home__testimonials-wrap { position: relative; background: var(--bg); }
 .home__faq-wrap      { position: relative; background: var(--bg); }
+.home__pricing-wrap  { position: relative; background: var(--bg-alt); overflow: hidden; }
 .home__cta-wrap      { position: relative; background: var(--bg-alt); }
+
+.home__cta-header {
+  text-align: center;
+  padding: 28px 24px 0;
+}
+
+.home__cta-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+.home__cta-heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--text-dark);
+  margin: 0 0 16px;
+}
+
+.home__cta-heading em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.home__cta-sub {
+  font-size: 1rem;
+  color: var(--text-muted, #666);
+  max-width: 480px;
+  margin: 0 auto;
+}
 
 /* Stitch dividers flush — no pixel gap between wrapper and divider */
 .home__trusted-wrap  .sdiv,
@@ -31,6 +67,7 @@
 .home__process-wrap  .sdiv,
 .home__testimonials-wrap .sdiv,
 .home__faq-wrap      .sdiv,
+.home__pricing-wrap  .sdiv,
 .home__cta-wrap      .sdiv {
   display: block;
   margin-top: -1px;
@@ -86,4 +123,13 @@
   pointer-events: none;
   z-index: 0;
   filter: blur(60px);
+}
+
+/* Pricing orb — soft warm tint on bg-alt */
+.home__depth-orb--pricing {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(ellipse, rgba(0,0,0,0.03) 0%, transparent 70%);
+  top: -60px;
+  right: -80px;
 }

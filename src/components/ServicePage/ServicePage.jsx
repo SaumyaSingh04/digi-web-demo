@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, useScroll, useTransform, useSpring } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import Process from '../Process/Process'
 import CTA from '../CTA/CTA'
@@ -41,6 +41,102 @@ function Counter({ target }) {
   }, [numeric, suffix, isFloat, target])
 
   return <span ref={ref}>{val}</span>
+}
+
+// Icon → gradient bg colour per card index
+const CARD_ACCENTS = [
+  { bg: 'linear-gradient(135deg,#e8f0fe 0%,#c7d7fd 100%)', icon: '#3b6ef8' },
+  { bg: 'linear-gradient(135deg,#fce8ff 0%,#e9b8fd 100%)', icon: '#a63bf8' },
+  { bg: 'linear-gradient(135deg,#e8fff3 0%,#b8fdd9 100%)', icon: '#1db87a' },
+  { bg: 'linear-gradient(135deg,#fff8e8 0%,#fde9b8 100%)', icon: '#d4860a' },
+  { bg: 'linear-gradient(135deg,#ffe8e8 0%,#fdb8b8 100%)', icon: '#e03c3c' },
+  { bg: 'linear-gradient(135deg,#e8f9ff 0%,#b8eafd 100%)', icon: '#0a9ed4' },
+]
+
+function StackedDeliverCard({ d, i, rowIdx, total, containerRef }) {
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start start', 'end end'],
+  })
+
+  const scaleVal = useTransform(
+    scrollYProgress,
+    [rowIdx / total, (rowIdx + 1) / total],
+    [1, 1 - (total - rowIdx - 1) * 0.035]
+  )
+  const scale = useSpring(scaleVal, { stiffness: 160, damping: 28, mass: 0.5 })
+
+  const opacityVal = useTransform(
+    scrollYProgress,
+    [rowIdx / total, (rowIdx + 1) / total],
+    [1, rowIdx === total - 1 ? 1 : 0.65]
+  )
+  const opacity = useSpring(opacityVal, { stiffness: 160, damping: 28, mass: 0.5 })
+
+  const accent = CARD_ACCENTS[i % CARD_ACCENTS.length]
+
+  return (
+    <motion.div
+      className="sp-deliver-card sp-deliver-card--stack"
+      style={{ scale, opacity, willChange: 'transform, opacity' }}
+      initial={{ opacity: 0, y: 48 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-40px' }}
+      transition={{ duration: 0.55, delay: (i % 2) * 0.07, ease: [0.16, 1, 0.3, 1] }}
+    >
+      {/* Left col — icon block */}
+      <div className="sp-deliver-card__icon-col">
+        <div className="sp-deliver-card__icon-wrap" style={{ background: accent.bg }}>
+          <span className="sp-deliver-card__icon" style={{ color: accent.icon }}>{d.icon}</span>
+        </div>
+        <div className="sp-deliver-card__index" style={{ color: accent.icon }}>
+          {String(i + 1).padStart(2, '0')}
+        </div>
+      </div>
+
+      {/* Right col — text */}
+      <div className="sp-deliver-card__body">
+        <div className="sp-deliver-card__tag" style={{ color: accent.icon, background: accent.bg }}>
+          Service {String(i + 1).padStart(2, '0')}
+        </div>
+        <h3>{d.title}</h3>
+        <p>{d.desc}</p>
+        <div className="sp-deliver-card__arrow" style={{ color: accent.icon }}>→</div>
+      </div>
+    </motion.div>
+  )
+}
+
+function StackedDeliversList({ delivers }) {
+  const containerRef = useRef(null)
+  // Group into pairs for 2-per-row layout
+  const rows = []
+  for (let i = 0; i < delivers.length; i += 2) rows.push(delivers.slice(i, i + 2))
+  // Flat index tracker
+  let idx = 0
+  return (
+    <div className="sp-delivers__stack" ref={containerRef}>
+      {rows.map((pair, rowIdx) => (
+        <div key={rowIdx} className="sp-deliver-card__sticky-wrap" style={{ '--i': rowIdx }}>
+          <div className="sp-delivers__row">
+            {pair.map((d) => {
+              const cardIdx = idx++
+              return (
+                <StackedDeliverCard
+                  key={d.title}
+                  d={d}
+                  i={cardIdx}
+                  rowIdx={rowIdx}
+                  total={rows.length}
+                  containerRef={containerRef}
+                />
+              )
+            })}
+          </div>
+        </div>
+      ))}
+    </div>
+  )
 }
 
 function FAQAccordion({ items }) {
@@ -174,13 +270,31 @@ export default function ServicePage({
       {stats && (
         <section className="sp-stats">
           <div className="container sp-stats__grid">
-            {stats.map((s, i) => (
-              <motion.div key={s.label} className="sp-stats__cell" {...up(i * 0.07)}>
-                <div className="sp-stats__num"><Counter target={s.val} /></div>
-                <div className="sp-stats__label">{s.label}</div>
-                {s.sub && <div className="sp-stats__sub">{s.sub}</div>}
-              </motion.div>
-            ))}
+            {stats.map((s, i) => {
+              const ICONS   = ['↗', '★', '◈', '✦']
+              const COLORS  = ['#7a9ab8', '#b8a46a', '#6da98e', '#a78a96']
+              const icon  = s.icon  || ICONS[i % 4]
+              const color = s.color || COLORS[i % 4]
+              return (
+                <motion.div
+                  key={s.label}
+                  className="sp-stats__cell"
+                  style={{ '--s-color': color }}
+                  {...up(i * 0.07)}
+                  whileHover={{ y: -4, transition: { duration: 0.2 } }}
+                >
+                  <div className="sp-stats__icon" style={{ color, background: `${color}18` }}>
+                    {icon}
+                  </div>
+                  <div className="sp-stats__num" style={{ color }}>
+                    <Counter target={s.val} />
+                  </div>
+                  <div className="sp-stats__label">{s.label}</div>
+                  {s.sub && <div className="sp-stats__sub">{s.sub}</div>}
+                  <div className="sp-stats__cell-bar" style={{ background: color }} />
+                </motion.div>
+              )
+            })}
           </div>
         </section>
       )}
@@ -194,13 +308,30 @@ export default function ServicePage({
               <h2 className="ap-h2">Every angle,<br /><em>fully covered.</em></h2>
             </motion.div>
             <div className="sp-delivers__grid">
-              {delivers.map((d, i) => (
-                <motion.div key={d.title} className="sp-deliver-card" {...up(i * 0.07)}>
-                  <span className="sp-deliver-card__icon">{d.icon}</span>
-                  <h3>{d.title}</h3>
-                  <p>{d.desc}</p>
-                </motion.div>
-              ))}
+              {delivers.map((d, i) => {
+                const accent = CARD_ACCENTS[i % CARD_ACCENTS.length]
+                return (
+                  <motion.div
+                    key={d.title}
+                    className="sp-deliver-mini"
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: '-20px' }}
+                    transition={{ duration: 0.5, delay: (i % 3) * 0.08, ease: [0.16, 1, 0.3, 1] }}
+                    whileHover={{ y: -4, transition: { duration: 0.2 } }}
+                  >
+                    <div className="sp-deliver-mini__icon" style={{ background: accent.bg, color: accent.icon }}>
+                      {d.icon}
+                    </div>
+                    <div className="sp-deliver-mini__num" style={{ color: accent.icon }}>
+                      {String(i + 1).padStart(2, '0')}
+                    </div>
+                    <h3 className="sp-deliver-mini__title">{d.title}</h3>
+                    <p className="sp-deliver-mini__desc">{d.desc}</p>
+                    <div className="sp-deliver-mini__bar" style={{ background: accent.icon }} />
+                  </motion.div>
+                )
+              })}
             </div>
           </div>
         </section>
@@ -218,13 +349,30 @@ export default function ServicePage({
               <h2 className="ap-h2">What makes us<br /><em>different.</em></h2>
             </motion.div>
             <div className="sp-why__grid">
-              {why.map((w, i) => (
-                <motion.div key={w.title} className="ap-why__card" {...up(i * 0.08)}>
-                  <span className="ap-why__num">{String(i + 1).padStart(2, '0')}</span>
-                  <h3>{w.title}</h3>
-                  <p>{w.body}</p>
-                </motion.div>
-              ))}
+              {why.map((w, i) => {
+                const COLORS = ['#7a9ab8', '#6da98e', '#b8a46a', '#a78a96']
+                const color  = COLORS[i % 4]
+                return (
+                  <motion.div
+                    key={w.title}
+                    className="sp-why__card"
+                    style={{ '--w-color': color }}
+                    initial={{ opacity: 0, y: 28 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: '-30px' }}
+                    transition={{ duration: 0.55, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                    whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                  >
+                    <div className="sp-why__card-top">
+                      <span className="sp-why__num" style={{ color }}>{String(i + 1).padStart(2, '0')}</span>
+                      <div className="sp-why__dot" style={{ background: color }} />
+                    </div>
+                    <h3 className="sp-why__title">{w.title}</h3>
+                    <p className="sp-why__body">{w.body}</p>
+                    <div className="sp-why__bar" style={{ background: color }} />
+                  </motion.div>
+                )
+              })}
             </div>
           </div>
         </section>

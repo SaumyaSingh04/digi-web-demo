@@ -33,15 +33,17 @@
 }
 
 .trusted__logo {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--text-subtle);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  display: flex;
+  align-items: center;
   opacity: 0.35;
-  white-space: nowrap;
-  transition: opacity var(--t-base);
   flex-shrink: 0;
+  transition: opacity var(--t-base);
+  color: var(--text);
+}
+
+.trusted__logo svg {
+  height: 36px;
+  width: auto;
 }
 
 .trusted__logo:hover { opacity: 0.7; }

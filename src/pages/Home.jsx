@@ -8,7 +8,7 @@ import Process from '../components/Process/Process'
 import Testimonials from '../components/Testimonials/Testimonials'
 import FAQ from '../components/FAQ/FAQ'
 import CTA from '../components/CTA/CTA'
-
+import Pricing from '../components/Pricing/Pricing'
 import SectionDivider from '../components/SectionDivider/SectionDivider'
 import './Home.css'
 
@@ -132,8 +132,22 @@ export default function Home() {
         <SectionDivider from={BG} to={ALT} variant="tilt" height={72} />
       </div>
 
+      {/* ── Custom Pricing ── */}
+      <div className="home__pricing-wrap">
+        <DepthOrb className="home__depth-orb--pricing" />
+        <motion.div {...revealUpSlow}>
+          <Pricing />
+        </motion.div>
+        <SectionDivider from={ALT} to={ALT} variant="tilt" height={40} />
+      </div>
+
       {/* ── CTA ── */}
       <div className="home__cta-wrap">
+        <div className="home__cta-header">
+          <span className="home__cta-eyebrow">Ready to scale?</span>
+          <h2 className="home__cta-heading">Let's grow your<br /><em>business together.</em></h2>
+          <p className="home__cta-sub">Tell us about your project and we'll get back to you within 24 hours.</p>
+        </div>
         <CTA />
       </div>
 

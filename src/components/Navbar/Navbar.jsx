@@ -7,7 +7,7 @@ import './Navbar.css'
 const megaMenuData = [
   {
     tab: 'SEO & Marketing',
-    icon: '⊙',
+    icon: '📈',
     tabLine2: 'SEO & Digital Marketing',
     heading: 'SEO & Digital Marketing',
     services: [
@@ -29,7 +29,7 @@ const megaMenuData = [
   },
   {
     tab: 'Web Development',
-    icon: '⬡',
+    icon: '💻',
     tabLine2: 'Web Development',
     heading: 'Web Development',
     services: [
@@ -53,7 +53,7 @@ const megaMenuData = [
   },
   {
     tab: 'Design & Creative',
-    icon: '✦',
+    icon: '🎨',
     tabLine2: 'Design & Creative',
     heading: 'Design & Creative',
     services: [
@@ -77,7 +77,7 @@ const megaMenuData = [
   },
   {
     tab: 'AI & Automation',
-    icon: '⬡',
+    icon: '🤖',
     tabLine2: 'AI & Automation',
     heading: 'AI & Automation',
     services: [
@@ -101,7 +101,7 @@ const megaMenuData = [
   },
   {
     tab: 'White Label',
-    icon: '◈',
+    icon: '🏷️',
     tabLine2: 'White Label Services',
     heading: 'White Label Services',
     services: [

@@ -14,11 +14,134 @@ const up = (d = 0) => ({
 })
 
 const STATS = [
-  { val: '150+', label: 'Campaigns Launched', sub: 'Across 12 industries' },
-  { val: '93%',  label: 'Client Retention',   sub: 'Year over year'       },
-  { val: '4.2×', label: 'Average ROAS',        sub: 'Paid media portfolio' },
-  { val: '60+',  label: 'Brands Scaled',       sub: 'Seed to Series B'    },
+  { val: '150+', label: 'Campaigns Launched', sub: 'Across 12 industries', icon: '↗', color: '#7a9ab8' },
+  { val: '93%',  label: 'Client Retention',   sub: 'Year over year',       icon: '★', color: '#b8a46a' },
+  { val: '4.2×', label: 'Average ROAS',        sub: 'Paid media portfolio', icon: '◈', color: '#6da98e' },
+  { val: '60+',  label: 'Brands Scaled',       sub: 'Seed to Series B',    icon: '✦', color: '#a78a96' },
 ]
+
+const LEADERS = [
+  {
+    name: 'Avinash Gupta',
+    role: 'Founder & CEO',
+    bio: 'Visionary behind Trendox. 10+ years transforming brands through performance-driven strategies.',
+    color: '#7a9ab8',
+    glow: 'rgba(122,154,184,0.12)',
+    skinTone: '#f4c49a',
+    hairColor: '#3a2010',
+    shirtColor: '#2a4a6a',
+    tag: 'Leadership',
+  },
+  {
+    name: 'Priya Sharma',
+    role: 'Head of Growth',
+    bio: 'Drives client acquisition and retention. Expert in scaling paid channels and conversion funnels.',
+    color: '#a78a96',
+    glow: 'rgba(167,138,150,0.12)',
+    skinTone: '#e8b88a',
+    hairColor: '#1a0a04',
+    shirtColor: '#6a2a4a',
+    tag: 'Growth',
+  },
+  {
+    name: 'Rohan Mehta',
+    role: 'Creative Director',
+    bio: 'Crafts visual identities and campaigns that convert. Believer in design as a business tool.',
+    color: '#6da98e',
+    glow: 'rgba(109,169,142,0.12)',
+    skinTone: '#c8986a',
+    hairColor: '#0a0604',
+    shirtColor: '#1a4a34',
+    tag: 'Creative',
+  },
+  {
+    name: 'Sneha Patel',
+    role: 'Tech Lead',
+    bio: 'Architects the digital infrastructure. Specialises in automation, AI tools, and CRM ecosystems.',
+    color: '#b8a46a',
+    glow: 'rgba(184,164,106,0.12)',
+    skinTone: '#d4a878',
+    hairColor: '#2a1808',
+    shirtColor: '#4a3a0a',
+    tag: 'Technology',
+  },
+  {
+    name: 'Karan Verma',
+    role: 'SEO Strategist',
+    bio: 'Drives organic visibility with data-backed keyword strategies and technical SEO excellence.',
+    color: '#7eb8a0',
+    glow: 'rgba(126,184,160,0.12)',
+    skinTone: '#c8906a',
+    hairColor: '#180e04',
+    shirtColor: '#1a4a3a',
+    tag: 'SEO',
+  },
+  {
+    name: 'Divya Nair',
+    role: 'Social Media Lead',
+    bio: 'Builds brand voices across platforms. Turns engagement into pipeline and followers into fans.',
+    color: '#c47aa8',
+    glow: 'rgba(196,122,168,0.12)',
+    skinTone: '#f0c8a0',
+    hairColor: '#0e0608',
+    shirtColor: '#5a1a40',
+    tag: 'Social',
+  },
+  {
+    name: 'Arjun Singh',
+    role: 'PPC Manager',
+    bio: 'Maximises ad spend efficiency across Google & Meta. Obsessed with ROAS and cost-per-lead.',
+    color: '#8a9ed4',
+    glow: 'rgba(138,158,212,0.12)',
+    skinTone: '#dca878',
+    hairColor: '#100808',
+    shirtColor: '#1a2a5a',
+    tag: 'Paid Ads',
+  },
+  {
+    name: 'Meera Joshi',
+    role: 'Content Strategist',
+    bio: 'Crafts content that ranks, resonates, and converts. From blogs to brand narratives.',
+    color: '#d4956a',
+    glow: 'rgba(212,149,106,0.12)',
+    skinTone: '#eabC90',
+    hairColor: '#1a0c04',
+    shirtColor: '#5a2a0a',
+    tag: 'Content',
+  },
+]
+
+function PersonSVG({ skinTone, hairColor, shirtColor, color }) {
+  return (
+    <svg viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg" className="ldr-card__avatar-svg">
+      {/* Background circle */}
+      <circle cx="60" cy="60" r="58" fill={`${color}14`} />
+      {/* Hair */}
+      <ellipse cx="60" cy="38" rx="24" ry="26" fill={hairColor} />
+      {/* Head */}
+      <ellipse cx="60" cy="46" rx="20" ry="22" fill={skinTone} />
+      {/* Ear left */}
+      <ellipse cx="40" cy="47" rx="4" ry="5" fill={skinTone} />
+      {/* Ear right */}
+      <ellipse cx="80" cy="47" rx="4" ry="5" fill={skinTone} />
+      {/* Neck */}
+      <rect x="54" y="64" width="12" height="12" rx="4" fill={skinTone} />
+      {/* Shirt / body */}
+      <path d="M28,130 C28,100 42,84 54,78 L60,82 L66,78 C78,84 92,100 92,130 Z" fill={shirtColor} />
+      {/* Collar */}
+      <path d="M54,78 L60,88 L66,78" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" fill="none" />
+      {/* Eyes */}
+      <ellipse cx="53" cy="44" rx="3" ry="3.5" fill="#1a1a1a" />
+      <ellipse cx="67" cy="44" rx="3" ry="3.5" fill="#1a1a1a" />
+      <circle cx="54" cy="43" r="1" fill="rgba(255,255,255,0.7)" />
+      <circle cx="68" cy="43" r="1" fill="rgba(255,255,255,0.7)" />
+      {/* Smile */}
+      <path d="M53,54 Q60,60 67,54" stroke="#c0806a" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+      {/* Nose */}
+      <ellipse cx="60" cy="50" rx="2" ry="2.5" fill={`${skinTone}99`} />
+    </svg>
+  )
+}
 
 const WHY = [
   {
@@ -298,16 +421,18 @@ export default function About() {
             <motion.div
               key={s.label}
               className="ap-stats__cell"
+              style={{ '--s-color': s.color }}
               initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-30px' }}
               transition={{ duration: 0.55, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
             >
-              <div className="ap-stats__num"><Counter target={s.val} /></div>
+              <div className="ap-stats__icon" style={{ color: s.color, background: `${s.color}18` }}>{s.icon}</div>
+              <div className="ap-stats__num" style={{ color: s.color }}><Counter target={s.val} /></div>
               <div className="ap-stats__label">{s.label}</div>
               <div className="ap-stats__sub">{s.sub}</div>
-              <div className="ap-stats__cell-bar" />
+              <div className="ap-stats__cell-bar" style={{ background: s.color }} />
             </motion.div>
           ))}
         </div>
@@ -329,9 +454,9 @@ export default function About() {
             <p>Trendox is a performance-led growth agency. We work with ambitious brands — from seed-stage startups to established companies — who are done settling for vanity metrics.</p>
             <p>We stay intentionally small. Smaller means sharper. Every client gets senior attention, not junior handoffs.</p>
             <div className="ap-who__sig">
-              <div className="ap-sig-text">Aryan</div>
+              <div className="ap-sig-text">Avinash</div>
               <div>
-                <strong>Aryan Verma</strong>
+                <strong>Avinash Gupta</strong>
                 <span>Founder &amp; CEO</span>
               </div>
             </div>
@@ -341,71 +466,123 @@ export default function About() {
 
       {/* 4 · OUR EXPERTISE */}
       <section className="ap-expertise">
-        <div className="container ap-expertise__inner">
-
-          {/* LEFT */}
-          <motion.div className="ap-exp-card" {...up(0)}>
-            <span className="ap-tag" style={{marginBottom:'14px'}}>Our Expertise</span>
+        <div className="container">
+          <motion.div className="ap-exp-section-head" {...up(0)}>
+            <span className="ap-tag">Our Expertise</span>
             <h2 className="ap-expertise__title">What We Do Best</h2>
-            <p className="ap-expertise__body">
-              Our <strong>digital marketing company in Lucknow, India</strong> specializes in SEO, Social media marketing and{' '}
-              <span className="ap-expertise__highlight">Web designing</span>. Keeping up with market trends and best practices.
-            </p>
-
-            <div className="ap-expertise__bars">
-              {[
-                { label: 'Low Cost',  pct: 30 },
-                { label: 'Support',  pct: 60 },
-                { label: 'Value',    pct: 90 },
-              ].map(({ label, pct }, i) => (
-                <div key={label} className="ap-bar">
-                  <div className="ap-bar__head">
-                    <span className="ap-bar__label">{label}</span>
-                    <span className="ap-bar__pct">{pct}%</span>
-                  </div>
-                  <div className="ap-bar__track">
-                    <motion.div
-                      className="ap-bar__fill"
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${pct}%` }}
-                      viewport={{ once: true, margin: '-40px' }}
-                      transition={{ duration: 1.2, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
           </motion.div>
 
-          {/* RIGHT */}
-          <div className="ap-expertise__right">
-            {[
-              { val: '70%',  label: 'Digital Global Audience Reached', icon: '🌐' },
-              { val: '90%',  label: 'Clients Satisfied',               icon: '★' },
-              { val: '150+', label: 'Projects Completed',              icon: '✦' },
-              { val: '30+',  label: 'Team Members',                    icon: '◆' },
-            ].map((s, i) => (
-              <motion.div
-                key={s.label}
-                className="ap-exp-stat-card"
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-30px' }}
-                transition={{ duration: 0.55, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                whileHover={{ y: -4, transition: { duration: 0.2 } }}
-              >
-                <span className="ap-exp-stat-card__icon">{s.icon}</span>
-                <div className="ap-expertise__stat-val"><Counter target={s.val} /></div>
-                <div className="ap-expertise__stat-label">{s.label}</div>
-                <div className="ap-exp-stat-card__bar" />
-              </motion.div>
-            ))}
-          </div>
+          <div className="ap-expertise__inner">
+            {/* LEFT — bars */}
+            <motion.div className="ap-exp-card" {...up(0.08)}>
+              <div className="ap-exp-card__label">Core Strengths</div>
+              <div className="ap-expertise__bars">
+                {[
+                  { label: 'Low Cost',  pct: 30, color: '#a78a96' },
+                  { label: 'Support',  pct: 60, color: '#7a9ab8' },
+                  { label: 'Value',    pct: 90, color: '#6da98e' },
+                ].map(({ label, pct, color }, i) => (
+                  <div key={label} className="ap-bar">
+                    <div className="ap-bar__head">
+                      <span className="ap-bar__label">{label}</span>
+                      <span className="ap-bar__pct" style={{ color }}><Counter target={`${pct}%`} /></span>
+                    </div>
+                    <div className="ap-bar__track">
+                      <motion.div
+                        className="ap-bar__fill"
+                        style={{ background: `linear-gradient(90deg, ${color}99, ${color})` }}
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${pct}%` }}
+                        viewport={{ once: true, margin: '-40px' }}
+                        transition={{ duration: 1.3, delay: i * 0.18, ease: [0.16, 1, 0.3, 1] }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
 
+              <div className="ap-exp-tags">
+                {['SEO', 'Social Media', 'Web Design', 'PPC', 'Branding'].map(t => (
+                  <span key={t} className="ap-exp-tag">{t}</span>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* RIGHT — stat cards */}
+            <div className="ap-expertise__right">
+              {[
+                { val: '70%',  label: 'Digital Global Audience Reached', icon: '🌐', color: '#7a9ab8', glow: 'rgba(122,154,184,0.10)' },
+                { val: '90%',  label: 'Clients Satisfied',               icon: '★',  color: '#b8a46a', glow: 'rgba(184,164,106,0.10)'  },
+                { val: '150+', label: 'Projects Completed',              icon: '✦',  color: '#6da98e', glow: 'rgba(109,169,142,0.10)'  },
+                { val: '30+',  label: 'Team Members',                    icon: '◆',  color: '#a78a96', glow: 'rgba(167,138,150,0.10)' },
+              ].map((s, i) => (
+                <motion.div
+                  key={s.label}
+                  className="ap-exp-stat-card"
+                  style={{ '--card-glow': s.glow, '--card-color': s.color }}
+                  initial={{ opacity: 0, y: 28, scale: 0.95 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: true, margin: '-30px' }}
+                  transition={{ duration: 0.55, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                  whileHover={{ y: -6, scale: 1.03, transition: { duration: 0.2 } }}
+                >
+                  <div className="ap-exp-stat-card__icon-wrap" style={{ background: s.glow, color: s.color }}>
+                    {s.icon}
+                  </div>
+                  <div className="ap-expertise__stat-val" style={{ color: s.color }}>
+                    <Counter target={s.val} />
+                  </div>
+                  <div className="ap-expertise__stat-label">{s.label}</div>
+                  <div className="ap-exp-stat-card__bar" style={{ background: s.color }} />
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* 5 · PROCESS */}
+      {/* 5 · MEET OUR LEADERSHIP */}
+      <section className="ap-ldr">
+        <div className="container">
+          <motion.div className="ap-ldr__head" {...up(0)}>
+            <span className="ap-tag">Our Team</span>
+            <h2 className="ap-h2">Meet Our <em>Leadership</em></h2>
+            <p className="ap-ldr__sub">The minds behind every strategy, campaign, and result .</p>
+          </motion.div>
+
+          <div className="ap-ldr__grid">
+            {LEADERS.map((ldr, i) => (
+              <motion.div
+                key={ldr.name}
+                className="ldr-card"
+                style={{ '--ldr-color': ldr.color, '--ldr-glow': ldr.glow }}
+                initial={{ opacity: 0, y: 32 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-20px' }}
+                transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                whileHover={{ y: -8, transition: { duration: 0.25 } }}
+              >
+                <div className="ldr-card__avatar">
+                  <PersonSVG
+                    skinTone={ldr.skinTone}
+                    hairColor={ldr.hairColor}
+                    shirtColor={ldr.shirtColor}
+                    color={ldr.color}
+                  />
+                  <div className="ldr-card__avatar-ring" />
+                </div>
+                <div className="ldr-card__tag" style={{ color: ldr.color, background: ldr.glow }}>{ldr.tag}</div>
+                <h3 className="ldr-card__name">{ldr.name}</h3>
+                <div className="ldr-card__role" style={{ color: ldr.color }}>{ldr.role}</div>
+                <p className="ldr-card__bio">{ldr.bio}</p>
+                <div className="ldr-card__bar" style={{ background: ldr.color }} />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6 · PROCESS */}
       <Process />
 
       {/* 5 · WHY CHOOSE US */}

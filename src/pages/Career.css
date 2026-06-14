@@ -7,7 +7,10 @@
 
 /* Career hero override */
 .ph--career .ph__inner {
-  padding-bottom: 100px;
+  padding-bottom: 120px;
+}
+.ph--career .ph__wave svg {
+  height: 120px;
 }
 
 /* ── Shared ─────────────────────────────────────── */
@@ -64,36 +67,108 @@
 /* ══ 2. WHY JOIN ════════════════════════════════ */
 .cp-why {
   background: var(--bg-alt);
-  padding: 80px 0;
+  padding: 88px 0;
+  position: relative;
+  overflow: hidden;
+}
+.cp-why::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+  background-size: 56px 56px;
+  pointer-events: none;
+}
+.cp-why::after {
+  content: '';
+  position: absolute;
+  top: -180px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 600px;
+  background: radial-gradient(ellipse at center, rgba(99,102,241,0.07) 0%, rgba(16,185,129,0.04) 40%, transparent 70%);
+  pointer-events: none;
 }
 .cp-why__head {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-bottom: 32px;
-  max-width: 520px;
+  gap: 14px;
+  margin-bottom: 40px;
+  max-width: 560px;
+  position: relative;
+  z-index: 1;
+}
+.cp-why .cp-tag {
+  color: var(--text-subtle);
+  border-color: var(--border-hover);
+}
+.cp-why .cp-h2 {
+  color: var(--text);
+}
+.cp-why .cp-h2 em {
+  font-style: italic;
+  font-weight: 300;
+  background: linear-gradient(90deg, #818cf8, #34d399, #818cf8);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: why-gradient 4s linear infinite;
+}
+@keyframes why-gradient {
+  0%   { background-position: 0% center; }
+  100% { background-position: 200% center; }
 }
 .cp-why__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+  gap: 14px;
+  position: relative;
+  z-index: 1;
 }
 .cp-why__card {
   background: #fff;
   border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 28px 22px;
+  border-radius: var(--radius-lg);
+  padding: 30px 24px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  transition: box-shadow var(--t-fast), transform var(--t-fast);
+  gap: 14px;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
 }
-.cp-why__card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.cp-why__card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.cp-why__card:hover {
+  box-shadow: 0 0 0 1px rgba(129,140,248,0.3), 0 8px 32px rgba(0,0,0,0.4);
+  transform: translateY(-4px);
+  border-color: rgba(129,140,248,0.3);
+}
+.cp-why__card:hover::before { opacity: 1; }
+.cp-why__card:nth-child(1) .cp-why__num { color: #818cf8; }
+.cp-why__card:nth-child(2) .cp-why__num { color: #34d399; }
+.cp-why__card:nth-child(3) .cp-why__num { color: #fb923c; }
+.cp-why__card:nth-child(4) .cp-why__num { color: #f472b6; }
+.cp-why__card:nth-child(1):hover { box-shadow: 0 0 0 1px rgba(129,140,248,0.35), 0 8px 32px rgba(129,140,248,0.15); border-color: rgba(129,140,248,0.35); }
+.cp-why__card:nth-child(2):hover { box-shadow: 0 0 0 1px rgba(52,211,153,0.35), 0 8px 32px rgba(52,211,153,0.15); border-color: rgba(52,211,153,0.35); }
+.cp-why__card:nth-child(3):hover { box-shadow: 0 0 0 1px rgba(251,146,60,0.35), 0 8px 32px rgba(251,146,60,0.15); border-color: rgba(251,146,60,0.35); }
+.cp-why__card:nth-child(4):hover { box-shadow: 0 0 0 1px rgba(244,114,182,0.35), 0 8px 32px rgba(244,114,182,0.15); border-color: rgba(244,114,182,0.35); }
 .cp-why__num {
   font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.14em; 
-  color: var(--text-subtle);
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 .cp-why__card h3 {
   font-size: 1.05rem;
@@ -104,7 +179,7 @@
 }
 .cp-why__card p {
   font-size: 0.875rem;
-  color: #3a3a3a;
+  color: var(--text-muted);
   line-height: 1.78;
 }
 
@@ -533,7 +608,7 @@
 
 /* ══ Responsive ═════════════════════════════════ */
 @media (max-width: 1024px) {
-  .cp-why__grid { grid-template-columns: repeat(2, 1fr); }
+  .cp-why__grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .cp-bento { grid-template-columns: repeat(2, 1fr); }
   .cp-bento__cell--wide { grid-column: span 2; }
   .cp-process__row { grid-template-columns: repeat(2, 1fr); }

@@ -103,10 +103,10 @@ export default function SoftwareDevelopment() {
         { icon: '🔒', val: 'ISO', label: 'Security Standards' },
       ]}
       stats={[
-        { val: '150+', label: 'Software Projects Delivered' },
-        { val: '99.9%', label: 'Avg. Uptime SLA' },
-        { val: '2x', label: 'Faster than In-House Build' },
-        { val: '95%', label: 'Client Retention Rate' },
+        { icon: '◎', val: '150+', label: 'Software Projects Delivered', color: '#7a9ab8' },
+        { icon: '⬡', val: '99.9%', label: 'Avg. Uptime SLA',            color: '#6da98e' },
+        { icon: '⚡', val: '2x',   label: 'Faster than In-House Build', color: '#b8a46a' },
+        { icon: '★', val: '95%',  label: 'Client Retention Rate',       color: '#a78a96' },
       ]}
       delivers={[
         { icon: '◎', title: 'Requirements Analysis', desc: 'Deep-dive discovery to map your business logic, user workflows, and technical constraints.' },
