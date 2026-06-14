@@ -295,10 +295,19 @@ export default function About() {
       <section className="ap-stats">
         <div className="container ap-stats__grid">
           {STATS.map((s, i) => (
-            <motion.div key={s.label} className="ap-stats__cell" {...up(i * 0.07)}>
+            <motion.div
+              key={s.label}
+              className="ap-stats__cell"
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-30px' }}
+              transition={{ duration: 0.55, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+              whileHover={{ y: -5, transition: { duration: 0.2 } }}
+            >
               <div className="ap-stats__num"><Counter target={s.val} /></div>
               <div className="ap-stats__label">{s.label}</div>
               <div className="ap-stats__sub">{s.sub}</div>
+              <div className="ap-stats__cell-bar" />
             </motion.div>
           ))}
         </div>
@@ -330,7 +339,73 @@ export default function About() {
         </div>
       </section>
 
-      {/* 4 · PROCESS */}
+      {/* 4 · OUR EXPERTISE */}
+      <section className="ap-expertise">
+        <div className="container ap-expertise__inner">
+
+          {/* LEFT */}
+          <motion.div className="ap-exp-card" {...up(0)}>
+            <span className="ap-tag" style={{marginBottom:'14px'}}>Our Expertise</span>
+            <h2 className="ap-expertise__title">What We Do Best</h2>
+            <p className="ap-expertise__body">
+              Our <strong>digital marketing company in Lucknow, India</strong> specializes in SEO, Social media marketing and{' '}
+              <span className="ap-expertise__highlight">Web designing</span>. Keeping up with market trends and best practices.
+            </p>
+
+            <div className="ap-expertise__bars">
+              {[
+                { label: 'Low Cost',  pct: 30 },
+                { label: 'Support',  pct: 60 },
+                { label: 'Value',    pct: 90 },
+              ].map(({ label, pct }, i) => (
+                <div key={label} className="ap-bar">
+                  <div className="ap-bar__head">
+                    <span className="ap-bar__label">{label}</span>
+                    <span className="ap-bar__pct">{pct}%</span>
+                  </div>
+                  <div className="ap-bar__track">
+                    <motion.div
+                      className="ap-bar__fill"
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${pct}%` }}
+                      viewport={{ once: true, margin: '-40px' }}
+                      transition={{ duration: 1.2, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* RIGHT */}
+          <div className="ap-expertise__right">
+            {[
+              { val: '70%',  label: 'Digital Global Audience Reached', icon: '🌐' },
+              { val: '90%',  label: 'Clients Satisfied',               icon: '★' },
+              { val: '150+', label: 'Projects Completed',              icon: '✦' },
+              { val: '30+',  label: 'Team Members',                    icon: '◆' },
+            ].map((s, i) => (
+              <motion.div
+                key={s.label}
+                className="ap-exp-stat-card"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-30px' }}
+                transition={{ duration: 0.55, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                whileHover={{ y: -4, transition: { duration: 0.2 } }}
+              >
+                <span className="ap-exp-stat-card__icon">{s.icon}</span>
+                <div className="ap-expertise__stat-val"><Counter target={s.val} /></div>
+                <div className="ap-expertise__stat-label">{s.label}</div>
+                <div className="ap-exp-stat-card__bar" />
+              </motion.div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* 5 · PROCESS */}
       <Process />
 
       {/* 5 · WHY CHOOSE US */}

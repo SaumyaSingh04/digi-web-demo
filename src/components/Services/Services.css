@@ -228,6 +228,21 @@
 
 .svc-cta:hover { opacity: 0.82; transform: translateY(-2px); }
 
+.svc-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.svc-cta--outline {
+  background: transparent;
+  color: var(--text);
+  border: 1.5px solid var(--border-hover);
+}
+
+.svc-cta--outline:hover { background: var(--bg-alt); opacity: 1; }
+
 /* ── Right image ── */
 .svc-panel__right { position: sticky; top: 100px; }
 

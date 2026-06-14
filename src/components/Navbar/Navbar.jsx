@@ -6,21 +6,24 @@ import './Navbar.css'
 
 const megaMenuData = [
   {
-    tab: 'SEO Services',
+    tab: 'SEO & Marketing',
     icon: '⊙',
-    tabLine2: 'Search Engine Optimization',
-    heading: 'Search Engine Optimization',
+    tabLine2: 'SEO & Digital Marketing',
+    heading: 'SEO & Digital Marketing',
     services: [
       { label: 'SEO Services', to: '/services/seo' },
       { label: 'Local SEO', to: '/services/local-seo' },
       { label: 'Ecommerce SEO', to: '/services/ecommerce-seo' },
-      { label: 'White Label SEO', to: '/services/white-label-seo' },
       { label: 'ORM Services', to: '/services/orm' },
+      { label: 'Digital Marketing', to: '/services/digital-marketing' },
+      { label: 'SMM Services', to: '/services/smm' },
+      { label: 'PPC Advertising', to: '/services/ppc' },
+      { label: 'Programmatic Advertising', to: '/services/programmatic-advertising' },
       { label: 'Mobile App Marketing', to: '/services/mobile-app-marketing' },
     ],
     card: {
-      headline: '3X Organic Growth Delivered — Rank #1 on Google',
-      cta: 'Explore SEO Services →',
+      headline: 'Rank #1 on Google & Turn Traffic Into Revenue',
+      cta: 'Explore SEO & Marketing →',
       to: '/services/seo',
     },
   },
@@ -49,67 +52,69 @@ const megaMenuData = [
     },
   },
   {
-    tab: 'Digital Marketing',
-    icon: '◈',
-    tabLine2: 'Digital Marketing',
-    heading: 'Digital Marketing',
-    services: [
-      { label: 'Digital Marketing', to: '/services/digital-marketing' },
-      { label: 'SMM Services', to: '/services/smm' },
-      { label: 'PPC Advertising', to: '/services/ppc' },
-    ],
-    card: {
-      headline: 'Full-Funnel Campaigns That Turn Traffic Into Revenue',
-      cta: 'Grow My Brand →',
-      to: '/services/digital-marketing',
-    },
-  },
-  {
-    tab: 'Social Media',
-    icon: '⬟',
-    tabLine2: 'Social Media Marketing',
-    heading: 'Social Media Marketing',
-    services: [
-      { label: 'Social Media Marketing', to: '/services/smm' },
-    ],
-    card: {
-      headline: 'Dominate Every Platform & Build a Brand That Sells',
-      cta: 'Boost My Social →',
-      to: '/services/smm',
-    },
-  },
-  {
-    tab: 'Performance Marketing',
-    icon: '◉',
-    tabLine2: 'Performance Marketing',
-    heading: 'Performance Marketing',
-    services: [
-      { label: 'PPC Advertising', to: '/services/ppc' },
-    ],
-    card: {
-      headline: 'Paid Campaigns Engineered for Maximum ROI & ROAS',
-      cta: 'Launch My Ads →',
-      to: '/services/ppc',
-    },
-  },
-  {
-    tab: 'Design & AI',
+    tab: 'Design & Creative',
     icon: '✦',
-    tabLine2: 'Design & AI Automation',
-    heading: 'Design & AI Automation',
+    tabLine2: 'Design & Creative',
+    heading: 'Design & Creative',
     services: [
-      { label: 'AI & Automation', to: '/services/ai-automation' },
       { label: 'Website Design', to: '/services/website-design' },
       { label: 'UI/UX Designing', to: '/services/ui-ux-designing' },
+      { label: 'Graphic Designing', to: '/services/graphic-designing' },
       { label: 'Landing Page Designing', to: '/services/landing-page-designing' },
       { label: 'Website Redesigning', to: '/services/website-redesigning' },
       { label: 'Web 2.0 Design', to: '/services/web-2-0-design' },
       { label: 'Flash Design', to: '/services/flash-design' },
+      { label: 'PSD to HTML', to: '/services/psd-to-html' },
+      { label: 'Corporate Video Editing', to: '/services/corporate-video-editing' },
+      { label: 'Product Video Editing', to: '/services/product-video-editing' },
+      { label: 'Testimonial Video Editing', to: '/services/testimonial-video-editing' },
+    ],
+    card: {
+      headline: 'Stunning Designs & Videos That Captivate & Convert',
+      cta: 'Explore Design →',
+      to: '/services/website-design',
+    },
+  },
+  {
+    tab: 'AI & Automation',
+    icon: '⬡',
+    tabLine2: 'AI & Automation',
+    heading: 'AI & Automation',
+    services: [
+      { label: 'AI & Automation', to: '/services/ai-automation' },
+      { label: 'AI Chatbot Development', to: '/services/ai-chatbot-development' },
+      { label: 'AI Customer Support Automation', to: '/services/ai-customer-support-automation' },
+      { label: 'AI Lead Generation Automation', to: '/services/ai-lead-generation-automation' },
+      { label: 'AI WhatsApp Automation', to: '/services/ai-whatsapp-automation' },
+      { label: 'AI Email Automation', to: '/services/ai-email-automation' },
+      { label: 'AI CRM Automation', to: '/services/ai-crm-automation' },
+      { label: 'AI Workflow Automation', to: '/services/ai-workflow-automation' },
+      { label: 'AI Voice Agents', to: '/services/ai-voice-agents' },
+      { label: 'AI Social Media Automation', to: '/services/ai-social-media-automation' },
+      { label: 'Custom AI Solutions', to: '/services/custom-ai-solutions' },
     ],
     card: {
       headline: 'Automate Operations & Scale 10X Faster with AI',
       cta: 'Explore AI Solutions →',
       to: '/services/ai-automation',
+    },
+  },
+  {
+    tab: 'White Label',
+    icon: '◈',
+    tabLine2: 'White Label Services',
+    heading: 'White Label Services',
+    services: [
+      { label: 'White Label SEO', to: '/services/white-label-seo' },
+      { label: 'White Label SMM', to: '/services/white-label-smm' },
+      { label: 'White Label PPC', to: '/services/white-label-ppc' },
+      { label: 'White Label Link Building', to: '/services/white-label-link-building' },
+      { label: 'White Label Content Marketing', to: '/services/white-label-content-marketing' },
+    ],
+    card: {
+      headline: 'Scale Your Agency with Our White Label Solutions',
+      cta: 'Explore White Label →',
+      to: '/services/white-label-seo',
     },
   },
 ]
@@ -306,8 +311,10 @@ export default function Navbar() {
                     {mobileServicesOpen && (
                       <div className="navbar__mobile-dropdown">
                         <Link to="/services" onClick={closeAll}>All Services</Link>
-                        {serviceLinks.map(s => (
-                          <Link key={s.to} to={s.to} onClick={closeAll}>{s.label}</Link>
+                        {megaMenuData.map(cat => (
+                          cat.services.map(s => (
+                            <Link key={s.to} to={s.to} onClick={closeAll}>{s.label}</Link>
+                          ))
                         ))}
                       </div>
                     )}

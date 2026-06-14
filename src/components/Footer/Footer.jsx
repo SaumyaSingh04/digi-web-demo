@@ -1,66 +1,98 @@
 import { Link } from 'react-router-dom'
-import {
-  FaFacebookF, FaInstagram, FaLinkedinIn, FaXTwitter,
-} from 'react-icons/fa6'
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa6'
 import './Footer.css'
 
-const company = [
+const quickLinks = [
   { label: 'Home', to: '/' },
   { label: 'About Us', to: '/about' },
-  { label: 'Portfolio', to: '/portfolio' },
-  { label: 'Blog', to: '/blog' },
-  { label: 'Career', to: '/career' },
-  { label: 'Contact', to: '/contact' },
-  { label: 'FAQs', to: '/faqs' },
+  { label: 'Contact Us', to: '/contact' },
+  { label: 'Testimonials', to: '/about#testimonials' },
+  { label: 'Case Study', to: '/portfolio' },
 ]
 
-const services = [
-  { label: 'Website Design', to: '/services/website-design' },
-  { label: 'Web Development', to: '/services/web-development' },
-  { label: 'SEO Services', to: '/services/seo' },
+const whiteLabelServices = [
+  { label: 'White Label PPC', to: '/services/ppc' },
+  { label: 'White Label SEO', to: '/services/seo' },
+  { label: 'PPC Reseller', to: '/services/ppc' },
+  { label: 'SEO Reseller', to: '/services/seo' },
+  { label: 'White Label Google Ads', to: '/services/ppc' },
+  { label: 'White Label FB Ads', to: '/services/smm' },
+  { label: 'White Label Web', to: '/services/web-development' },
+]
+
+const leadGeneration = [
+  { label: 'Real Estate', to: '/services/digital-marketing' },
+  { label: 'Education', to: '/services/digital-marketing' },
+  { label: 'Tourism', to: '/services/digital-marketing' },
+  { label: 'Photographer', to: '/services/digital-marketing' },
+]
+
+const additionalServices = [
+  { label: 'SEO', to: '/services/seo' },
+  { label: 'PPC', to: '/services/ppc' },
   { label: 'Digital Marketing', to: '/services/digital-marketing' },
-  { label: 'SMM Services', to: '/services/smm' },
-  { label: 'PPC Advertising', to: '/services/ppc' },
 ]
 
-const contact = [
-  { label: 'hello@trendoxmarketing.com', href: 'mailto:hello@trendoxmarketing.com' },
-  { label: '+91 885-353-3552', href: 'tel:+918853533552' },
-  { label: 'Lucknow, Uttar Pradesh, India' },
-  { label: 'www.trendoxmarketing.com', href: 'https://www.trendoxmarketing.com' },
+const forCompanies = [
+  { label: 'Blogs', to: '/blog' },
+  { label: 'Career', to: '/career' },
+  { label: 'Resources', to: '/blog' },
 ]
 
 const socials = [
-  { icon: <FaFacebookF />, href: 'https://facebook.com', label: 'Facebook' },
   { icon: <FaInstagram />, href: 'https://instagram.com', label: 'Instagram' },
+  { icon: <FaFacebookF />, href: 'https://facebook.com', label: 'Facebook' },
   { icon: <FaLinkedinIn />, href: 'https://linkedin.com', label: 'LinkedIn' },
-  { icon: <FaXTwitter />, href: 'https://twitter.com', label: 'X' },
 ]
 
 export default function Footer() {
   return (
     <footer className="footer">
-
-      {/* Wave transition — prev section into dark footer */}
       <svg className="footer__wave" viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
         <path d="M0,40 C360,80 1080,0 1440,40 L1440,0 L0,0 Z" fill="var(--bg-alt)" />
       </svg>
+
       <div className="footer__main">
         <div className="container footer__grid">
 
+          {/* Col 1 — Quick Links + White Label */}
+          <div className="footer__col">
+            <h4 className="footer__col-title">Quick Links</h4>
+            <ul className="footer__links">
+              {quickLinks.map(l => <li key={l.label}><Link to={l.to}>{l.label}</Link></li>)}
+            </ul>
+            <div className="footer__divider" />
+            <h4 className="footer__col-title">White Label Services</h4>
+            <ul className="footer__links">
+              {whiteLabelServices.map(l => <li key={l.label}><Link to={l.to}>{l.label}</Link></li>)}
+            </ul>
+          </div>
+
+          {/* Col 2 — Lead Gen + Additional + For Companies */}
+          <div className="footer__col">
+            <h4 className="footer__col-title">Lead Generation</h4>
+            <ul className="footer__links">
+              {leadGeneration.map(l => <li key={l.label}><Link to={l.to}>{l.label}</Link></li>)}
+            </ul>
+            <div className="footer__divider" />
+            <h4 className="footer__col-title">Additional Services</h4>
+            <ul className="footer__links">
+              {additionalServices.map(l => <li key={l.label}><Link to={l.to}>{l.label}</Link></li>)}
+            </ul>
+            <div className="footer__divider" />
+            <h4 className="footer__col-title">For Companies</h4>
+            <ul className="footer__links">
+              {forCompanies.map(l => <li key={l.label}><Link to={l.to}>{l.label}</Link></li>)}
+            </ul>
+          </div>
+
+          {/* Col 3 — Brand + Map */}
           <div className="footer__col footer__col--brand">
             <Link to="/" className="footer__logo">
-              <img
-                src="/trendoxlogo.png"
-                alt="Trendox"
-                className="footer__logo-img"
-                width="auto"
-                height="65"
-              />
+              <img src="/trendoxlogo.png" alt="Trendox" className="footer__logo-img" height="65" width="auto" />
             </Link>
             <p className="footer__about">
-              We help ambitious brands grow through strategy, design,
-              development and performance marketing.
+              We are a results-driven digital marketing agency helping brands grow through strategy, design, and performance marketing.
             </p>
             <div className="footer__socials">
               {socials.map(s => (
@@ -69,38 +101,10 @@ export default function Footer() {
                 </a>
               ))}
             </div>
-          </div>
-
-          <div className="footer__col">
-            <h4 className="footer__col-title">Company</h4>
-            <ul className="footer__links">
-              {company.map(p => (
-                <li key={p.label}><Link to={p.to}>{p.label}</Link></li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="footer__col">
-            <h4 className="footer__col-title">Services</h4>
-            <ul className="footer__links">
-              {services.map(s => (
-                <li key={s.label}><Link to={s.to}>{s.label}</Link></li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="footer__col">
-            <h4 className="footer__col-title">Contact</h4>
-            <ul className="footer__links">
-              {contact.map(c => (
-                <li key={c.label}>
-                  {c.href
-                    ? <a href={c.href} target={c.href.startsWith('http') ? '_blank' : undefined} rel="noreferrer">{c.label}</a>
-                    : <span>{c.label}</span>
-                  }
-                </li>
-              ))}
-            </ul>
+            <div className="footer__map-wrap">
+              <div className="footer__map-label">GLOBAL REACH</div>
+              <img src="/map.png" alt="Global Reach Map" className="footer__world-map" />
+            </div>
           </div>
 
         </div>

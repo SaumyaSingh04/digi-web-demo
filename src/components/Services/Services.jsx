@@ -336,6 +336,15 @@ const serviceColors = {
   ai:      { light: '#38bdf8', dark: '#0369a1' },
 }
 
+const serviceRoutes = {
+  seo:     '/services/seo',
+  web:     '/services/web-development',
+  ppc:     '/services/ppc',
+  smm:     '/services/smm',
+  content: '/services/content-marketing',
+  ai:      '/services/ai-automation',
+}
+
 const services = [
   {
     id: 'seo',
@@ -461,9 +470,14 @@ export default function Services() {
                 </ul>
               </div>
 
-              <button className="svc-cta" onClick={() => navigate('/contact')}>
-                Get Similar Results →
-              </button>
+              <div className="svc-cta-row">
+                <button className="svc-cta" onClick={() => navigate('/contact')}>
+                  Get Similar Results →
+                </button>
+                <button className="svc-cta svc-cta--outline" onClick={() => navigate(serviceRoutes[current.id])}>
+                  View Service →
+                </button>
+              </div>
             </div>
 
             <div className="svc-panel__right">

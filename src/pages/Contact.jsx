@@ -257,37 +257,6 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* ── BG → INFO: var(--bg) already matches wave fill ── */}
-      {/* ── INFO CARDS ── */}
-      <section className="ct-info">
-        <div className="container ct-info__grid">
-          {INFO_CARDS.map((c, i) => {
-            const Tag = c.href ? 'a' : 'div'
-            const extra = c.href ? { href: c.href } : {}
-            return (
-              <motion.div key={c.label} {...up(i * 0.08)}>
-                <Tag className="ct-info-card" style={{ '--card-color': c.color }} {...extra}>
-                  <span className="ct-info-card__icon" style={{ color: c.color, background: `${c.color}18` }}>{c.icon}</span>
-                  <div className="ct-info-card__body">
-                    <span className="ct-info-card__label">{c.label}</span>
-                    <strong className="ct-info-card__value">{c.value}</strong>
-                    <span className="ct-info-card__sub">{c.sub}</span>
-                  </div>
-                  <div className="ct-info-card__bar" style={{ background: c.color }} />
-                </Tag>
-              </motion.div>
-            )
-          })}
-        </div>
-      </section>
-
-      {/* ── Wave: bg → bg-alt ── */}
-      <div className="ct-info__divider">
-        <svg viewBox="0 0 1440 56" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0,0 C360,56 1080,0 1440,56 L1440,56 L0,56 Z" fill="var(--bg-alt)" />
-        </svg>
-      </div>
-
       {/* ── FORM + SIDEBAR ── */}
       <section className="ct-main" id="contact-form">
         <div className="container ct-main__inner">
@@ -521,6 +490,29 @@ export default function Contact() {
               <p>We respond to every enquiry within 24 hours. No spam, ever.</p>
             </div>
           </motion.aside>
+        </div>
+      </section>
+
+      {/* ── INFO CARDS ── */}
+      <section className="ct-info">
+        <div className="container ct-info__grid">
+          {INFO_CARDS.map((c, i) => {
+            const Tag = c.href ? 'a' : 'div'
+            const extra = c.href ? { href: c.href } : {}
+            return (
+              <motion.div key={c.label} {...up(i * 0.08)}>
+                <Tag className="ct-info-card" style={{ '--card-color': c.color }} {...extra}>
+                  <span className="ct-info-card__icon" style={{ color: c.color, background: `${c.color}18` }}>{c.icon}</span>
+                  <div className="ct-info-card__body">
+                    <span className="ct-info-card__label">{c.label}</span>
+                    <strong className="ct-info-card__value">{c.value}</strong>
+                    <span className="ct-info-card__sub">{c.sub}</span>
+                  </div>
+                  <div className="ct-info-card__bar" style={{ background: c.color }} />
+                </Tag>
+              </motion.div>
+            )
+          })}
         </div>
       </section>
 

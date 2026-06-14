@@ -38,6 +38,27 @@ import LandingPageDesigning from './pages/LandingPageDesigning'
 import WebsiteRedesigning from './pages/WebsiteRedesigning'
 import Web20Design from './pages/Web20Design'
 import FlashDesign from './pages/FlashDesign'
+import GraphicDesigning from './pages/GraphicDesigning'
+import PSDtoHTML from './pages/PSDtoHTML'
+import CorporateVideoEditing from './pages/CorporateVideoEditing'
+import ProductVideoEditing from './pages/ProductVideoEditing'
+import TestimonialVideoEditing from './pages/TestimonialVideoEditing'
+import WhiteLabelSMM from './pages/WhiteLabelSMM'
+import WhiteLabelPPC from './pages/WhiteLabelPPC'
+import WhiteLabelContentMarketing from './pages/WhiteLabelContentMarketing'
+import WhiteLabelLinkBuilding from './pages/WhiteLabelLinkBuilding'
+import ProgrammaticAdvertising from './pages/ProgrammaticAdvertising'
+import ContentMarketing from './pages/ContentMarketing'
+import AIChatbotDevelopment from './pages/AIChatbotDevelopment'
+import AICustomerSupportAutomation from './pages/AICustomerSupportAutomation'
+import AILeadGenerationAutomation from './pages/AILeadGenerationAutomation'
+import AIWhatsAppAutomation from './pages/AIWhatsAppAutomation'
+import AIEmailAutomation from './pages/AIEmailAutomation'
+import AICRMAutomation from './pages/AICRMAutomation'
+import AIWorkflowAutomation from './pages/AIWorkflowAutomation'
+import AIVoiceAgents from './pages/AIVoiceAgents'
+import AISocialMediaAutomation from './pages/AISocialMediaAutomation'
+import CustomAISolutions from './pages/CustomAISolutions'
 import NotFound from './pages/NotFound'
 
 function ScrollToTop() {
@@ -62,6 +83,16 @@ export default function App() {
         <Route path="/services/smm" element={<SMM />} />
         <Route path="/services/ppc" element={<PPC />} />
         <Route path="/services/ai-automation" element={<AIAutomation />} />
+        <Route path="/services/ai-chatbot-development" element={<AIChatbotDevelopment />} />
+        <Route path="/services/ai-customer-support-automation" element={<AICustomerSupportAutomation />} />
+        <Route path="/services/ai-lead-generation-automation" element={<AILeadGenerationAutomation />} />
+        <Route path="/services/ai-whatsapp-automation" element={<AIWhatsAppAutomation />} />
+        <Route path="/services/ai-email-automation" element={<AIEmailAutomation />} />
+        <Route path="/services/ai-crm-automation" element={<AICRMAutomation />} />
+        <Route path="/services/ai-workflow-automation" element={<AIWorkflowAutomation />} />
+        <Route path="/services/ai-voice-agents" element={<AIVoiceAgents />} />
+        <Route path="/services/ai-social-media-automation" element={<AISocialMediaAutomation />} />
+        <Route path="/services/custom-ai-solutions" element={<CustomAISolutions />} />
         <Route path="/services/orm" element={<ORM />} />
         <Route path="/services/local-seo" element={<LocalSEO />} />
         <Route path="/services/ecommerce-seo" element={<EcommerceSEO />} />
@@ -82,6 +113,17 @@ export default function App() {
         <Route path="/services/website-redesigning" element={<WebsiteRedesigning />} />
         <Route path="/services/web-2-0-design" element={<Web20Design />} />
         <Route path="/services/flash-design" element={<FlashDesign />} />
+        <Route path="/services/graphic-designing" element={<GraphicDesigning />} />
+        <Route path="/services/psd-to-html" element={<PSDtoHTML />} />
+        <Route path="/services/corporate-video-editing" element={<CorporateVideoEditing />} />
+        <Route path="/services/product-video-editing" element={<ProductVideoEditing />} />
+        <Route path="/services/testimonial-video-editing" element={<TestimonialVideoEditing />} />
+        <Route path="/services/white-label-smm" element={<WhiteLabelSMM />} />
+        <Route path="/services/white-label-ppc" element={<WhiteLabelPPC />} />
+        <Route path="/services/white-label-content-marketing" element={<WhiteLabelContentMarketing />} />
+        <Route path="/services/white-label-link-building" element={<WhiteLabelLinkBuilding />} />
+        <Route path="/services/programmatic-advertising" element={<ProgrammaticAdvertising />} />
+        <Route path="/services/content-marketing" element={<ContentMarketing />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<BlogPost />} />
