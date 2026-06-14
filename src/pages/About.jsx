@@ -419,7 +419,7 @@ export default function About() {
         <div className="container ap-who__layout">
           <motion.div className="ap-who__img-wrap" {...up(0)}>
   <img
-    src="/public/Teamup.png"
+    src="/Teamup.png"
     alt="About Us"
     className="ap-who__img"
   />
