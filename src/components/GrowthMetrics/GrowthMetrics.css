@@ -1,0 +1,124 @@
+/* GrowthMetrics */
+.gm {
+  padding: 80px 0;
+  background: var(--bg);
+}
+
+.gm__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.gm__headline {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: var(--text);
+  margin: 12px 0 32px;
+}
+.gm__headline em { font-style: italic; color: var(--text-muted); }
+
+.gm__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.gm__card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 20px;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.gm__card-icon {
+  font-size: 1.1rem;
+  color: var(--text-subtle);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.gm__card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.gm__card-desc {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+.gm__metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.gm__metric {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.gm__metric-value {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.gm__metric-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.gm__checks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.gm__check-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.gm__check-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--text);
+  color: var(--bg);
+  font-size: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .gm__inner { grid-template-columns: 1fr; gap: 40px; }
+}

@@ -3,7 +3,7 @@ import emailjs from '@emailjs/browser'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaLocationDot, FaPhone, FaEnvelope } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
-import './pages.css'
+import '../styles/layout.css'
 import './Contact.css'
 
 const EMAILJS_SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID  || ''

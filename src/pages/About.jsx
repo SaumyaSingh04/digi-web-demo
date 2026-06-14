@@ -1,9 +1,10 @@
-import { useRef, useState, useEffect } from 'react'
+import { useRef } from 'react'
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import CTA from '../components/CTA/CTA'
 import Process from '../components/Process/Process'
-import './About.page.css'
+import { useCounter } from '../hooks'
+import './About.css'
 
 const vp = { once: true, margin: '-30px' }
 const up = (d = 0) => ({
@@ -12,6 +13,11 @@ const up = (d = 0) => ({
   viewport: vp,
   transition: { duration: 0.6, delay: d, ease: [0.16, 1, 0.3, 1] },
 })
+
+function Counter({ target }) {
+  const { val, ref } = useCounter(target)
+  return <span ref={ref}>{val}</span>
+}
 
 const STATS = [
   { val: '150+', label: 'Campaigns Launched', sub: 'Across 12 industries', icon: '↗', color: '#7a9ab8' },
@@ -157,36 +163,6 @@ const WHY = [
     body: "Custom digital strategies tailored to your growth goals."
   }
 ]
-
-function Counter({ target }) {
-  const [val, setVal] = useState('0')
-  const ref = useRef(null)
-  const started = useRef(false)
-  const numeric = parseFloat(target)
-  const suffix = target.replace(/[\d.]/g, '')
-  const isFloat = target.includes('.')
-
-  useEffect(() => {
-    const io = new IntersectionObserver(([e]) => {
-      if (e.isIntersecting && !started.current) {
-        started.current = true
-        const steps = 55, dur = 1400
-        let frame = 0
-        const id = setInterval(() => {
-          frame++
-          const ease = 1 - Math.pow(1 - frame / steps, 3)
-          const cur = numeric * ease
-          if (frame >= steps) { setVal(target); clearInterval(id) }
-          else setVal((isFloat ? cur.toFixed(1) : Math.round(cur)) + suffix)
-        }, dur / steps)
-      }
-    }, { threshold: 0.4 })
-    if (ref.current) io.observe(ref.current)
-    return () => io.disconnect()
-  }, [numeric, suffix, isFloat, target])
-
-  return <span ref={ref}>{val}</span>
-}
 
 function AboutVisual() {
   const visualRef = useRef(null)

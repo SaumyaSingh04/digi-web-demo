@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import CTA from '../components/CTA/CTA'
-import './pages.css'
+import '../styles/layout.css'
 import './Career.css'
 
 const vp = { once: true, margin: '-30px' }

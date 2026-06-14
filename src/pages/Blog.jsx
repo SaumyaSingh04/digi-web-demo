@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import CTA from '../components/CTA/CTA'
 import { blogThumbs } from '../components/Blog/BlogThumbnails'
-import './pages.css'
+import '../styles/layout.css'
 import './Blog.css'
 
 const fadeUp = (delay = 0) => ({

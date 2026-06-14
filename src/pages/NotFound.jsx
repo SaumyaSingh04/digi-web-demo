@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import './pages.css'
+import '../styles/layout.css'
 
 export default function NotFound() {
   return (
