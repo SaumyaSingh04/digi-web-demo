@@ -23,102 +23,99 @@ export default function CTA() {
           viewport={{ once: true }}
           transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
         >
-          <motion.svg
-            className="cta__person-img"
-            viewBox="0 0 420 500"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            animate={{ y: [0, -14, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-          >
+          <svg viewBox="0 0 420 500" xmlns="http://www.w3.org/2000/svg" width="100%" style={{maxWidth:'460px'}}>
+            <defs>
+              <radialGradient id="bgGrad" cx="50%" cy="60%" r="55%">
+                <stop offset="0%" stopColor="#2e2a4a" stopOpacity="0.55"/>
+                <stop offset="100%" stopColor="#1a1828" stopOpacity="0"/>
+              </radialGradient>
+            </defs>
 
-            {/* Person - legs */}
-            <rect x="170" y="370" width="28" height="80" rx="10" fill="#2d2b50"/>
-            <rect x="222" y="370" width="28" height="80" rx="10" fill="#2d2b50"/>
-            <rect x="158" y="438" width="48" height="18" rx="8" fill="#1a1830"/>
-            <rect x="214" y="438" width="48" height="18" rx="8" fill="#1a1830"/>
+            {/* Soft bg glow */}
+            <ellipse cx="210" cy="300" rx="180" ry="130" fill="url(#bgGrad)"/>
+            <ellipse cx="210" cy="460" rx="145" ry="28" fill="#3a3560" opacity="0.25"/>
 
-            {/* Person - body */}
-            <rect x="148" y="240" width="124" height="140" rx="24" fill="#4a4870"/>
-
-            {/* Shirt collar */}
-            <path d="M194 240 L210 265 L226 240" fill="#fff" opacity="0.1"/>
-
-            {/* Left arm - holding phone */}
-            <rect x="90" y="255" width="62" height="26" rx="13" fill="#4a4870"/>
-            {/* Phone in left hand */}
-            <rect x="58" y="232" width="38" height="62" rx="9" fill="#1a1830" stroke="#5a5880" strokeWidth="2"/>
-            <rect x="64" y="240" width="26" height="40" rx="5" fill="#0d0b2e"/>
-            {/* Phone screen glow */}
-            <rect x="66" y="242" width="22" height="10" rx="3" fill="#5a5880" opacity="0.6"/>
-            <rect x="66" y="256" width="16" height="6" rx="3" fill="#7a7898" opacity="0.5"/>
-            <rect x="66" y="266" width="20" height="6" rx="3" fill="#7a7898" opacity="0.35"/>
-            <circle cx="77" cy="284" r="4" fill="#4a4870"/>
-
-            {/* Right arm - raised/waving */}
-            <rect x="268" y="248" width="62" height="26" rx="13" fill="#4a4870"/>
-            {/* Hand */}
-            <circle cx="342" cy="240" r="18" fill="#c4a870"/>
-
-            {/* Head */}
-            <circle cx="210" cy="200" r="52" fill="#c4a870"/>
-            {/* Hair */}
-            <path d="M160 188 Q165 148 210 145 Q255 148 260 188" fill="#1a1830"/>
-            {/* Eyes */}
-            <ellipse cx="194" cy="196" rx="6" ry="7" fill="#1a1830"/>
-            <ellipse cx="226" cy="196" rx="6" ry="7" fill="#1a1830"/>
-            <circle cx="196" cy="194" r="2" fill="#fff"/>
-            <circle cx="228" cy="194" r="2" fill="#fff"/>
-            {/* Smile */}
-            <path d="M194 214 Q210 228 226 214" stroke="#1a1830" strokeWidth="3" strokeLinecap="round" fill="none"/>
-            {/* Cheeks */}
-            <circle cx="182" cy="212" r="8" fill="#b07070" opacity="0.3"/>
-            <circle cx="238" cy="212" r="8" fill="#b07070" opacity="0.3"/>
-            {/* Headset */}
-            <path d="M160 188 Q158 165 175 158" stroke="#2d2b50" strokeWidth="5" strokeLinecap="round" fill="none"/>
-            <rect x="154" y="186" width="14" height="20" rx="6" fill="#2d2b50"/>
-            <path d="M260 188 Q262 165 245 158" stroke="#2d2b50" strokeWidth="5" strokeLinecap="round" fill="none"/>
-            <rect x="252" y="186" width="14" height="20" rx="6" fill="#2d2b50"/>
-            {/* Mic */}
-            <path d="M154 200 Q140 205 142 215" stroke="#5a5880" strokeWidth="3" strokeLinecap="round" fill="none"/>
-            <circle cx="142" cy="218" r="5" fill="#5a5880"/>
-
-            {/* Floating bubble - email */}
-            <g className="cta-bubble--email">
-              <rect x="270" y="120" width="140" height="54" rx="14" fill="#1a1830" stroke="#5a5880" strokeWidth="1.5"/>
-              <path d="M280 136 L340 136 L340 162 L280 162 Z" fill="none" stroke="#5a5880" strokeWidth="1.5" rx="4"/>
-              <path d="M280 136 L310 152 L340 136" stroke="#5a5880" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
-              <rect x="352" y="136" width="46" height="8" rx="4" fill="#5a5880" opacity="0.45"/>
-              <rect x="352" y="150" width="32" height="6" rx="3" fill="#7a7898" opacity="0.35"/>
-              <path d="M295 174 L285 188 L310 174" fill="#1a1830" stroke="#5a5880" strokeWidth="1.5"/>
+            {/* ── BIG ENVELOPE (main hero) ── */}
+            <g className="svg-envelope">
+              {/* body */}
+              <rect x="80" y="160" width="260" height="180" rx="14" fill="#2c2845" stroke="#4a4270" strokeWidth="2"/>
+              {/* envelope flap open */}
+              <path d="M80 160 L210 248 L340 160" fill="none" stroke="#4a4270" strokeWidth="2"/>
+              <path d="M80 160 L210 232 L340 160 L340 148 Q340 136 328 136 L92 136 Q80 136 80 148 Z" fill="#3a3560" stroke="#4a4270" strokeWidth="1.5"/>
+              {/* letter inside peeking */}
+              <rect x="148" y="125" width="124" height="90" rx="7" fill="#232040" stroke="#3d3968" strokeWidth="1.5" className="svg-letter"/>
+              <rect x="162" y="140" width="60" height="5" rx="2.5" fill="#5a5490" opacity="0.8"/>
+              <rect x="162" y="152" width="96" height="4" rx="2" fill="#4a4470" opacity="0.6"/>
+              <rect x="162" y="163" width="80" height="4" rx="2" fill="#4a4470" opacity="0.5"/>
+              <rect x="162" y="174" width="50" height="4" rx="2" fill="#4a4470" opacity="0.4"/>
+              {/* cursor blink on letter */}
+              <rect x="162" y="185" width="6" height="8" rx="1" fill="#7b74cc" className="svg-cursor"/>
+              {/* bottom fold lines */}
+              <line x1="80" y1="340" x2="175" y2="258" stroke="#4a4270" strokeWidth="1.5" opacity="0.7"/>
+              <line x1="340" y1="340" x2="245" y2="258" stroke="#4a4270" strokeWidth="1.5" opacity="0.7"/>
+              {/* stamp */}
+              <rect x="298" y="172" width="28" height="22" rx="4" fill="#3d3968" stroke="#5a5490" strokeWidth="1"/>
+              <rect x="302" y="176" width="20" height="14" rx="2" fill="#4a4490" opacity="0.6"/>
             </g>
 
-            {/* Floating bubble - message */}
-            <g className="cta-bubble--msg">
-              <rect x="10" y="100" width="130" height="54" rx="14" fill="#1a1830" stroke="#5a7a6a" strokeWidth="1.5"/>
-              <rect x="26" y="116" width="72" height="8" rx="4" fill="#5a7a6a" opacity="0.7"/>
-              <rect x="26" y="130" width="90" height="7" rx="3" fill="#7a9a8a" opacity="0.45"/>
-              <rect x="26" y="143" width="56" height="7" rx="3" fill="#7a9a8a" opacity="0.3"/>
-              <path d="M30 154 L20 170 L50 154" fill="#1a1830" stroke="#5a7a6a" strokeWidth="1.5"/>
+            {/* ── FLOATING BUBBLE: email ── */}
+            <g className="svg-bubble-1">
+              <rect x="18" y="80" width="110" height="52" rx="12" fill="#2e2a4a" stroke="#4a4270" strokeWidth="1.5"/>
+              <polygon points="38,132 52,132 45,144" fill="#2e2a4a"/>
+              {/* @ symbol */}
+              <text x="34" y="112" fontSize="22" fill="#6b63b5" fontFamily="monospace" fontWeight="bold">@</text>
+              <rect x="64" y="96" width="46" height="5" rx="2.5" fill="#5a5490" opacity="0.7"/>
+              <rect x="64" y="107" width="32" height="4" rx="2" fill="#4a4470" opacity="0.5"/>
+              <rect x="64" y="117" width="38" height="4" rx="2" fill="#4a4470" opacity="0.45"/>
             </g>
 
-            {/* Floating badge - call */}
-            <g className="cta-bubble--call">
-              <rect x="290" y="310" width="120" height="48" rx="14" fill="#1a1830" stroke="#8a6a75" strokeWidth="1.5"/>
-              <circle cx="316" cy="334" r="14" fill="#8a6a75" opacity="0.15"/>
-              <path d="M309 327 Q308 334 315 340 Q322 347 328 345 L325 339 L320 341 Q316 337 314 333 L317 329 Z" fill="#8a6a75"/>
-              <rect x="336" y="326" width="62" height="8" rx="4" fill="#8a6a75" opacity="0.6"/>
-              <rect x="336" y="340" width="44" height="6" rx="3" fill="#aa8a95" opacity="0.45"/>
+            {/* ── FLOATING BUBBLE: phone ── */}
+            <g className="svg-bubble-2">
+              <rect x="292" y="60" width="110" height="52" rx="12" fill="#2a2840" stroke="#413d6a" strokeWidth="1.5"/>
+              <polygon points="298,112 312,112 305,124" fill="#2a2840"/>
+              {/* phone icon */}
+              <path d="M312 78 Q310 76 308 78 L304 88 Q302 92 306 94 Q312 98 318 104 Q322 108 326 103 L330 99 Q332 97 330 95 L326 91 Q324 89 322 91 L320 93 Q316 90 312 86 L314 84 Q316 82 314 80 Z" fill="#6b63b5" strokeWidth="0"/>
+              <rect x="330" y="76" width="56" height="5" rx="2.5" fill="#5a5490" opacity="0.7"/>
+              <rect x="330" y="87" width="40" height="4" rx="2" fill="#4a4470" opacity="0.5"/>
+              <rect x="330" y="98" width="48" height="4" rx="2" fill="#4a4470" opacity="0.45"/>
             </g>
 
-            {/* Stars / sparkles */}
-            <circle cx="130" cy="60" r="4" fill="#b89a60" opacity="0.6"/>
-            <circle cx="300" cy="80" r="3" fill="#5a5880" opacity="0.6"/>
-            <circle cx="380" cy="200" r="4" fill="#5a7a6a" opacity="0.6"/>
-            <circle cx="50" cy="300" r="3" fill="#8a6a75" opacity="0.6"/>
-            <circle cx="20" cy="200" r="5" fill="#7a7898" opacity="0.45"/>
+            {/* ── FLOATING BUBBLE: chat ── */}
+            <g className="svg-bubble-3">
+              <rect x="270" y="330" width="120" height="52" rx="12" fill="#2c2845" stroke="#4a4270" strokeWidth="1.5"/>
+              <polygon points="380,382 366,382 373,394" fill="#2c2845"/>
+              <circle cx="300" cy="356" r="4" fill="#5a5490" opacity="0.8"/>
+              <circle cx="315" cy="356" r="4" fill="#5a5490" opacity="0.8"/>
+              <circle cx="330" cy="356" r="4" fill="#5a5490" opacity="0.8"/>
+              <rect x="348" y="344" width="30" height="5" rx="2.5" fill="#5a5490" opacity="0.55"/>
+              <rect x="348" y="355" width="22" height="4" rx="2" fill="#4a4470" opacity="0.4"/>
+              <rect x="348" y="365" width="28" height="4" rx="2" fill="#4a4470" opacity="0.35"/>
+            </g>
 
-          </motion.svg>
+            {/* ── FLOATING BUBBLE: location ── */}
+            <g className="svg-bubble-4">
+              <rect x="20" y="310" width="100" height="52" rx="12" fill="#2a2840" stroke="#413d6a" strokeWidth="1.5"/>
+              <polygon points="30,362 44,362 37,374" fill="#2a2840"/>
+              {/* pin icon */}
+              <ellipse cx="46" cy="330" rx="9" ry="9" fill="#4a4470" stroke="#6b63b5" strokeWidth="1.5"/>
+              <ellipse cx="46" cy="330" rx="4" ry="4" fill="#6b63b5"/>
+              <line x1="46" y1="339" x2="46" y2="350" stroke="#6b63b5" strokeWidth="2" strokeLinecap="round"/>
+              <rect x="62" y="324" width="44" height="5" rx="2.5" fill="#5a5490" opacity="0.7"/>
+              <rect x="62" y="335" width="32" height="4" rx="2" fill="#4a4470" opacity="0.5"/>
+              <rect x="62" y="345" width="38" height="4" rx="2" fill="#4a4470" opacity="0.4"/>
+            </g>
+
+            {/* ── SMALL DOTS decoration ── */}
+            <circle cx="200" cy="68" r="4" fill="#4a4470" opacity="0.5" className="svg-dot-pulse"/>
+            <circle cx="220" cy="52" r="2.5" fill="#5a5490" opacity="0.4"/>
+            <circle cx="185" cy="55" r="2" fill="#5a5490" opacity="0.35"/>
+            <circle cx="72" cy="230" r="3" fill="#4a4470" opacity="0.4" className="svg-dot-pulse"/>
+            <circle cx="352" cy="220" r="3" fill="#4a4470" opacity="0.4"/>
+
+            {/* ── SIGNAL ARCS around envelope ── */}
+            <path d="M174 108 Q150 88 174 68" fill="none" stroke="#4a4270" strokeWidth="1.5" strokeDasharray="4 3" opacity="0.6" className="svg-arc"/>
+            <path d="M246 108 Q270 88 246 68" fill="none" stroke="#4a4270" strokeWidth="1.5" strokeDasharray="4 3" opacity="0.6" className="svg-arc"/>
+          </svg>
         </motion.div>
 
         {/* Right: Form Card */}
