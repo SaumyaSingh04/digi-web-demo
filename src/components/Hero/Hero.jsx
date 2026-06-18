@@ -302,8 +302,7 @@ export default function Hero() {
           </motion.div>
 
           <motion.h1 className="hero__title" {...fadeUp(0.1)}>
-            Helping Brands Achieve<br />
-            <span className="hero__title-wave">Sustainable Digital</span> Growth
+            Helping Brands Achieve <span className="hero__title-wave">Sustainable Digital</span> Growth
           </motion.h1>
 
           <motion.p className="hero__subtitle" {...fadeUp(0.2)}>

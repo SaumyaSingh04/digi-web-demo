@@ -228,5 +228,14 @@
   border-top: 1px solid var(--border);
 }
 
-@media (max-width: 1024px) { .pf-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 640px)  { .pf-grid { grid-template-columns: 1fr; } }
+@media (max-width: 1024px) { .pf-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; } }
+@media (max-width: 640px)  { .pf-grid { grid-template-columns: 1fr; gap: 12px; max-width: 520px; margin-left: auto; margin-right: auto; } }
+@media (max-width: 480px)  {
+  .pf-card__visual { padding: 20px 16px 16px; min-height: 130px; }
+  .pf-card__body { padding: 18px 16px; }
+  .pf-card__metric-big { font-size: 2rem; }
+}
+@media (max-width: 375px) {
+  .pf-card__body { padding: 16px 14px; }
+  .pf-card__metric-big { font-size: 1.8rem; }
+}

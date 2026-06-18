@@ -71,7 +71,7 @@
   gap: 56px;
   width: 100%;
   padding-top: 60px;
-  padding-bottom: 160px;
+  padding-bottom: clamp(60px, 8vw, 120px);
   position: relative;
   z-index: 2;
 }
@@ -426,16 +426,38 @@
   .ph-float--3  { right: 0; bottom: 0; }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  .ph__inner { padding-bottom: 70px; padding-top: 48px; }
+  .ph__subtitle { max-width: 100%; }
+}
+
+@media (max-width: 640px) {
   .ph { padding-top: 88px; }
-  .ph__inner { padding-bottom: 60px; }
+  .ph__inner { padding-bottom: 60px; gap: 32px; }
+  .ph__title { font-size: clamp(2rem, 8vw, 3.2rem); }
+  .ph__subtitle { font-size: 0.95rem; }
   .ph-float--2 { display: none; }
   .hero__actions { flex-direction: column; align-items: stretch; }
   .hero__btn-primary, .hero__btn-ghost { justify-content: center; }
 }
 
+@media (max-width: 480px) {
+  .ph { padding-top: 76px; }
+  .ph__inner { padding-bottom: 50px; }
+  .ph__parallax { max-width: 100%; padding: 12px 0; }
+}
+
 @media (max-width: 400px) {
   .ph-float { display: none; }
+  .ph { padding-top: 70px; }
+  .ph__title { font-size: clamp(1.8rem, 9vw, 2.6rem); }
+}
+
+@media (max-width: 320px) {
+  .ph { padding-top: 64px; }
+  .ph__title { font-size: clamp(1.6rem, 10vw, 2.2rem); }
+  .ph__subtitle { font-size: 0.875rem; }
+  .hero__btn-primary, .hero__btn-ghost { padding: 12px 18px; font-size: 0.825rem; }
 }
 
 /* ─────────────────────────────────────────
@@ -556,8 +578,30 @@
   .about-team__grid   { grid-template-columns: repeat(3, 1fr); }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
+  .about-team__grid { grid-template-columns: repeat(2, 1fr); }
   .page-hero { padding: 64px 0 40px; }
+  .page-hero__subtitle { max-width: 90%; }
+}
+
+@media (max-width: 640px) {
   .about-values__grid { grid-template-columns: 1fr; }
   .about-team__grid   { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .about-team__grid { grid-template-columns: repeat(2, 1fr); }
+  .page-hero { padding: 56px 0 32px; }
+  .page-hero__title { font-size: clamp(2rem, 8vw, 3rem); }
+  .page-hero__subtitle { font-size: 0.9rem; max-width: 100%; }
+}
+
+@media (max-width: 375px) {
+  .about-team__grid { grid-template-columns: repeat(2, 1fr); }
+  .page-hero { padding: 48px 0 28px; }
+}
+
+@media (max-width: 320px) {
+  .about-team__grid { grid-template-columns: 1fr; }
+  .about-values__grid { grid-template-columns: 1fr; }
 }

@@ -9,13 +9,13 @@
   gap: 24px;
 }
 
-/* Left image side */
 .cta__image-side {
   flex: 1;
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
-  margin-left: -40px;
+  margin-left: clamp(-20px, -3vw, 0px);
+  min-width: 0;
 }
 
 .cta__person-img {
@@ -23,19 +23,21 @@
   max-width: 480px;
   height: 100%;
   min-height: 500px;
-  filter: drop-shadow(0 20px 48px rgba(80, 120, 255, 0.25));
+  filter: drop-shadow(0 20px 48px rgba(80,120,255,0.25));
 }
 
-/* Right form card */
 .cta__form-card {
   flex: 1;
   background: var(--bg-dark-card);
   border-radius: 16px;
   padding: 40px 36px;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .cta__form-title {
-  font-size: 1.15rem;
+  font-size: clamp(1rem, 2vw, 1.15rem);
   font-weight: 700;
   color: #fff;
   text-align: center;
@@ -59,28 +61,25 @@
 .cta__form textarea {
   width: 100%;
   background: transparent;
-  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border: 1.5px solid rgba(255,255,255,0.2);
   border-radius: 8px;
   padding: 13px 16px;
   color: #fff;
   font-size: 0.9rem;
+  font-family: var(--font);
   outline: none;
   transition: border-color 0.2s;
   box-sizing: border-box;
   resize: none;
+  min-height: 44px;
 }
 
 .cta__form input::placeholder,
-.cta__form textarea::placeholder {
-  color: rgba(255, 255, 255, 0.45);
-}
+.cta__form textarea::placeholder { color: rgba(255,255,255,0.45); }
 
 .cta__form input:focus,
-.cta__form textarea:focus {
-  border-color: rgba(255, 255, 255, 0.55);
-}
+.cta__form textarea:focus { border-color: rgba(255,255,255,0.55); }
 
-/* reCAPTCHA mock */
 .cta__recaptcha {
   display: flex;
   align-items: center;
@@ -88,6 +87,7 @@
   background: #fff;
   border-radius: 8px;
   padding: 14px 16px;
+  flex-wrap: wrap;
 }
 
 .cta__recaptcha input[type="checkbox"] {
@@ -99,40 +99,18 @@
   flex-shrink: 0;
   background: #fff;
   padding: 0;
-  border-color: #ccc;
 }
 
-.cta__recaptcha label {
-  font-size: 0.92rem;
-  color: #333;
-  flex: 1;
-  cursor: pointer;
-}
+.cta__recaptcha label { font-size: 0.92rem; color: #333; flex: 1; cursor: pointer; min-width: 0; }
 
-.cta__recaptcha-logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-}
+.cta__recaptcha-logo { display: flex; flex-direction: column; align-items: center; gap: 2px; flex-shrink: 0; }
+.cta__recaptcha-logo span { font-size: 0.65rem; color: #555; font-weight: 600; }
+.cta__recaptcha-logo small { font-size: 0.55rem; color: #999; }
 
-.cta__recaptcha-logo span {
-  font-size: 0.65rem;
-  color: #555;
-  font-weight: 600;
-}
-
-.cta__recaptcha-logo small {
-  font-size: 0.55rem;
-  color: #999;
-}
-
-/* Submit button */
 .cta__submit {
   width: 100%;
-  background: var(--accent);
-  color: #fff;
   background: #3d3b3b;
+  color: #fff;
   font-size: 1rem;
   font-weight: 700;
   padding: 16px;
@@ -141,120 +119,48 @@
   cursor: pointer;
   letter-spacing: 0.02em;
   transition: opacity 0.2s, transform 0.2s;
+  font-family: var(--font);
+  min-height: 52px;
 }
-
-.cta__submit:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
-}
+.cta__submit:hover { opacity: 0.9; transform: translateY(-2px); }
 
 /* ── SVG Animations ── */
+.svg-envelope  { animation: svgFloat 5s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.svg-letter    { animation: svgLetterPeek 4s ease-in-out infinite; transform-box: fill-box; transform-origin: bottom center; }
+.svg-cursor    { animation: svgCursorBlink 1.1s step-start infinite; transform-box: fill-box; }
+.svg-bubble-1  { animation: svgFloat 4.2s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.svg-bubble-2  { animation: svgFloatDown 4.8s ease-in-out infinite 0.6s; transform-box: fill-box; transform-origin: center; }
+.svg-bubble-3  { animation: svgFloat 5.5s ease-in-out infinite 1s; transform-box: fill-box; transform-origin: center; }
+.svg-bubble-4  { animation: svgFloatDown 5s ease-in-out infinite 0.3s; transform-box: fill-box; transform-origin: center; }
+.svg-dot-pulse { animation: svgPulse 2.5s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.svg-arc       { animation: svgDashMove 2s linear infinite; }
 
-/* Envelope gentle float */
-.svg-envelope {
-  animation: svgFloat 5s ease-in-out infinite;
-  transform-box: fill-box;
-  transform-origin: center;
-}
+@keyframes svgFloat      { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-9px)} }
+@keyframes svgFloatDown  { 0%,100%{transform:translateY(0)} 50%{transform:translateY(9px)} }
+@keyframes svgLetterPeek { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+@keyframes svgCursorBlink{ 0%,100%{opacity:1} 50%{opacity:0} }
+@keyframes svgPulse      { 0%,100%{opacity:0.5} 50%{opacity:1} }
+@keyframes svgDashMove   { to{stroke-dashoffset:-14} }
 
-/* Letter peek up/down inside envelope */
-.svg-letter {
-  animation: svgLetterPeek 4s ease-in-out infinite;
-  transform-box: fill-box;
-  transform-origin: bottom center;
-}
-
-/* Cursor blink */
-.svg-cursor {
-  animation: svgCursorBlink 1.1s step-start infinite;
-  transform-box: fill-box;
-}
-
-/* Bubble 1 — email — float up */
-.svg-bubble-1 {
-  animation: svgFloat 4.2s ease-in-out infinite;
-  transform-box: fill-box;
-  transform-origin: center;
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .cta__image-side { margin-left: -16px; }
+  .cta__person-img { min-height: 400px; }
 }
 
-/* Bubble 2 — phone — float down offset */
-.svg-bubble-2 {
-  animation: svgFloatDown 4.8s ease-in-out infinite 0.6s;
-  transform-box: fill-box;
-  transform-origin: center;
-}
-
-/* Bubble 3 — chat — float up slower */
-.svg-bubble-3 {
-  animation: svgFloat 5.5s ease-in-out infinite 1s;
-  transform-box: fill-box;
-  transform-origin: center;
-}
-
-/* Bubble 4 — location — float down */
-.svg-bubble-4 {
-  animation: svgFloatDown 5s ease-in-out infinite 0.3s;
-  transform-box: fill-box;
-  transform-origin: center;
-}
-
-/* Decorative dots pulse */
-.svg-dot-pulse {
-  animation: svgPulse 2.5s ease-in-out infinite;
-  transform-box: fill-box;
-  transform-origin: center;
-}
-
-/* Signal arcs dash march */
-.svg-arc {
-  animation: svgDashMove 2s linear infinite;
-}
-
-@keyframes svgFloat {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-9px); }
-}
-@keyframes svgFloatDown {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(9px); }
-}
-@keyframes svgLetterPeek {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-10px); }
-}
-@keyframes svgCursorBlink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0; }
-}
-@keyframes svgPulse {
-  0%, 100% { opacity: 0.5; r: 4; }
-  50%       { opacity: 1;   r: 6; }
-}
-@keyframes svgDashMove {
-  to { stroke-dashoffset: -14; }
-}
-
-/* Responsive */
 @media (max-width: 900px) {
-  .cta__inner {
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .cta__person-img {
-    height: 320px;
-    max-width: 100%;
-  }
-
-  .cta__form-card {
-    width: 100%;
-    border-radius: 16px;
-    padding: 28px 20px;
-  }
+  .cta__inner { flex-direction: column; gap: 16px; }
+  .cta__image-side { margin-left: 0; width: 100%; justify-content: center; }
+  .cta__person-img { height: 320px; min-height: unset; max-width: 100%; }
+  .cta__form-card { width: 100%; border-radius: 16px; padding: 28px 24px; }
 }
 
-@media (max-width: 500px) {
-  .cta__form-row {
-    grid-template-columns: 1fr;
-  }
+@media (max-width: 600px) {
+  .cta__form-row { grid-template-columns: 1fr; }
+  .cta__form-card { padding: 24px 18px; }
+}
+
+@media (max-width: 375px) {
+  .cta__form-card { padding: 20px 14px; border-radius: 12px; }
+  .cta__form { gap: 12px; }
 }

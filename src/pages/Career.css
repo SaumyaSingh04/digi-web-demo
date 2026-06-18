@@ -623,7 +623,7 @@
   .cp-culture__grid {
     grid-template-columns: 1fr;
   }
-  .cp-culture__img--tall { grid-row: span 1; aspect-ratio: 16/9; }
+  .cp-culture__img--tall { grid-row: span 1; aspect-ratio: 16 / 9; max-height: none; }
   .cp-job {
     flex-direction: column;
     align-items: flex-start;
@@ -639,4 +639,12 @@
   .cp-cta__actions { flex-direction: column; }
   .cp-cta__btn-primary,
   .cp-cta__btn-ghost { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 480px) {
+  .cp-why__card { padding: 22px 18px; }
+  .cp-why__grid { grid-template-columns: 1fr; }
+  .cp-bento__cell { padding: 22px 18px; }
+  .cp-process__card { padding: 16px 14px 14px; }
+  .cp-why, .cp-benefits, .cp-process, .cp-positions, .cp-culture, .cp-cta { padding-top: 56px; padding-bottom: 56px; }
 }

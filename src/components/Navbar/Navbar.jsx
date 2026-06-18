@@ -191,11 +191,9 @@ export default function Navbar() {
             alt="Trendox"
             className="navbar__logo-img"
             width="auto"
-            height="52"
+            height="48"
           />
         </Link>
-        {/* Spacer holds left side of flex row — logo is position:absolute above it */}
-        <div className="navbar__logo-spacer" aria-hidden="true" />
 
         {/* Desktop nav */}
         <ul className="navbar__links">
@@ -296,6 +294,10 @@ export default function Navbar() {
       <>
         <div className={`navbar__overlay${menuOpen ? ' navbar__overlay--visible' : ''}`} onClick={closeAll} />
         <div className={`navbar__mobile-menu${menuOpen ? ' navbar__mobile-menu--open' : ''}`}>
+          <div className="navbar__mobile-header">
+            <span className="navbar__mobile-title">Menu</span>
+            <button className="navbar__mobile-close" onClick={closeAll} aria-label="Close menu">✕</button>
+          </div>
           <ul className="navbar__mobile-links">
             {navLinks.map(({ label, to, hasDropdown }) => (
               <li key={label}>

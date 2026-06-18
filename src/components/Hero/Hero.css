@@ -35,13 +35,7 @@
   z-index: 1;
 }
 
-/* ── Floating silver particles ── */
-.hero__particles {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-}
+.hero__particles { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
 .hero__particle {
   position: absolute;
   border-radius: 50%;
@@ -49,7 +43,6 @@
   display: block;
 }
 
-/* mountain waves */
 .hero__mountains {
   position: absolute;
   bottom: 0;
@@ -64,7 +57,7 @@
 /* ── GRID ── */
 .hero__inner {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 38px;
   width: 100%;
@@ -110,12 +103,14 @@
 }
 
 .hero__title {
-  font-size: clamp(2.5rem, 4.4vw, 4.2rem);
+  font-size: clamp(2.1rem, 4.4vw, 4.2rem);
   font-weight: 800;
-  line-height: 1.06;
+  line-height: 1.1;
   letter-spacing: -0.045em;
   color: #ffffff;
   margin-bottom: 24px;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .hero__title-wave {
@@ -135,7 +130,7 @@
 }
 
 .hero__subtitle {
-  font-size: 1rem;
+  font-size: clamp(0.875rem, 1.6vw, 1rem);
   color: rgba(255,255,255,0.72);
   line-height: 1.82;
   max-width: 460px;
@@ -164,6 +159,8 @@
   font-family: var(--font);
   transition: background var(--t-fast), transform var(--t-fast), box-shadow var(--t-fast);
   box-shadow: 0 4px 24px rgba(0,0,0,0.35);
+  min-height: 48px;
+  white-space: nowrap;
 }
 .hero__btn-primary:hover {
   background: #f0f0f0;
@@ -186,6 +183,8 @@
   border: 1.5px solid rgba(255,255,255,0.32);
   font-family: var(--font);
   transition: background var(--t-fast), border-color var(--t-fast), transform var(--t-fast);
+  min-height: 48px;
+  white-space: nowrap;
 }
 .hero__btn-outline:hover {
   background: rgba(255,255,255,0.10);
@@ -199,7 +198,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 400px;
+  min-height: 340px;
 }
 
 .hero__3d-wrap {
@@ -241,19 +240,61 @@
 .hero__wave svg { display: block; width: 100%; height: 80px; }
 
 /* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .hero__inner { gap: 28px; }
+  .hero__title { font-size: clamp(2rem, 4vw, 3.4rem); }
+}
+
 @media (max-width: 900px) {
   .hero__inner {
     grid-template-columns: 1fr;
     padding-top: 40px;
-    padding-bottom: 100px;
-    gap: 48px;
+    padding-bottom: 110px;
+    gap: 40px;
   }
   .hero__3d-wrap { max-width: 480px; margin: 0 auto; }
   .hero__subtitle { max-width: 100%; }
+  .hero__visual { min-height: 300px; }
+  .hero__title { font-size: clamp(2rem, 5.5vw, 3rem); }
 }
 
 @media (max-width: 640px) {
   .hero { padding-top: 80px; }
+  .hero__inner { padding-bottom: 100px; gap: 32px; }
+  .hero__title { font-size: clamp(1.85rem, 7vw, 2.6rem); }
+  .hero__subtitle { font-size: 0.9rem; margin-bottom: 28px; }
+  .hero__badge-pill { margin-bottom: 20px; }
   .hero__actions { flex-direction: column; align-items: stretch; }
-  .hero__btn-primary, .hero__btn-outline { justify-content: center; }
+  .hero__btn-primary, .hero__btn-outline { justify-content: center; width: 100%; }
+  .hero__visual { min-height: 240px; }
+  .hero__3d-wrap { max-width: 100%; }
+  .hero__wave svg { height: 60px; }
+}
+
+@media (max-width: 480px) {
+  .hero { padding-top: 76px; }
+  .hero__inner { padding-top: 28px; padding-bottom: 90px; gap: 28px; }
+  .hero__title { font-size: clamp(1.75rem, 7.5vw, 2.4rem); }
+  .hero__btn-primary, .hero__btn-outline { padding: 13px 24px; font-size: 0.85rem; min-height: 44px; }
+  .hero__orb { width: 220px; height: 220px; }
+  .hero__wave svg { height: 50px; }
+}
+
+@media (max-width: 375px) {
+  .hero { padding-top: 68px; }
+  .hero__inner { padding-top: 20px; padding-bottom: 80px; }
+  .hero__title { font-size: clamp(1.6rem, 8vw, 2.1rem); }
+  .hero__subtitle { font-size: 0.85rem; }
+  .hero__btn-primary, .hero__btn-outline { padding: 12px 20px; font-size: 0.825rem; }
+  .hero__badge-pill { font-size: 0.6rem; padding: 5px 12px 5px 8px; margin-bottom: 16px; }
+  .hero__wave svg { height: 44px; }
+}
+
+@media (max-width: 320px) {
+  .hero__inner { padding-bottom: 72px; gap: 24px; }
+  .hero__title { font-size: clamp(1.45rem, 9vw, 1.9rem); letter-spacing: -0.03em; }
+  .hero__subtitle { font-size: 0.82rem; }
+  .hero__badge-pill { font-size: 0.58rem; padding: 5px 10px 5px 7px; }
+  .hero__btn-primary, .hero__btn-outline { padding: 11px 16px; font-size: 0.8rem; }
+  .hero__visual { min-height: 180px; }
 }

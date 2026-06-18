@@ -12,7 +12,7 @@
 }
 
 .gm__headline {
-  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-size: clamp(1.75rem, 3.5vw, 3rem);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.04em;
@@ -37,26 +37,9 @@
   border-radius: var(--radius-lg);
 }
 
-.gm__card-icon {
-  font-size: 1.1rem;
-  color: var(--text-subtle);
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.gm__card-title {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--text);
-  letter-spacing: -0.02em;
-  margin-bottom: 4px;
-}
-
-.gm__card-desc {
-  font-size: 0.825rem;
-  color: var(--text-muted);
-  line-height: 1.65;
-}
+.gm__card-icon { font-size: 1.1rem; color: var(--text-subtle); flex-shrink: 0; margin-top: 2px; }
+.gm__card-title { font-size: 0.95rem; font-weight: 700; color: var(--text); letter-spacing: -0.02em; margin-bottom: 4px; }
+.gm__card-desc  { font-size: 0.825rem; color: var(--text-muted); line-height: 1.65; }
 
 .gm__metrics-grid {
   display: grid;
@@ -76,25 +59,16 @@
 }
 
 .gm__metric-value {
-  font-size: 1.8rem;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
   font-weight: 800;
   color: var(--text);
   letter-spacing: -0.04em;
   line-height: 1;
 }
 
-.gm__metric-label {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  font-weight: 500;
-}
+.gm__metric-label { font-size: 0.75rem; color: var(--text-muted); font-weight: 500; }
 
-.gm__checks {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+.gm__checks { list-style: none; display: flex; flex-direction: column; gap: 10px; }
 
 .gm__check-item {
   display: flex;
@@ -119,6 +93,26 @@
   font-weight: 700;
 }
 
+@media (max-width: 1024px) {
+  .gm__inner { gap: 40px; }
+}
+
 @media (max-width: 900px) {
-  .gm__inner { grid-template-columns: 1fr; gap: 40px; }
+  .gm__inner { grid-template-columns: 1fr; gap: 36px; }
+}
+
+@media (max-width: 640px) {
+  .gm__metrics-grid { grid-template-columns: 1fr 1fr; }
+  .gm__card { padding: 18px 16px; }
+}
+
+@media (max-width: 480px) {
+  .gm__metric { padding: 18px 16px; }
+  .gm__card { padding: 16px; }
+  .gm__metrics-grid { gap: 12px; }
+}
+
+@media (max-width: 375px) {
+  .gm__metrics-grid { grid-template-columns: 1fr; }
+  .gm__metric-value { font-size: clamp(1.3rem, 8vw, 1.6rem); }
 }

@@ -1,0 +1,125 @@
+/* ── Gradient Blobs ───────────────────────────────────── */
+.pa-blob {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(80px);
+  opacity: 0.045;
+  animation: pa-drift linear infinite;
+  will-change: transform;
+}
+
+.pa-blob--a {
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, #6366f1, transparent 70%);
+  top: 10%;
+  left: -10%;
+  animation-duration: 22s;
+}
+
+.pa-blob--b {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #a855f7, transparent 70%);
+  top: 50%;
+  right: -8%;
+  animation-duration: 28s;
+  animation-delay: -8s;
+}
+
+.pa-blob--c {
+  width: 340px;
+  height: 340px;
+  background: radial-gradient(circle, #14b8a6, transparent 70%);
+  bottom: 10%;
+  left: 30%;
+  animation-duration: 18s;
+  animation-delay: -14s;
+}
+
+@keyframes pa-drift {
+  0%   { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(40px, -30px) scale(1.05); }
+  66%  { transform: translate(-20px, 20px) scale(0.97); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+/* ── Card hover glow layer ──────────────────────────── */
+.pa-card-wrap {
+  position: relative;
+}
+
+.pa-card-wrap::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  opacity: 0;
+  background: radial-gradient(600px circle at var(--mx, 50%) var(--my, 50%), rgba(99,102,241,0.10), transparent 40%);
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.pa-card-wrap:hover::after {
+  opacity: 1;
+}
+
+/* ── Section entrance helpers ───────────────────────── */
+.pa-reveal-left,
+.pa-reveal-right,
+.pa-reveal-center {
+  will-change: transform, opacity;
+}
+
+/* ── Text reveal animation ─────────────────────────── */
+.pa-text-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity;
+}
+
+.pa-text-revealed {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* ── Portfolio image zoom reveal ───────────────────── */
+.pa-portfolio-item {
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.7s ease;
+  opacity: 0.85;
+  transform: scale(0.97) translateY(8px);
+  will-change: transform, opacity;
+}
+
+.pa-portfolio-visible {
+  opacity: 1 !important;
+  transform: scale(1) translateY(0) !important;
+}
+
+/* ── Testimonials marquee pause on hover ───────────── */
+/* (already in Testimonials.css — this is a safety override) */
+.gr-track:hover {
+  animation-play-state: paused !important;
+}
+
+/* ── Smooth scroll globally ────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Disable blobs on reduced motion ────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .pa-blob { animation: none; }
+  html { scroll-behavior: auto; }
+  .pa-text-reveal { transition: none; }
+  .pa-portfolio-item { transition: none; }
+}
+
+/* ── Mobile: tone down blobs ────────────────────────── */
+@media (max-width: 768px) {
+  .pa-blob { opacity: 0.025; filter: blur(60px); }
+}

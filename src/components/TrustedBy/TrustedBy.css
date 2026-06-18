@@ -52,3 +52,12 @@
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
+
+@media (max-width: 480px) {
+  .trusted__track { gap: 40px; }
+  .trusted__logo svg { height: 28px; }
+}
+
+@media (max-width: 375px) {
+  .trusted__track { gap: 32px; }
+}

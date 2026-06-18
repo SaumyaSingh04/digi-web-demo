@@ -237,8 +237,22 @@
 }
 
 /* ═══ RESPONSIVE ═══════════════════════════ */
+@media (max-width: 900px) {
+  .tm-desktop { width: 100%; overflow-x: auto; }
+}
+
 @media (max-width: 640px) {
   .tm { padding: 60px 0 68px; }
   .tm-desktop { display: none; }
   .tm-mobile  { display: flex; flex-direction: column; align-items: center; gap: 0; position: relative; z-index: 1; }
+}
+
+@media (max-width: 480px) {
+  .tm { padding: 48px 0 56px; }
+  .tm-card--mobile { width: 200px; }
+  .tm-card--mobile .tm-card__label { font-size: 0.78rem; }
+}
+
+@media (max-width: 375px) {
+  .tm-card--mobile { width: 180px; padding: 12px 14px; }
 }

@@ -9,6 +9,7 @@
   --accent-hover: #222222;
 
   --text:         #111111;
+  --text-dark:    #111111;
   --text-muted:   #555555;
   --text-subtle:  #7A7A7A;
   --text-inverse: #F7F7F5;
@@ -44,3 +45,4 @@
 @media (max-width: 1024px) { :root { --section-padding: 64px 0; --section-padding-compact: 44px 0; } }
 @media (max-width: 768px)  { :root { --section-padding: 48px 0; --section-padding-compact: 36px 0; } }
 @media (max-width: 480px)  { :root { --section-padding: 40px 0; --section-padding-compact: 28px 0; } }
+@media (max-width: 375px)  { :root { --section-padding: 32px 0; --section-padding-compact: 24px 0; } }

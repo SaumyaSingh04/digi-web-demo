@@ -28,7 +28,7 @@
 
 .home__cta-header {
   text-align: center;
-  padding: 28px 24px 0;
+  padding: clamp(16px, 3vw, 28px) clamp(16px, 4vw, 24px) 0;
 }
 
 .home__cta-eyebrow {
@@ -45,7 +45,7 @@
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 800;
   line-height: 1.15;
-  color: var(--text-dark);
+  color: var(--text);
   margin: 0 0 16px;
 }
 

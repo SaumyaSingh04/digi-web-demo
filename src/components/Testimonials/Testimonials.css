@@ -4,14 +4,10 @@
   overflow: hidden;
 }
 
-.testimonials__head {
-  margin-bottom: 32px;
-}
+.testimonials__head { margin-bottom: 32px; }
 
-/* ── Marquee track ─────────────────────────────── */
 .gr-track-wrap {
   overflow: hidden;
-  /* fade edges */
   mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
 }
@@ -23,16 +19,13 @@
   animation: gr-scroll 70s linear infinite;
 }
 
-.gr-track:hover {
-  animation-play-state: paused;
-}
+.gr-track:hover { animation-play-state: paused; }
 
 @keyframes gr-scroll {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
 
-/* ── Card ──────────────────────────────────────── */
 .gr-card {
   width: 320px;
   flex-shrink: 0;
@@ -48,38 +41,14 @@
   cursor: default;
 }
 
-.gr-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
-}
+.gr-card:hover { transform: translateY(-5px); box-shadow: 0 8px 32px rgba(0,0,0,0.10); }
 
-/* top row */
-.gr-card__top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+.gr-card__top { display: flex; align-items: center; justify-content: space-between; }
+.gr-card__brand { display: flex; align-items: center; gap: 7px; }
+.gr-card__brand-text { font-size: 0.72rem; font-weight: 700; color: #444444; letter-spacing: 0.01em; }
 
-.gr-card__brand {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-}
+.gr-stars { display: flex; gap: 1px; }
 
-.gr-card__brand-text {
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: #444444;
-  letter-spacing: 0.01em;
-}
-
-/* stars */
-.gr-stars {
-  display: flex;
-  gap: 1px;
-}
-
-/* quote */
 .gr-card__quote {
   font-size: 0.875rem;
   color: #111111;
@@ -91,7 +60,6 @@
   overflow: hidden;
 }
 
-/* author */
 .gr-card__author {
   display: flex;
   align-items: center;
@@ -113,23 +81,22 @@
   flex-shrink: 0;
 }
 
-.gr-card__name {
-  display: block;
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: #111111;
-  letter-spacing: -0.01em;
+.gr-card__name { display: block; font-size: 0.8rem; font-weight: 700; color: #111111; letter-spacing: -0.01em; }
+.gr-card__role { display: block; font-size: 0.7rem; color: #666666; margin-top: 1px; }
+
+@media (max-width: 768px) {
+  .testimonials { padding: 48px 0; }
+  .gr-track-wrap {
+    mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
+  }
 }
 
-.gr-card__role {
-  display: block;
-  font-size: 0.7rem;
-  color: #666666;
-  margin-top: 1px;
-}
-
-/* ── Mobile ────────────────────────────────────── */
 @media (max-width: 600px) {
   .gr-card { width: 272px; padding: 18px 16px 14px; }
   .gr-track { gap: 12px; }
+}
+
+@media (max-width: 375px) {
+  .gr-card { width: 248px; }
 }

@@ -12,17 +12,20 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  min-width: 320px;
 }
 
 a  { text-decoration: none; color: inherit; }
 ul { list-style: none; }
-img { max-width: 100%; display: block; }
+img { max-width: 100%; display: block; height: auto; }
+svg { max-width: 100%; }
 button { cursor: pointer; border: none; background: none; font-family: var(--font); }
 
 .container {
   max-width: var(--container);
   margin: 0 auto;
   padding: 0 32px;
+  width: 100%;
 }
 
 .section { padding: var(--section-padding); width: 100%; overflow: hidden; }
@@ -51,7 +54,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
 }
 
 .section-title {
-  font-size: clamp(2rem, 3.6vw, 2.8rem);
+  font-size: clamp(1.75rem, 3.6vw, 2.8rem);
   font-weight: 800;
   color: var(--text);
   line-height: 1.1;
@@ -62,7 +65,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
 .section-title--dark { color: var(--text-inverse); }
 
 .section-subtitle {
-  font-size: 1rem;
+  font-size: clamp(0.875rem, 1.8vw, 1rem);
   color: var(--text-muted);
   max-width: 480px;
   line-height: 1.75;
@@ -100,6 +103,8 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   letter-spacing: -0.01em;
   font-family: var(--font);
   cursor: pointer;
+  white-space: nowrap;
+  min-height: 44px;
 }
 
 .btn-primary:hover { opacity: 0.82; transform: translateY(-2px); }
@@ -119,6 +124,8 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   transition: border-color var(--t-fast), color var(--t-fast), transform var(--t-fast);
   font-family: var(--font);
   cursor: pointer;
+  white-space: nowrap;
+  min-height: 44px;
 }
 
 .btn-outline:hover {
@@ -127,10 +134,23 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   transform: translateY(-2px);
 }
 
-@media (max-width: 768px) { .container { padding: 0 20px; } }
-@media (max-width: 375px) { .container { padding: 0 16px; } }
+@media (max-width: 1024px) { .container { padding: 0 24px; } }
+@media (max-width: 768px)  { .container { padding: 0 20px; } }
+@media (max-width: 480px)  { .container { padding: 0 16px; } }
+@media (max-width: 375px)  { .container { padding: 0 14px; } }
+
+@media (max-width: 480px) {
+  .section-title { font-size: clamp(1.5rem, 7vw, 2rem); }
+  .btn-primary, .btn-outline { padding: 12px 22px; font-size: 0.85rem; width: 100%; justify-content: center; }
+  .section-header { margin-bottom: 32px; }
+}
 
 @media (max-width: 375px) {
-  .section-title { font-size: clamp(1.6rem, 7.5vw, 2rem); }
-  .btn-primary, .btn-outline { padding: 11px 20px; font-size: 0.825rem; }
+  .section-title { font-size: clamp(1.4rem, 7.5vw, 1.8rem); }
+  .btn-primary, .btn-outline { padding: 11px 18px; font-size: 0.825rem; }
+}
+
+@media (max-width: 320px) {
+  .container { padding: 0 12px; }
+  .btn-primary, .btn-outline { padding: 10px 16px; font-size: 0.8rem; }
 }

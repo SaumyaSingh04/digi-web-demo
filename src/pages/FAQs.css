@@ -1,7 +1,7 @@
 .faqs-layout {
   display: grid;
   grid-template-columns: 1fr 300px;
-  gap: 64px;
+  gap: clamp(32px, 5vw, 64px);
   align-items: start;
 }
 
@@ -57,4 +57,10 @@
 
 @media (max-width: 600px) {
   .faqs-sidebar { flex-direction: column; }
+}
+
+@media (max-width: 480px) {
+  .faqs-layout { gap: 32px; }
+  .faqs-sidebar { flex-direction: column; }
+  .faqs-sidebar__card { padding: 20px 18px; flex: unset; width: 100%; }
 }
