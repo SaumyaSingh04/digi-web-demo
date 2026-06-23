@@ -89,7 +89,7 @@ export default function Footer() {
           {/* Col 3 — Brand + Map */}
           <div className="footer__col footer__col--brand">
             <Link to="/" className="footer__logo">
-              <img src="/trendoxlogo.png" alt="Trendox" className="footer__logo-img" height="65" width="auto" />
+              <img src="/logo.png" alt="Trendox" className="footer__logo-img" height="95" width="auto" />
             </Link>
             <p className="footer__about">
               We are a results-driven digital marketing agency helping brands grow through strategy, design, and performance marketing.

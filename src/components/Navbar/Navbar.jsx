@@ -187,7 +187,7 @@ export default function Navbar() {
       <div className="container navbar__inner">
         <Link to="/" className="navbar__logo">
           <img
-            src="/trendoxlogo.png"
+            src="/navlogo.png"
             alt="Trendox"
             className="navbar__logo-img"
             width="auto"
