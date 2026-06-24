@@ -41,17 +41,17 @@
   cursor: default;
 }
 
-.gr-card:hover { transform: translateY(-5px); box-shadow: 0 8px 32px rgba(0,0,0,0.10); }
+.gr-card:hover { transform: translateY(-5px); box-shadow: 0 8px 32px rgba(0,0,0,0.10); border-color: rgba(var(--accent-rgb),0.3); }
 
 .gr-card__top { display: flex; align-items: center; justify-content: space-between; }
 .gr-card__brand { display: flex; align-items: center; gap: 7px; }
-.gr-card__brand-text { font-size: 0.72rem; font-weight: 700; color: #444444; letter-spacing: 0.01em; }
+.gr-card__brand-text { font-size: 0.72rem; font-weight: 700; color: var(--text-muted); letter-spacing: 0.01em; }
 
 .gr-stars { display: flex; gap: 1px; }
 
 .gr-card__quote {
   font-size: 0.875rem;
-  color: #111111;
+  color: var(--text);
   line-height: 1.65;
   flex: 1;
   display: -webkit-box;
@@ -65,7 +65,7 @@
   align-items: center;
   gap: 10px;
   padding-top: 12px;
-  border-top: 1px solid #eeeeee;
+  border-top: 1px solid var(--border);
 }
 
 .gr-card__avatar {
@@ -81,8 +81,8 @@
   flex-shrink: 0;
 }
 
-.gr-card__name { display: block; font-size: 0.8rem; font-weight: 700; color: #111111; letter-spacing: -0.01em; }
-.gr-card__role { display: block; font-size: 0.7rem; color: #666666; margin-top: 1px; }
+.gr-card__name { display: block; font-size: 0.8rem; font-weight: 700; color: var(--text); letter-spacing: -0.01em; }
+.gr-card__role { display: block; font-size: 0.7rem; color: var(--text-subtle); margin-top: 1px; }
 
 @media (max-width: 768px) {
   .testimonials { padding: 48px 0; }

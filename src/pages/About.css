@@ -4,15 +4,13 @@
 ══════════════════════════════════════════════ */
 
 .ap {
-  --ink:      #0e0e0e;
-  --chalk:    #fafaf8;
-  --fog:      #f4f4f2;
-  --gold:     #888888;
-  --gold-dim: rgba(136,136,136,0.18);
-  --w10:      rgba(255,255,255,0.10);
-  --w18:      rgba(255,255,255,0.18);
-  --w35:      rgba(255,255,255,0.35);
-  --w55:      rgba(255,255,255,0.55);
+  --ink:   #0e0e0e;
+  --chalk: #fafaf8;
+  --fog:   #f4f4f2;
+  --w10:   rgba(255,255,255,0.10);
+  --w18:   rgba(255,255,255,0.18);
+  --w35:   rgba(255,255,255,0.35);
+  --w55:   rgba(255,255,255,0.55);
   background: var(--bg);
   overflow-x: hidden;
 }
@@ -61,7 +59,7 @@
 .ap-hero__bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #000000 0%, #1a1a1a 40%, #0d0d0d 70%, #000000 100%);
+  background: var(--bg-dark);
   z-index: 0;
 }
 
@@ -135,9 +133,9 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #ffffff;
+  background: var(--gold);
   flex-shrink: 0;
-  box-shadow: 0 0 8px rgba(255,255,255,0.6);
+  box-shadow: 0 0 8px var(--gold-glow);
   animation: apDotPulse 2s ease-out infinite;
 }
 @keyframes apDotPulse {
@@ -157,7 +155,7 @@
 .ap-hero__title-em {
   position: relative;
   display: inline-block;
-  color: #D9D9D9;
+  color: var(--gold-light);
 }
 .ap-hero__title-em::after {
   content: '';
@@ -166,7 +164,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, rgba(192,192,192,0.6) 0%, rgba(192,192,192,0.1) 100%);
+  background: linear-gradient(90deg, rgba(var(--accent-rgb),0.7) 0%, rgba(var(--accent-rgb),0.1) 100%);
   border-radius: 2px;
 }
 
@@ -191,8 +189,8 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #ffffff;
-  color: #111111;
+  background: var(--gold);
+  color: var(--navy);
   font-size: 0.875rem;
   font-weight: 700;
   padding: 15px 32px;
@@ -200,12 +198,12 @@
   letter-spacing: -0.01em;
   font-family: var(--font);
   transition: background var(--t-fast), transform var(--t-fast), box-shadow var(--t-fast);
-  box-shadow: 0 4px 24px rgba(0,0,0,0.35);
+  box-shadow: 0 4px 24px var(--gold-glow);
 }
 .ap-hero__btn-primary:hover {
-  background: #f0f0f0;
+  background: var(--gold-light);
   transform: translateY(-2px);
-  box-shadow: 0 10px 32px rgba(0,0,0,0.45);
+  box-shadow: 0 10px 32px rgba(212,160,23,0.42);
 }
 .ap-hero__btn-arrow {
   display: inline-block;
@@ -326,8 +324,8 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #fff;
-  box-shadow: 0 0 10px rgba(255,255,255,0.6);
+  background: var(--gold);
+  box-shadow: 0 0 10px var(--gold-glow);
   animation: apDotPulse 2s ease-out infinite;
 }
 .ap-card__title {
@@ -607,7 +605,7 @@
   transform: translateX(-50%);
   width: 700px;
   height: 400px;
-  background: radial-gradient(ellipse, rgba(96,165,250,0.05) 0%, transparent 65%);
+  background: radial-gradient(ellipse, rgba(var(--accent-rgb),0.05) 0%, transparent 65%);
   pointer-events: none;
 }
 

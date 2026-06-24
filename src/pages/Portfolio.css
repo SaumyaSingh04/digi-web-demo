@@ -74,7 +74,7 @@
 
 /* Visual panel */
 .pf-card__visual {
-  background: #090912;
+  background: var(--bg-dark);
   padding: 28px 24px 20px;
   display: flex;
   flex-direction: column;
@@ -226,6 +226,15 @@
   margin-top: auto;
   padding-top: 12px;
   border-top: 1px solid var(--border);
+}
+
+/* Portfolio hero override */
+.ph--portfolio .ph__inner {
+  padding-top: 45px;
+  padding-bottom: clamp(80px, 10vw, 140px);
+}
+.ph--portfolio .ph__title {
+  font-size: clamp(2.5rem, 4.4vw, 4.2rem);
 }
 
 @media (max-width: 1024px) { .pf-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; } }

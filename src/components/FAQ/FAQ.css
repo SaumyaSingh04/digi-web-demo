@@ -35,7 +35,7 @@
 }
 
 .faq__question:hover { color: var(--text); }
-.faq__item--open .faq__question { color: var(--text); }
+.faq__item--open .faq__question { color: var(--navy); }
 
 .faq__icon {
   font-size: 1.2rem;
@@ -46,7 +46,7 @@
   transition: color var(--t-fast);
 }
 
-.faq__item--open .faq__icon { color: var(--text); }
+.faq__item--open .faq__icon { color: var(--gold); }
 
 .faq__answer { overflow: hidden; }
 

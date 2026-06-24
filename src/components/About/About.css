@@ -34,7 +34,7 @@
 
 .about__feature-icon {
   font-size: 1rem;
-  color: var(--text-subtle);
+  color: var(--gold);
 }
 
 .about__visual {
@@ -63,7 +63,7 @@
 .about__stat-num {
   font-size: 2.2rem;
   font-weight: 800;
-  color: var(--text);
+  color: var(--navy);
   line-height: 1;
   letter-spacing: -0.04em;
 }

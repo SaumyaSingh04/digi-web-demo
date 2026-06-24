@@ -4,8 +4,8 @@
 
 /* ── Dark glass card ── */
 .custom-pricing__card {
-  background: #0e0e0e;
-  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--navy);
+  border: 1px solid rgba(var(--accent-rgb),0.2);
   border-radius: 24px;
   padding: 52px 52px 36px;
   position: relative;
@@ -102,8 +102,8 @@
   align-items: center;
   gap: 6px;
   padding: 15px 30px;
-  background: #ffffff;
-  color: #0e0e0e;
+  background: var(--gold);
+  color: var(--navy);
   font-size: 0.875rem;
   font-weight: 700;
   border: none;
@@ -111,17 +111,17 @@
   cursor: pointer;
   font-family: var(--font);
   letter-spacing: 0.01em;
-  box-shadow: 0 0 0 1px rgba(255,255,255,0.9), 0 4px 20px rgba(255,255,255,0.15);
-  transition: opacity var(--t-fast), transform var(--t-fast), box-shadow var(--t-fast);
+  box-shadow: 0 0 0 1px rgba(var(--accent-rgb),0.9), 0 4px 20px rgba(var(--accent-rgb),0.25);
+  transition: background var(--t-fast), transform var(--t-fast), box-shadow var(--t-fast);
   position: relative;
   z-index: 1;
   white-space: nowrap;
 }
 
 .cp-btn-primary:hover {
-  opacity: 0.92;
+  background: var(--gold-light);
   transform: translateY(-2px);
-  box-shadow: 0 0 0 1px rgba(255,255,255,0.9), 0 8px 28px rgba(255,255,255,0.2);
+  box-shadow: 0 0 0 1px rgba(var(--accent-rgb),0.9), 0 8px 28px rgba(var(--accent-rgb),0.35);
 }
 
 .cp-btn-secondary {

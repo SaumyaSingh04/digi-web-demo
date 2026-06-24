@@ -4,7 +4,7 @@
 .ph {
   position: relative;
   overflow: hidden;
-  padding-top: 104px;
+  padding-top: 114px;
 }
 
 /* Dark gradient background — mirrors Home hero */
@@ -12,7 +12,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #000000 0%, #1a1a1a 40%, #0d0d0d 70%, #000000 100%);
+  background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-dark-alt) 40%, var(--bg-dark) 70%, var(--bg-dark) 100%);
   z-index: 0;
 }
 
@@ -70,8 +70,8 @@
   align-items: center;
   gap: 56px;
   width: 100%;
-  padding-top: 60px;
-  padding-bottom: clamp(60px, 8vw, 120px);
+  padding-top: 22px;
+  padding-bottom: clamp(80px, 10vw, 140px);
   position: relative;
   z-index: 2;
 }
@@ -82,9 +82,9 @@
 }
 
 .ph__title {
-  font-size: clamp(2.6rem, 4.6vw, 4.4rem);
+  font-size: clamp(2.5rem, 4.4vw, 4.2rem);
   font-weight: 800;
-  line-height: 1.04;
+  line-height: 1.1;
   letter-spacing: -0.05em;
   color: #ffffff;
   margin-bottom: 24px;

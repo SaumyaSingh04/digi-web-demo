@@ -62,7 +62,7 @@
 
 .impact__ring {
   position: absolute; inset: -6px; border-radius: 50%;
-  background: conic-gradient(from 0deg,rgba(0,0,0,0.18),rgba(0,0,0,0.04),rgba(0,0,0,0.18),transparent,rgba(0,0,0,0.18));
+  background: conic-gradient(from 0deg,rgba(var(--accent-rgb),0.35),rgba(var(--accent-rgb),0.06),rgba(var(--accent-rgb),0.35),transparent,rgba(var(--accent-rgb),0.35));
   animation: spin 6s linear infinite; z-index: 0;
 }
 .impact__ring::after { content: ''; position: absolute; inset: 3px; border-radius: 50%; background: var(--bg-alt); }
@@ -91,7 +91,7 @@
 
 .impact__achieve { position: relative; cursor: default; }
 .impact__achieve-inner { display: flex; align-items: center; gap: 12px; padding: 12px 0 10px; }
-.impact__check { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 50%; background: var(--text); border: 1px solid var(--text); color: var(--text-inverse); font-size: 0.65rem; font-weight: 900; flex-shrink: 0; transition: opacity 0.2s; }
+.impact__check { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 50%; background: var(--navy); border: 1px solid var(--navy); color: var(--gold); font-size: 0.65rem; font-weight: 900; flex-shrink: 0; transition: opacity 0.2s; }
 .impact__achieve:hover .impact__check { opacity: 0.75; }
 .impact__achieve-text { font-size: 0.82rem; font-weight: 500; color: var(--text-muted); letter-spacing: -0.01em; transition: color 0.2s; }
 .impact__achieve:hover .impact__achieve-text { color: var(--text); }

@@ -27,12 +27,12 @@
 
 .why__sub {
   font-size: 0.9rem;
-  color: #444444;
+  color: var(--text-muted);
   margin-top: 8px;
   line-height: 1.6;
 }
 
-.why__accent { color: #111111; font-style: italic; font-weight: 800; }
+.why__accent { color: var(--text); font-style: italic; font-weight: 800; }
 
 /* ─── Stats block ───────────────────────────────────────── */
 .why__stats {
@@ -70,7 +70,7 @@
 .why__stat-val {
   font-size: 1.55rem;
   font-weight: 800;
-  color: var(--text);
+  color: var(--navy);
   letter-spacing: -0.04em;
   line-height: 1;
 }
@@ -109,7 +109,7 @@
 
 .why-card:hover {
   box-shadow: var(--shadow-hover);
-  border-color: var(--border-hover);
+  border-color: rgba(var(--accent-rgb),0.35);
 }
 
 .why-card--dark {
@@ -167,8 +167,8 @@
 }
 
 .why-card:hover .why-card__icon {
-  background: var(--text);
-  color: #fff;
+  background: var(--navy);
+  color: var(--gold);
   transform: scale(1.08);
 }
 
@@ -232,7 +232,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: var(--text);
+  background: var(--gold);
   transform-origin: left;
   display: block;
 }

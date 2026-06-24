@@ -131,7 +131,7 @@ const pfFloatCards = [
 export default function Portfolio() {
   return (
     <>
-      <section className="ph">
+      <section className="ph ph--portfolio">
         <div className="ph__bg-glow" />
         <div className="ph__noise" />
         <svg className="ph__mountains" viewBox="0 0 1440 320" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">

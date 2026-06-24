@@ -1,12 +1,20 @@
 :root {
-  --bg:           #F7F7F5;
-  --bg-alt:       #EFEFEA;
-  --bg-dark:      #111111;
-  --bg-dark-alt:  #161616;
-  --bg-dark-card: #1A1A1A;
+  --bg:           #F8F7F4;
+  --bg-alt:       #F0EDE6;
+  --bg-dark:      #050d1a;
+  --bg-dark-alt:  #071020;
+  --bg-dark-card: #0d1b2e;
 
-  --accent:       #000000;
-  --accent-hover: #222222;
+  --accent:       #D4A017;
+  --accent-hover: #B88A10;
+  --accent-rgb:   212,160,23;
+
+  --navy:         #0A1F44;
+  --navy-light:   #122654;
+  --gold:         #D4A017;
+  --gold-light:   #E0B430;
+  --gold-dim:     rgba(212,160,23,0.12);
+  --gold-glow:    rgba(212,160,23,0.28);
 
   --text:         #111111;
   --text-dark:    #111111;

@@ -63,7 +63,7 @@
   transition: color var(--t-fast);
 }
 
-.footer__links li a:hover { color: rgba(255,255,255,0.85); }
+.footer__links li a:hover { color: var(--gold-light); }
 
 .footer__col--brand { gap: 20px; }
 
@@ -104,8 +104,8 @@
 }
 
 .footer__socials a:hover {
-  color: rgba(255,255,255,0.85);
-  border-color: rgba(255,255,255,0.2);
+  color: var(--gold);
+  border-color: rgba(200,169,81,0.45);
 }
 
 .footer__map-wrap {
@@ -164,7 +164,7 @@
   white-space: nowrap;
 }
 
-.footer__bottom-links a:hover { color: rgba(255,255,255,0.6); }
+.footer__bottom-links a:hover { color: var(--gold); }
 
 /* ── Tablet: 2-col ── */
 @media (max-width: 1024px) {

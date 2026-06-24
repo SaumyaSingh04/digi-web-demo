@@ -7,10 +7,11 @@
 
 /* Career hero override */
 .ph--career .ph__inner {
-  padding-bottom: 120px;
+  padding-top: 22px;
+  padding-bottom: clamp(80px, 10vw, 140px);
 }
-.ph--career .ph__wave svg {
-  height: 120px;
+.ph--career .ph__title {
+  font-size: clamp(2.5rem, 4.4vw, 4.2rem);
 }
 
 /* ── Shared ─────────────────────────────────────── */
@@ -89,7 +90,7 @@
   transform: translateX(-50%);
   width: 900px;
   height: 600px;
-  background: radial-gradient(ellipse at center, rgba(99,102,241,0.07) 0%, rgba(16,185,129,0.04) 40%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(var(--accent-rgb),0.05) 0%, rgba(10,31,68,0.04) 40%, transparent 70%);
   pointer-events: none;
 }
 .cp-why__head {
@@ -111,16 +112,7 @@
 .cp-why .cp-h2 em {
   font-style: italic;
   font-weight: 300;
-  background: linear-gradient(90deg, #818cf8, #34d399, #818cf8);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: why-gradient 4s linear infinite;
-}
-@keyframes why-gradient {
-  0%   { background-position: 0% center; }
-  100% { background-position: 200% center; }
+  color: var(--gold);
 }
 .cp-why__grid {
   display: grid;
@@ -130,7 +122,7 @@
   z-index: 1;
 }
 .cp-why__card {
-  background: #fff;
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 30px 24px;
@@ -151,19 +143,19 @@
   pointer-events: none;
 }
 .cp-why__card:hover {
-  box-shadow: 0 0 0 1px rgba(129,140,248,0.3), 0 8px 32px rgba(0,0,0,0.4);
+  box-shadow: 0 0 0 1px rgba(var(--accent-rgb),0.3), 0 8px 32px rgba(0,0,0,0.08);
   transform: translateY(-4px);
-  border-color: rgba(129,140,248,0.3);
+  border-color: rgba(var(--accent-rgb),0.3);
 }
 .cp-why__card:hover::before { opacity: 1; }
-.cp-why__card:nth-child(1) .cp-why__num { color: #818cf8; }
-.cp-why__card:nth-child(2) .cp-why__num { color: #34d399; }
-.cp-why__card:nth-child(3) .cp-why__num { color: #fb923c; }
-.cp-why__card:nth-child(4) .cp-why__num { color: #f472b6; }
-.cp-why__card:nth-child(1):hover { box-shadow: 0 0 0 1px rgba(129,140,248,0.35), 0 8px 32px rgba(129,140,248,0.15); border-color: rgba(129,140,248,0.35); }
-.cp-why__card:nth-child(2):hover { box-shadow: 0 0 0 1px rgba(52,211,153,0.35), 0 8px 32px rgba(52,211,153,0.15); border-color: rgba(52,211,153,0.35); }
-.cp-why__card:nth-child(3):hover { box-shadow: 0 0 0 1px rgba(251,146,60,0.35), 0 8px 32px rgba(251,146,60,0.15); border-color: rgba(251,146,60,0.35); }
-.cp-why__card:nth-child(4):hover { box-shadow: 0 0 0 1px rgba(244,114,182,0.35), 0 8px 32px rgba(244,114,182,0.15); border-color: rgba(244,114,182,0.35); }
+.cp-why__card:nth-child(1) .cp-why__num { color: var(--gold); }
+.cp-why__card:nth-child(2) .cp-why__num { color: var(--gold-light); }
+.cp-why__card:nth-child(3) .cp-why__num { color: var(--accent-hover); }
+.cp-why__card:nth-child(4) .cp-why__num { color: var(--navy); }
+.cp-why__card:nth-child(1):hover { box-shadow: 0 0 0 1px rgba(var(--accent-rgb),0.35), 0 8px 32px rgba(var(--accent-rgb),0.12); border-color: rgba(var(--accent-rgb),0.35); }
+.cp-why__card:nth-child(2):hover { box-shadow: 0 0 0 1px rgba(var(--accent-rgb),0.35), 0 8px 32px rgba(var(--accent-rgb),0.12); border-color: rgba(var(--accent-rgb),0.35); }
+.cp-why__card:nth-child(3):hover { box-shadow: 0 0 0 1px rgba(var(--accent-rgb),0.35), 0 8px 32px rgba(var(--accent-rgb),0.12); border-color: rgba(var(--accent-rgb),0.35); }
+.cp-why__card:nth-child(4):hover { box-shadow: 0 0 0 1px rgba(10,31,68,0.35), 0 8px 32px rgba(10,31,68,0.12); border-color: rgba(10,31,68,0.3); }
 .cp-why__num {
   font-size: 0.62rem;
   font-weight: 800;
@@ -214,12 +206,11 @@
 }
 .cp-bento__cell--wide {
   grid-column: span 2;
-  background: var(--text);
-  border-color: var(--text);
+  background: var(--navy);
+  border-color: var(--navy);
 }
 .cp-bento__cell--wide .cp-bento__icon,
-.cp-bento__cell--wide strong,
-.cp-bento__cell--wide p {
+.cp-bento__cell--wide strong {
   color: rgba(255,255,255,0.9);
 }
 .cp-bento__cell--wide p { color: rgba(255,255,255,0.5); }
@@ -288,7 +279,7 @@
 }
 .cp-process__card {
   position: relative;
-  background: #fff;
+  background: var(--surface);
   border: 1px solid rgba(0,0,0,0.07);
   border-radius: var(--radius-lg);
   padding: 20px 18px 16px;
@@ -356,7 +347,7 @@
 
 /* ══ 5. OPEN POSITIONS ══════════════════════════ */
 .cp-positions {
-  background: var(--bg-alt, #efefea);
+  background: var(--bg-alt);
   padding: 80px 0;
 }
 .cp-jobs {
@@ -365,7 +356,7 @@
   gap: 10px;
 }
 .cp-job {
-  background: #fff;
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 26px 30px;
@@ -436,8 +427,8 @@
   flex-shrink: 0;
   display: inline-flex;
   align-items: center;
-  background: var(--text);
-  color: #fff;
+  background: var(--navy);
+  color: var(--gold);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -447,7 +438,7 @@
   white-space: nowrap;
   transition: background var(--t-fast), transform var(--t-fast);
 }
-.cp-job__btn:hover { background: #333; transform: translateY(-1px); }
+.cp-job__btn:hover { background: var(--navy-light); transform: translateY(-1px); }
 
 
 /* ══ 6. TEAM & CULTURE ══════════════════════════ */
@@ -572,18 +563,19 @@
 .cp-cta__btn-primary {
   display: inline-flex;
   align-items: center;
-  background: #fff;
-  color: #000;
+  background: var(--gold);
+  color: var(--navy);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   padding: 14px 30px;
   border-radius: var(--radius-sm);
-  transition: opacity var(--t-fast), transform var(--t-fast);
+  transition: background var(--t-fast), transform var(--t-fast), box-shadow var(--t-fast);
   white-space: nowrap;
+  box-shadow: 0 4px 18px var(--gold-glow);
 }
-.cp-cta__btn-primary:hover { opacity: 0.85; transform: translateY(-2px); }
+.cp-cta__btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(var(--accent-rgb),0.35); }
 .cp-cta__btn-ghost {
   display: inline-flex;
   align-items: center;

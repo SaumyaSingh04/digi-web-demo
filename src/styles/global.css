@@ -46,6 +46,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   padding: 5px 12px;
   border-radius: var(--radius-pill);
   margin-bottom: 20px;
+  transition: border-color var(--t-fast), color var(--t-fast);
 }
 
 .section-tag--dark {
@@ -73,8 +74,8 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
 
 .section-subtitle--dark { color: rgba(255,255,255,0.45); }
 
-.accent { color: var(--text); }
-.highlight { color: var(--text); }
+.accent { color: var(--gold); }
+.highlight { color: var(--gold); }
 
 .section-header {
   margin-bottom: 48px;
@@ -92,14 +93,14 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: var(--text);
-  color: var(--text-inverse);
+  background: var(--gold);
+  color: var(--navy);
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 700;
   padding: 13px 28px;
   border-radius: var(--radius-sm);
-  border: 1.5px solid var(--text);
-  transition: opacity var(--t-fast), transform var(--t-fast);
+  border: 1.5px solid var(--gold);
+  transition: background var(--t-fast), transform var(--t-fast), box-shadow var(--t-fast);
   letter-spacing: -0.01em;
   font-family: var(--font);
   cursor: pointer;
@@ -107,7 +108,12 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   min-height: 44px;
 }
 
-.btn-primary:hover { opacity: 0.82; transform: translateY(-2px); }
+.btn-primary:hover {
+  background: var(--gold-light);
+  border-color: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px var(--gold-glow);
+}
 
 .btn-outline {
   display: inline-flex;
@@ -129,8 +135,8 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
 }
 
 .btn-outline:hover {
-  border-color: var(--text);
-  color: var(--text);
+  border-color: var(--gold);
+  color: var(--gold);
   transform: translateY(-2px);
 }
 

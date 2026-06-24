@@ -12,11 +12,11 @@
   padding-top: 104px;
 }
 
-/* Dark gradient background — same as home hero */
+/* Dark background — pure black */
 .sp-hero__bg-grid {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #000000 0%, #1a1a1a 40%, #0d0d0d 70%, #000000 100%);
+  background: var(--bg-dark);
   z-index: 0;
 }
 
@@ -110,9 +110,9 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #ffffff;
+  background: var(--gold);
   flex-shrink: 0;
-  box-shadow: 0 0 8px rgba(255,255,255,0.6);
+  box-shadow: 0 0 8px var(--gold-glow);
   animation: spDotPulse 2s ease-out infinite;
 }
 @keyframes spDotPulse {
@@ -163,15 +163,15 @@
 
 /* Override btn-primary / btn-outline for dark hero context */
 .sp-hero .btn-primary {
-  background: #ffffff;
-  color: #111111;
+  background: var(--gold);
+  color: var(--navy);
   border: none;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 24px var(--gold-glow);
 }
 .sp-hero .btn-primary:hover {
-  background: #f0f0ee;
+  background: var(--gold-light);
   transform: translateY(-2px);
-  box-shadow: 0 10px 32px rgba(0,0,0,0.28);
+  box-shadow: 0 10px 32px rgba(var(--accent-rgb),0.42);
 }
 .sp-hero .btn-outline {
   background: transparent;
@@ -672,7 +672,7 @@
   transition: color var(--t-fast);
 }
 
-.sp-faq__item--open .sp-faq__icon { color: var(--text); }
+.sp-faq__item--open .sp-faq__icon { color: var(--gold); }
 
 .sp-faq__a { overflow: hidden; }
 

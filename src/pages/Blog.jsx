@@ -1,18 +1,10 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import CTA from '../components/CTA/CTA'
-import { blogThumbs } from '../components/Blog/BlogThumbnails'
 import '../styles/layout.css'
 import './Blog.css'
 
-const fadeUp = (delay = 0) => ({
-  initial: { opacity: 0, y: 20 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.5, delay, ease: 'easeOut' },
-})
-
-const articles = [  
+const articles = [
   {
     id: 1,
     tag: 'SEO',
@@ -109,7 +101,7 @@ const blogFloatCards = [
   {
     cls: 'ph-float--1',
     icon: '✦',
-    value: '50+',
+    value: '9+',
     label: 'Articles Published',
     initial: { opacity: 0, x: 20, y: -10 },
     animate: { opacity: 1, x: 0, y: [0, -8, 0] },
@@ -122,8 +114,8 @@ const blogFloatCards = [
   {
     cls: 'ph-float--2',
     icon: '◆',
-    value: '8',
-    label: 'Topics Covered',
+    value: '5 min',
+    label: 'Avg. Read Time',
     initial: { opacity: 0, x: -20, y: 10 },
     animate: { opacity: 1, x: 0, y: [0, 7, 0] },
     transition: {
@@ -135,8 +127,8 @@ const blogFloatCards = [
   {
     cls: 'ph-float--3',
     icon: '↑',
-    value: '20K+',
-    label: 'Monthly Readers',
+    value: '6+',
+    label: 'Topics Covered',
     initial: { opacity: 0, y: 18 },
     animate: { opacity: 1, y: [0, -6, 0] },
     transition: {
@@ -149,7 +141,7 @@ const blogFloatCards = [
 export default function Blog() {
   return (
     <>
-      <section className="ph">
+      <section className="ph ph--blog">
         <div className="ph__bg-glow" />
         <div className="ph__noise" />
         <svg className="ph__mountains" viewBox="0 0 1440 320" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -162,21 +154,21 @@ export default function Blog() {
           <div className="ph__content">
             <motion.div className="hero__trust-badge" initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}>
               <span className="hero__badge-pulse" />
-              <span className="hero__trust-badge-text">Trendox Blog</span>
+              <span className="hero__trust-badge-text">Our Blog</span>
             </motion.div>
             <motion.h1 className="ph__title" initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}>
               Insights, Strategy<br />
-              <span className="hero__title-accent">&amp; Agency Thinking</span>
+              <span className="hero__title-accent">& Agency Thinking</span>
             </motion.h1>
             <motion.p className="ph__subtitle" initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}>
               Practical guides, case study breakdowns, and marketing strategy from the Trendox team.
             </motion.p>
             <motion.div className="hero__actions" initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}>
-              <a href="#articles" className="hero__btn-primary">Browse Articles <span className="hero__btn-arrow">→</span></a>
+              <a href="#articles" className="hero__btn-primary">Read Articles <span className="hero__btn-arrow">→</span></a>
               <Link to="/contact" className="hero__btn-ghost">Work With Us</Link>
             </motion.div>
             <motion.div className="hero__trust-indicators" initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65, delay: 0.42, ease: [0.22, 1, 0.36, 1] }}>
-              {['50+ Articles', '8 Topics', '20K+ Monthly Readers'].map(item => (
+              {['SEO & PPC', 'Web & Design', 'Strategy & Growth'].map(item => (
                 <div key={item} className="hero__trust-item">
                   <span className="hero__trust-check">✓</span>
                   <span>{item}</span>
@@ -196,43 +188,50 @@ export default function Blog() {
                 <svg viewBox="0 0 420 320" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', display: 'block', borderRadius: 16 }}>
                   <defs>
                     <linearGradient id="bl-bg" x1="0" y1="0" x2="420" y2="320" gradientUnits="userSpaceOnUse">
-                      <stop offset="0%" stopColor="#0e1a10"/><stop offset="100%" stopColor="#060e08"/>
+                      <stop offset="0%" stopColor="#0a1628"/><stop offset="100%" stopColor="#040e1c"/>
                     </linearGradient>
                     <filter id="bl-sh"><feDropShadow dx="0" dy="4" stdDeviation="8" floodColor="#00000050"/></filter>
                   </defs>
                   <rect width="420" height="320" rx="16" fill="url(#bl-bg)"/>
-                  {/* article cards stacked */}
+                  {/* grid lines */}
+                  {[80,130,180,230].map(y => <line key={y} x1="24" y1={y} x2="396" y2={y} stroke="rgba(255,255,255,0.05)" strokeWidth="1"/>)}
+                  {/* article topic rows */}
                   {[
-                    {y:16,  tag:'SEO',          title:'10 Technical SEO Fixes', color:'#4ade80', tagBg:'rgba(74,222,128,0.15)'},
-                    {y:88,  tag:'PPC',          title:'How We Got 4.5x ROAS',   color:'#fb923c', tagBg:'rgba(251,146,60,0.15)'},
-                    {y:160, tag:'Web Design',   title:'5 UX Principles for CRO',color:'#60a5fa', tagBg:'rgba(96,165,250,0.15)'},
-                    {y:232, tag:'Social Media', title:'Fix Your Instagram Reach',color:'#f472b6', tagBg:'rgba(244,114,182,0.15)'},
-                  ].map(({y,tag,title,color,tagBg},i)=>(
-                    <g key={tag} filter="url(#bl-sh)">
-                      <rect x="18" y={y} width="384" height="62" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)" strokeWidth="1"/>
-                      {/* color left bar */}
-                      <rect x="18" y={y} width="4" height="62" rx="2" fill={color} opacity="0.8"/>
-                      {/* tag pill */}
-                      <rect x="30" y={y+10} width={tag.length*6+10} height="16" rx="8" fill={tagBg}/>
-                      <text x={30+(tag.length*6+10)/2} y={y+22} fontSize="7" fontWeight="700" fill={color} fontFamily="Inter,sans-serif" textAnchor="middle">{tag}</text>
-                      {/* title */}
-                      <text x="30" y={y+44} fontSize="10" fontWeight="700" fill="rgba(255,255,255,0.85)" fontFamily="Inter,sans-serif">{title}</text>
-                      {/* read time */}
-                      <text x="350" y={y+44} fontSize="7" fill="rgba(255,255,255,0.35)" fontFamily="Inter,sans-serif" textAnchor="middle">{6+i} min</text>
-                      {/* progress bar */}
-                      <rect x="30" y={y+52} width="340" height="3" rx="2" fill="rgba(255,255,255,0.06)"/>
-                      <rect x="30" y={y+52} width={100+i*60} height="3" rx="2" fill={color} opacity="0.5"/>
+                    { label: 'SEO',           count: 2, color: '#4f8bff', w: 220 },
+                    { label: 'PPC',           count: 2, color: '#fb923c', w: 180 },
+                    { label: 'Web Design',    count: 2, color: '#34d399', w: 200 },
+                    { label: 'Social Media',  count: 1, color: '#f472b6', w: 140 },
+                    { label: 'Strategy',      count: 1, color: '#a78bfa', w: 160 },
+                    { label: 'Branding',      count: 1, color: '#38bdf8', w: 120 },
+                  ].map(({ label, count, color, w }, i) => (
+                    <g key={label} transform={`translate(24, ${56 + i * 36})`}>
+                      <text x="0" y="12" fontSize="8" fill="rgba(255,255,255,0.5)" fontFamily="Inter,sans-serif">{label}</text>
+                      <rect x="90" y="3" width={w} height="10" rx="5" fill={color} opacity="0.25"/>
+                      <rect x="90" y="3" width={w * 0.7} height="10" rx="5" fill={color} opacity="0.7"/>
+                      <text x={90 + w + 8} y="12" fontSize="7" fill="rgba(255,255,255,0.4)" fontFamily="Inter,sans-serif">{count} article{count > 1 ? 's' : ''}</text>
                     </g>
                   ))}
-                  {/* top stats */}
-                  <g filter="url(#bl-sh)" transform="translate(18,16)" opacity="0">
-                    <rect width="100" height="36" rx="8" fill="rgba(255,255,255,0.06)"/>
+                  {/* stat badge top-left */}
+                  <g filter="url(#bl-sh)" transform="translate(18,16)">
+                    <rect width="120" height="46" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" strokeWidth="1"/>
+                    <text x="14" y="22" fontSize="7" fill="rgba(99,153,255,0.8)" fontFamily="Inter,sans-serif">Total Articles</text>
+                    <text x="14" y="40" fontSize="18" fontWeight="900" fill="#93c5fd" fontFamily="Inter,sans-serif">9+</text>
                   </g>
-                  {/* readers badge */}
-                  <g filter="url(#bl-sh)" transform="translate(284,248)">
-                    <rect width="118" height="52" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.08)" strokeWidth="1"/>
-                    <text x="14" y="20" fontSize="7" fill="rgba(74,222,128,0.8)" fontFamily="Inter,sans-serif">Monthly Readers</text>
-                    <text x="14" y="40" fontSize="18" fontWeight="900" fill="#86efac" fontFamily="Inter,sans-serif">20K+</text>
+                  {/* stat badge top-right */}
+                  <g filter="url(#bl-sh)" transform="translate(282,16)">
+                    <rect width="120" height="46" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" strokeWidth="1"/>
+                    <text x="14" y="22" fontSize="7" fill="rgba(52,211,153,0.8)" fontFamily="Inter,sans-serif">Topics</text>
+                    <text x="14" y="40" fontSize="18" fontWeight="900" fill="#6ee7b7" fontFamily="Inter,sans-serif">6+</text>
+                  </g>
+                  {/* bottom tag strip */}
+                  <g transform="translate(18,278)">
+                    <rect width="384" height="30" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.07)" strokeWidth="1"/>
+                    {[['SEO','#4f8bff'],['PPC','#fb923c'],['Design','#34d399'],['Social','#f472b6'],['Strategy','#a78bfa'],['Branding','#38bdf8']].map(([lbl,clr],i)=>(
+                      <g key={lbl}>
+                        <circle cx={22+i*64} cy={15} r={4} fill={clr} opacity="0.8"/>
+                        <text x={30+i*64} y={19} fontSize="7" fill="rgba(255,255,255,0.55)" fontFamily="Inter,sans-serif">{lbl}</text>
+                      </g>
+                    ))}
                   </g>
                 </svg>
               </motion.div>
@@ -261,7 +260,7 @@ export default function Blog() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section" id="articles">
         <div className="container">
           <div className="blog-grid">
             {articles.map((article, i) => (

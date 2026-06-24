@@ -1,5 +1,18 @@
 /* ══ Contact Page · ct- namespace ══════════════════════════════ */
 
+.ph--contact {
+  padding-top: 114px;
+}
+
+.ph--contact .ph__inner {
+  padding-top: 45px;
+  padding-bottom: clamp(80px, 10vw, 140px);
+}
+
+.ph--contact .ph__title {
+  font-size: clamp(2.5rem, 4.4vw, 4.2rem);
+}
+
 .ct {
   background: var(--bg);
   overflow-x: hidden;
@@ -221,8 +234,8 @@ a.ct-info-card:hover .ct-info-card__bar { opacity: 0.7; }
 }
 
 .cf-input:focus {
-  border-color: var(--text);
-  box-shadow: 0 0 0 3px rgba(0,0,0,0.05);
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px var(--gold-dim);
 }
 
 .cf-select {
@@ -286,8 +299,8 @@ a.ct-info-card:hover .ct-info-card__bar { opacity: 0.7; }
   justify-content: center;
   gap: 10px;
   width: 100%;
-  background: var(--text);
-  color: var(--text-inverse);
+  background: var(--navy);
+  color: var(--gold);
   font-size: 0.9rem;
   font-weight: 700;
   padding: 16px 32px;
@@ -296,15 +309,15 @@ a.ct-info-card:hover .ct-info-card__bar { opacity: 0.7; }
   cursor: pointer;
   font-family: var(--font);
   letter-spacing: -0.01em;
-  transition: opacity var(--t-fast), transform var(--t-fast), box-shadow var(--t-fast);
+  transition: background var(--t-fast), transform var(--t-fast), box-shadow var(--t-fast);
   margin-top: 4px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 20px rgba(10,31,68,0.18);
 }
 
 .ct-submit:hover:not(:disabled) {
-  opacity: 0.85;
+  background: var(--navy-light);
   transform: translateY(-2px);
-  box-shadow: 0 10px 32px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 32px rgba(212,160,23,0.2);
 }
 
 .ct-submit:disabled { opacity: 0.5; cursor: not-allowed; }
@@ -414,10 +427,10 @@ a.ct-sidebar__row:hover { background: var(--bg-alt); }
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #34d399;
+  background: var(--gold);
   flex-shrink: 0;
   margin-top: 4px;
-  box-shadow: 0 0 8px rgba(52,211,153,0.5);
+  box-shadow: 0 0 8px var(--gold-glow);
   animation: ctPromisePulse 2s ease-out infinite;
 }
 
@@ -453,12 +466,12 @@ a.ct-sidebar__row:hover { background: var(--bg-alt); }
 .ct-cta__glow--l {
   top: -120px;
   left: -80px;
-  background: radial-gradient(circle, rgba(79,139,255,0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(var(--accent-rgb),0.06) 0%, transparent 70%);
 }
 .ct-cta__glow--r {
   bottom: -120px;
   right: -80px;
-  background: radial-gradient(circle, rgba(52,211,153,0.05) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(10,31,68,0.08) 0%, transparent 70%);
 }
 
 .ct-cta__inner {
@@ -492,14 +505,14 @@ a.ct-sidebar__row:hover { background: var(--bg-alt); }
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #34d399;
-  box-shadow: 0 0 8px rgba(52,211,153,0.6);
+  background: var(--gold);
+  box-shadow: 0 0 8px var(--gold-glow);
   flex-shrink: 0;
   animation: ctaDotPulse 2s ease-out infinite;
 }
 @keyframes ctaDotPulse {
-  0%, 100% { opacity: 1; box-shadow: 0 0 8px rgba(52,211,153,0.6); }
-  50%       { opacity: 0.5; box-shadow: 0 0 4px rgba(52,211,153,0.2); }
+  0%, 100% { opacity: 1; box-shadow: 0 0 8px var(--gold-glow); }
+  50%       { opacity: 0.5; box-shadow: 0 0 4px rgba(200,169,81,0.1); }
 }
 
 .ct-cta__title {
@@ -536,21 +549,21 @@ a.ct-sidebar__row:hover { background: var(--bg-alt); }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--text);
-  color: var(--text-inverse);
+  background: var(--navy);
+  color: var(--gold);
   font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: -0.01em;
   padding: 13px 26px;
   border-radius: var(--radius-pill);
-  transition: opacity var(--t-fast), transform var(--t-fast), box-shadow var(--t-fast);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  transition: background var(--t-fast), transform var(--t-fast), box-shadow var(--t-fast);
+  box-shadow: 0 4px 20px rgba(10,31,68,0.15);
 }
 
 .ct-cta__btn-primary:hover {
-  opacity: 0.85;
+  background: var(--navy-light);
   transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+  box-shadow: 0 10px 28px rgba(212,160,23,0.18);
 }
 
 .ct-cta__btn-ghost {

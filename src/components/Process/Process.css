@@ -138,8 +138,8 @@
 }
 
 .tm-card--active {
-  border-color: rgba(255,255,255,0.35) !important;
-  box-shadow: 0 0 0 3px rgba(255,255,255,0.06), 0 8px 32px rgba(0,0,0,0.4) !important;
+  border-color: rgba(var(--accent-rgb),0.6) !important;
+  box-shadow: 0 0 0 3px rgba(var(--accent-rgb),0.12), 0 8px 32px rgba(0,0,0,0.4) !important;
   transform: scale(1.07);
   background: var(--bg-dark-alt) !important;
 }
@@ -180,7 +180,7 @@
   position: absolute;
   inset: -6px;
   border-radius: 20px;
-  border: 1.5px solid rgba(255,255,255,0.18);
+  border: 1.5px solid rgba(var(--accent-rgb),0.4);
   opacity: 0;
   animation: tm-pulse-ring 1.6s ease-out infinite;
   pointer-events: none;
